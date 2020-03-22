@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DTCM_Automation.project.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="OnlineUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CRM365DC\crmadmin</Value>
+    </Setting>
+    <Setting Name="OnlinePassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">linkP@ss</Value>
+    </Setting>
+    <Setting Name="OnlineCrmUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://dtcmqc.linkdev.com/main.aspx</Value>
+    </Setting>
+    <Setting Name="BrowserType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Chrome</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
