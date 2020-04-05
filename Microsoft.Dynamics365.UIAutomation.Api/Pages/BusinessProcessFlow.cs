@@ -740,6 +740,21 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
                 return true;
             });
         }
+        public BrowserCommandResult<String> GetCurrentStage(int thinkTime = Constants.DefaultThinkTime)
+        {
+            this.Browser.ThinkTime(thinkTime);
+
+            return this.Execute("Set Active", driver =>
+            {
+                driver.WaitUntilVisible(By.XPath(Elements.Xpath[Reference.BusinessProcessFlow.ActiveFlag]));
+                // activa stage title ="Entity: Marine Craft Application, Stage: Choose Plate Number, Status: Active"
+                var element = driver.FindElement(By.XPath(Elements.Xpath[Reference.BusinessProcessFlow.ActiveFlag]));
+                string stageName = element.GetAttribute("title").Split(',')[1].Split(':')[1];
+                return stageName;
+
+            });
+        }
+
 
         /// <summary>
         /// Sets the current selected Stage as Active.

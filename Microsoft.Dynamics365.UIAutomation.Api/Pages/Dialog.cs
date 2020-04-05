@@ -448,5 +448,47 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
                 return true;
             });
         }
+
+
+        public BrowserCommandResult<bool> PickDialog()
+        {
+
+            return this.Execute(GetOptions($"Close Warning Dialog"), driver =>
+            {
+
+                string index = "";
+                driver.SwitchTo().DefaultContent();
+                var inlineDialog = Browser.Driver.HasElement(By.XPath(Elements.Xpath[Reference.Frames.DialogFrame].Replace("[INDEX]", index)));
+                if (inlineDialog)
+                {
+                    //wait for the content panel to render
+                    Browser.Driver.WaitUntilAvailable(By.XPath(Elements.Xpath[Reference.Frames.DialogFrame].Replace("[INDEX]", index)),
+                                                      new TimeSpan(0, 0, 2),
+                                                      d => { Browser.Driver.SwitchTo().Frame(Elements.ElementId[Reference.Frames.DialogFrameId].Replace("[INDEX]", index)); });
+
+                    System.Threading.Thread.Sleep(5000);
+                    var dialogFooter = driver.WaitUntilAvailable(By.XPath(Elements.Xpath[Reference.Dialogs.WarningFooter1]));
+
+                    if (
+                        !(dialogFooter?.FindElements(By.XPath(Elements.Xpath[Reference.Dialogs.DialogWarningokButton])).Count >
+                          0))
+                        return true;
+                    // var closeBtn = dialogFooter.FindElement(By.XPath(Elements.Xpath[Reference.Dialogs.WarningCloseButton]));
+                    try
+                    {
+                        dialogFooter.FindElement(By.XPath(Elements.Xpath[Reference.Dialogs.DialogWarningokButton])).Click();
+                    }
+                    catch (Exception)
+                    {
+                        // handle satle exception
+                    }
+                }
+
+
+                return true;
+            });
+        }
+
+
     }
 }

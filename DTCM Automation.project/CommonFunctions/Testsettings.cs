@@ -20,6 +20,7 @@ namespace DTCM_Automation.project
         public static BrowserOptions Options = new BrowserOptions
         {
             BrowserType = (BrowserType)Enum.Parse(typeof(BrowserType), Type),
+            PageLoadStrategyValue = OpenQA.Selenium.PageLoadStrategy.None,
             PrivateMode = true,
             FireEvents = true,
             Headless = false,

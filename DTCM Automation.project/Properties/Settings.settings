@@ -14,5 +14,35 @@
     <Setting Name="BrowserType" Type="System.String" Scope="User">
       <Value Profile="(Default)">Chrome</Value>
     </Setting>
+    <Setting Name="CRMAdminUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CRM365DC\crmadmin</Value>
+    </Setting>
+    <Setting Name="CRMAdminPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">linkP@ss</Value>
+    </Setting>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Frontend_URL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Backend_URL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SENDGRID_API_KEY" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FromMail" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="timeToWaitInMinutes" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="RunHeadless" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="toMails" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>
