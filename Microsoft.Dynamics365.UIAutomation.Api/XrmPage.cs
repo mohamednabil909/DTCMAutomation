@@ -56,42 +56,50 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
         /// <example>xrmBrowser.CommandBar.ClickCommand("New");</example>
         internal bool ClickCommandButton(string name, string subName = "", bool moreCommands = false, int thinkTime = Constants.DefaultThinkTime)
         {
-            var driver = Browser.Driver;
-
-            var buttons = GetCommands(false).Value;
-            var button = buttons.FirstOrDefault(x => x.Text.Split('\r')[0].ToLowerString() == name.ToLowerString());
-
-            if (button == null)
+            try
             {
-                driver.ClickWhenAvailable(By.XPath(Elements.Xpath[Reference.CommandBar.MoreCommands]));
-                buttons = GetCommands(true).Value;
-                button = buttons.FirstOrDefault(x => x.Text.Split('\r')[0].ToLowerString() == name.ToLowerString());
-            }
+                var driver = Browser.Driver;
 
-            if (button == null)
+                var buttons = GetCommands(false).Value;
+                var button = buttons.FirstOrDefault(x => x.Text.Split('\r')[0].ToLowerString() == name.ToLowerString());
+
+                if (button == null)
+                {
+                    driver.ClickWhenAvailable(By.XPath(Elements.Xpath[Reference.CommandBar.MoreCommands]));
+                    buttons = GetCommands(true).Value;
+                    button = buttons.FirstOrDefault(x => x.Text.Split('\r')[0].ToLowerString() == name.ToLowerString());
+                }
+
+                if (button == null)
+                {
+                    throw new InvalidOperationException($"No command with the name '{name}' exists inside of Commandbar.");
+                }
+
+                if (string.IsNullOrEmpty(subName))
+                {
+                    button.Click(true);
+                }
+                else
+                {
+
+                    button.FindElement(By.ClassName(Elements.CssClass[Reference.CommandBar.FlyoutAnchorArrow])).Click();
+
+                    var flyoutId = button.GetAttribute("id").Replace("|", "_").Replace(".", "_") + "Menu";
+                    var subButtons = driver.FindElement(By.Id(flyoutId)).FindElements(By.ClassName("ms-crm-CommandBar-Menu"));
+                    var item = subButtons.FirstOrDefault(x => x.Text.ToLowerString() == subName.ToLowerString());
+                    if (item == null) { throw new InvalidOperationException($"The sub menu item '{subName}' is not found."); }
+
+                    item.Click();
+                }
+
+                driver.WaitForPageToLoad();
+                return true;
+            }
+            catch(Exception ex)
             {
-                throw new InvalidOperationException($"No command with the name '{name}' exists inside of Commandbar.");
+                return true;
             }
-
-            if (string.IsNullOrEmpty(subName))
-            {
-                button.Click(true);
-            }
-            else
-            {
-
-                button.FindElement(By.ClassName(Elements.CssClass[Reference.CommandBar.FlyoutAnchorArrow])).Click();
-
-                var flyoutId = button.GetAttribute("id").Replace("|", "_").Replace(".", "_") + "Menu";
-                var subButtons = driver.FindElement(By.Id(flyoutId)).FindElements(By.ClassName("ms-crm-CommandBar-Menu"));
-                var item = subButtons.FirstOrDefault(x => x.Text.ToLowerString() == subName.ToLowerString());
-                if (item == null) { throw new InvalidOperationException($"The sub menu item '{subName}' is not found."); }
-
-                item.Click();
-            }
-
-            driver.WaitForPageToLoad();
-            return true;
+            
         }
 
         /// <summary>
@@ -1287,17 +1295,24 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
 
         internal bool SwitchToContent()
         {
-            Browser.Driver.SwitchTo().DefaultContent();
-            //wait for the content panel to render
-            Browser.Driver.WaitUntilAvailable(By.XPath(Elements.Xpath[Reference.Frames.ContentPanel]));
+            try
+            {
+                Browser.Driver.SwitchTo().DefaultContent();
+                //wait for the content panel to render
+                Browser.Driver.WaitUntilAvailable(By.XPath(Elements.Xpath[Reference.Frames.ContentPanel]));
 
-            //find the crmContentPanel and find out what the current content frame ID is - then navigate to the current content frame
-            var currentContentFrame = Browser.Driver.FindElement(By.XPath(Elements.Xpath[Reference.Frames.ContentPanel]))
-                .GetAttribute(Elements.ElementId[Reference.Frames.ContentFrameId]);
+                //find the crmContentPanel and find out what the current content frame ID is - then navigate to the current content frame
+                var currentContentFrame = Browser.Driver.FindElement(By.XPath(Elements.Xpath[Reference.Frames.ContentPanel]))
+                    .GetAttribute(Elements.ElementId[Reference.Frames.ContentFrameId]);
 
-            Browser.Driver.SwitchTo().Frame(currentContentFrame);
+                Browser.Driver.SwitchTo().Frame(currentContentFrame);
 
-            return true;
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
 
         /// <summary>

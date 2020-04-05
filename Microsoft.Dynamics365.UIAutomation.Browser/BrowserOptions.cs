@@ -80,6 +80,7 @@ namespace Microsoft.Dynamics365.UIAutomation.Browser
         /// Gets or sets the Application Insights Instrumentation Key to write telemetry to. 
         /// </summary>
         public string AppInsightsKey { get; set; }
+        public PageLoadStrategy PageLoadStrategyValue { get; set; }
 
         public virtual ChromeOptions ToChrome()
         {

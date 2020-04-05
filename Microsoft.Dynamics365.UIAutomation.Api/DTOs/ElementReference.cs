@@ -13,6 +13,8 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             { "BPF_NextStage"       , "id(\"stageAdvanceActionContainer\")/div"},
             { "BPF_NextStageMenu"       , "id(\"stageNavigateActionContainer\")/div"},
             { "BPF_NextStageMenuOptions"       , "//div[@class=\"navigateMenuSection\"]"},
+
+            { "BPF_ActiveFlag"     ,"//div[contains(@title,\"Status: Active\")]" },
             { "BPF_PreviousStage"   , "id(\"stageBackActionContainer\")/div"},
             { "BPF_Hide"            , "id(\"processControlCollapseButton\")" },
             { "BPF_SetActive"       , "id(\"stageSetActiveActionContainer\")" },
@@ -56,6 +58,10 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             { "Dialog_RoleLookupTable",   "id(\"record2roleid_IMenu\")" },
             { "Dialog_WarningFooter" , "//*[@id=\"crmDialogFooter\"]" },
             { "Dialog_WarningCloseButton", "//*[@id=\"butBegin\"]" },
+
+             { "Dialog_WarningFooter1" , "//*[@id=\"tdDialogFooter\"]" },
+            //{ "Dialog_WarningCloseButton", "//*[@id=\"butBegin\"]" },
+           { "Dialog_WarningokButton", "//*[@id=\"ok_id\"]" },
            // buttonClose
             { "Dialog_CloseFoundPlaces", "//span[contains(text(), 'Close')]"},
            
@@ -460,6 +466,8 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             public static string FinishedLabel = "BPF_FinishedLabel";
             public static string SelectStage = "BPF_SelectStage";
             public static string Ok = "BPF_Ok";
+
+            public static string ActiveFlag = "BPF_ActiveFlag";
             public static string TextFieldContainer = "BPF_TextFieldContainer";
             public static string CheckboxFieldContainer = "BPF_CheckboxFieldContainer";
             public static string OptionSetFieldContainer = "BPF_OptionSetFieldContainer";
@@ -480,8 +488,12 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             public static string ProcessFlowHeader = "Dialog_ProcessFlowHeader";
             public static string AddConnectionHeader = "Dialog_AddConnectionHeader";
             public static string WarningFooter = "Dialog_WarningFooter";
-            public static string WarningCloseButton = "Dialog_WarningCloseButton";
+            //public static string WarningCloseButton = "Dialog_WarningCloseButton";
             public static string CloseFoundPlacesDialog = "Dialog_CloseFoundPlaces";
+
+            public static string WarningFooter1 = "Dialog_WarningFooter1";
+            public static string WarningCloseButton = "Dialog_WarningCloseButton";
+            public static string DialogWarningokButton = "Dialog_WarningokButton";
 
             public static class CloseOpportunity
             {
