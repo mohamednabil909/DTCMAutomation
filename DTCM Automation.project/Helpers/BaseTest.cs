@@ -13,6 +13,7 @@ using DTCM_Automation.project.Reporting;
 
 namespace DTCM_Automation.project
 {
+
     public class BaseTest : Common
     {
         public TestContext TestContext { get; set; }
