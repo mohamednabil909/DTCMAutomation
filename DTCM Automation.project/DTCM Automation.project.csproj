@@ -57,6 +57,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\companyform.cs" />
+    <Compile Include="Common\HelperFunctions.cs" />
+    <Compile Include="Common\POIcompany.cs" />
     <Compile Include="Common\Testsettings.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
