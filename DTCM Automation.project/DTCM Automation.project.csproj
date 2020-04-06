@@ -131,6 +131,17 @@
     <Compile Include="Helpers\ITestHelper.cs" />
     <Compile Include="Helpers\OneTimeSetupAndTearDown.cs" />
     <Compile Include="Helpers\TestHelper.cs" />
+    <Compile Include="Portal\AddNewPOI.cs" />
+    <Compile Include="Portal\Associate to GOC.cs" />
+    <Compile Include="Portal\Change Brand Category.cs" />
+    <Compile Include="Portal\Change Cluster.cs" />
+    <Compile Include="Portal\changePoiType.cs" />
+    <Compile Include="Portal\FestivalRequest.cs" />
+    <Compile Include="Portal\Login.cs" />
+    <Compile Include="Portal\Main Class.cs" />
+    <Compile Include="Portal\Register New Company.cs" />
+    <Compile Include="Portal\Registration.cs" />
+    <Compile Include="Portal\RetailCalendarRequest.cs" />
     <Compile Include="Reporting\ReportingManager.cs" />
     <Compile Include="Steps\CRMFormsClass.cs" />
     <Compile Include="Steps\CRMSteps.cs" />
