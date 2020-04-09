@@ -28,6 +28,11 @@ using AventStack.ExtentReports;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 using System.Threading.Tasks;
+using SeleniumHelpers = SeleniumExtras.WaitHelpers;
+
+
+
+
 
 namespace DTCM_Automation.project
 {
@@ -1672,6 +1677,57 @@ namespace DTCM_Automation.project
 
         #region Send Scripts to Browser Functions
 
+        //public static void GotoMyServices(IWebDriver webDriver, WebDriverWait wait, By[] links)
+        //{
+        //    foreach (By linkLocator in links)
+        //    {
+        //        wait.Until(SeleniumHelpers.ExpectedConditions.ElementIsVisible(linkLocator));
+
+        //        ScrollToElement(webDriver, webDriver.FindElement(linkLocator));
+
+        //        ClickOnElement(webDriver, wait, linkLocator, false);
+
+        //        WaitForPageReadyState(webDriver);
+        //    }
+        //}
+
+
+        //public static void ScrollToElement(IWebDriver webDriver, IWebElement element, bool useCustomScroller = true)
+        //{
+        //    var counter = 0;
+        //    bool elementInView;
+
+        //    do
+        //    {
+        //        if (IsElementPresent(webDriver, By.Id("s4-workspace")) && useCustomScroller)
+        //        {
+        //            webDriver.Scripts().ExecuteScript(
+        //                webDriver.FindElement(By.Id("s4-workspace")).GetAttribute("class").Contains("mCustomScrollbar")
+        //                    ? "$('#s4-workspace').mCustomScrollbar(\"scrollTo\",arguments[0]);"
+        //                    : "arguments[0].scrollIntoView();", element);
+        //        }
+        //        else
+        //        {
+        //            webDriver.Scripts().ExecuteScript("arguments[0].scrollIntoView();", element);
+        //        }
+
+        //        counter++;
+        //        elementInView = (bool)((IJavaScriptExecutor)webDriver).ExecuteScript(
+        //              "var elem = arguments[0],                 " +
+        //              "  box = elem.getBoundingClientRect(),    " +
+        //              "  cx = box.left + box.width / 2,         " +
+        //              "  cy = box.top + box.height / 2,         " +
+        //              "  e = document.elementFromPoint(cx, cy); " +
+        //              "for (; e; e = e.parentElement) {         " +
+        //              "  if (e === elem)                        " +
+        //              "    return true;                         " +
+        //              "}                                        " +
+        //              "return false;                            "
+        //              , element);
+        //    } while (!elementInView && counter < 5);
+
+        //    Thread.Sleep(1000);
+        //}
         /// <summary>
         /// Scripts: Returns IJavaScriptExecutor Object for the provided _driver
         /// Can be used for Clicking, Scrolling or Executing any Javascript Code in the Browser

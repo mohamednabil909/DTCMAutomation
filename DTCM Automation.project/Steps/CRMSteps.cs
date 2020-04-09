@@ -23,12 +23,11 @@ namespace DTCM_Automation.project.Steps
             {
                 if (PickRequest)
                     commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
-                // TODO Add approval 
-               // xrmBrowser.BusinessProcessFlow.SelectStage(  commonFunctions.StagesValues[CommonFunctions.CommonFunctions.Stages.Reviewdecision]);
+                // Done
                 checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
 
-                // TODO add approve stage form
-               CRMFormsClass.CompanyCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+                // Done
+               CRMFormsClass.CompanyCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve, CommonFunctions.CommonFunctions.AccountType.Retailer);
             }
             else
             {
@@ -40,15 +39,14 @@ namespace DTCM_Automation.project.Steps
                     {
                         // TODO open existing request 
                        commonFunctions.CRMLoginAs(xrmBrowser1, User);
-                       commonFunctions.NavigateTo(xrmBrowser1, "Profile Management", "Profile Management Requests", RequestNumber);
+                       
                     }
 
-                    // TODO Add approval stage
-                    //xrmBrowser.BusinessProcessFlow.SelectStage(commonFunctions.StagesValues[CommonFunctions.CommonFunctions.Stages.Reviewdecision]);
+                    // Done
                     checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
 
-                    // TODO add approve stage form
-                    CRMFormsClass.CompanyCreationDecision(xrmBrowser1, decision);
+                    // Done
+                    CRMFormsClass.CompanyCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve, CommonFunctions.CommonFunctions.AccountType.Retailer);
                 }
             }
 
@@ -57,88 +55,83 @@ namespace DTCM_Automation.project.Steps
 
 
 
+        public bool CalendarCreationDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
+        {
+            bool checkStageIsCorrect = true;
 
-        //public bool CancelCompanyDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
-        //{
-        //    bool checkStageIsCorrect = true;
+            if (SameUser)
+            {
+                if (PickRequest)
+                    commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
+                // Done
+                checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Employeedecision);
 
-        //    if (SameUser)
-        //    {
-        //        if (PickRequest)
-        //            commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
-        //        // TODO Add approval stage
-        //        xrmBrowser.BusinessProcessFlow.SelectStage(commonFunctions.StagesValues[CommonFunctions.CommonFunctions.Stages.Reviewdecision]);
-        //        checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
+                // Done
+                CRMFormsClass.CalendarCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+            }
+            else
+            {
+                using (var xrmBrowser1 = new Browser(TestSettings.Options))
+                {
+                    if (PickRequest)
+                        commonFunctions.PickOpenRequest(xrmBrowser1, User, loginFirst, RequestNumber);
+                    else
+                    {
+                        // TODO open existing request 
+                        commonFunctions.CRMLoginAs(xrmBrowser1, User);
 
-        //        // TODO add approve stage form
-        //        CRMFormsClass.cancelrequest(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Cancel);
-        //    }
-        //    else
-        //    {
-        //        using (var xrmBrowser1 = new Browser(TestSettings.Options))
-        //        {
-        //            if (PickRequest)
-        //                commonFunctions.PickOpenRequest(xrmBrowser1, User, loginFirst, RequestNumber);
-        //            else
-        //            {
-        //                // TODO open existing request 
-        //                commonFunctions.CRMLoginAs(xrmBrowser1, User);
-        //                commonFunctions.NavigateTo(xrmBrowser1, "Profile Management", "Profile Management Requests", RequestNumber);
-        //            }
+                    }
 
-        //            // TODO Add approval stage
-        //            xrmBrowser.BusinessProcessFlow.SelectStage(commonFunctions.StagesValues[CommonFunctions.CommonFunctions.Stages.Reviewdecision]);
-        //            checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
+                    // Done
+                    checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, CommonFunctions.CommonFunctions.Stages.Employeedecision);
 
-        //            // TODO add approve stage form
-        //            CRMFormsClass.cancelrequest(xrmBrowser1, CommonFunctions.CommonFunctions.Decisions.Cancel);
-        //        }
-        //    }
+                    // Done
+                    CRMFormsClass.CalendarCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+                }
+            }
 
-        //    return checkStageIsCorrect;
-        //}
+            return checkStageIsCorrect;
+        }
 
 
 
-        //public bool SendbackCompanyDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
-        //{
-        //    bool checkStageIsCorrect = true;
+        public bool ActivatioinCreationDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
+        {
+            bool checkStageIsCorrect = true;
 
-        //    if (SameUser)
-        //    {
-        //        if (PickRequest)
-        //            commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
-        //        // TODO Add approval stage
-        //        xrmBrowser.BusinessProcessFlow.SelectStage(commonFunctions.StagesValues[CommonFunctions.CommonFunctions.Stages.Reviewdecision]);
-        //        checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
+            if (SameUser)
+            {
+                if (PickRequest)
+                    commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
+                // Done
+                checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Managerdecision);
 
-        //        // TODO add approve stage form
-        //        CRMFormsClass.Sendbackrequest(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Sendback);
-        //    }
-        //    else
-        //    {
-        //        using (var xrmBrowser1 = new Browser(TestSettings.Options))
-        //        {
-        //            if (PickRequest)
-        //                commonFunctions.PickOpenRequest(xrmBrowser1, User, loginFirst, RequestNumber);
-        //            else
-        //            {
-        //                // TODO open existing request 
-        //                commonFunctions.CRMLoginAs(xrmBrowser1, User);
-        //                commonFunctions.NavigateTo(xrmBrowser1, "Profile Management", "Profile Management Requests", RequestNumber);
-        //            }
+                // Done
+                CRMFormsClass.ActivatioinCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+            }
+            else
+            {
+                using (var xrmBrowser1 = new Browser(TestSettings.Options))
+                {
+                    if (PickRequest)
+                        commonFunctions.PickOpenRequest(xrmBrowser1, User, loginFirst, RequestNumber);
+                    else
+                    {
+                        // TODO open existing request 
+                        commonFunctions.CRMLoginAs(xrmBrowser1, User);
+                        // TODO navigate to requests and open request using requestid parameter
+                    }
 
-        //            // TODO Add approval stage
-        //            xrmBrowser.BusinessProcessFlow.SelectStage(commonFunctions.StagesValues[CommonFunctions.CommonFunctions.Stages.Reviewdecision]);
-        //            checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
+                    // Done
+                    checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, CommonFunctions.CommonFunctions.Stages.Managerdecision);
 
-        //            // TODO add approve stage form
-        //            CRMFormsClass.Sendbackrequest(xrmBrowser1, CommonFunctions.CommonFunctions.Decisions.Sendback);
-        //        }
-        //    }
+                    // Done
+                    CRMFormsClass.ActivatioinCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+                }
+            }
 
-        //    return checkStageIsCorrect;
-        //}
+            return checkStageIsCorrect;
+        }
 
     }
 }

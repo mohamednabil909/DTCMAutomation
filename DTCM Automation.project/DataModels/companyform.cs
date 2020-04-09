@@ -12,17 +12,15 @@ namespace DTCM_Automation.project
 {
    public class companyform
     {
-        public string ldv_accounttypecode= "Retailer";
-        
-        
+        string Companyname;
 
-        public void Addnewcompany(Browser xrmBrowser)
+        public string Addnewcompany(Browser xrmBrowser, CommonFunctions.CommonFunctions.AccountType accountType, CommonFunctions.CommonFunctions.LisenceNumber lisenceNumber)
         {
 
             xrmBrowser.Navigation.OpenSubArea("Profile Management", "Accounts");
             Thread.Sleep(10000);
             xrmBrowser.CommandBar.ClickCommand("New", "Company");
-            xrmBrowser.Entity.SetValue(new OptionSet() {Name= "ldv_accounttypecode", Value=ldv_accounttypecode});
+            xrmBrowser.Entity.SetValue(new OptionSet() {Name= "ldv_accounttypecode", Value= accountType.ToString()});
 
             //Cluster field
             xrmBrowser.Entity.SelectLookup("ldv_clusterid");
@@ -33,7 +31,7 @@ namespace DTCM_Automation.project
             //license type
             xrmBrowser.Entity.SelectLookup("ldv_licensetypeid");
             Thread.Sleep(5000);
-            xrmBrowser.Lookup.Search("DED");
+            xrmBrowser.Lookup.Search(lisenceNumber.ToString());
             xrmBrowser.Lookup.Add();
 
             //lisence number
@@ -50,6 +48,8 @@ namespace DTCM_Automation.project
             xrmBrowser.Lookup.Add();
 
             xrmBrowser.CommandBar.ClickCommand("Save");
+
+            return Companyname;
         }
 
     }

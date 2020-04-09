@@ -1,4 +1,5 @@
-﻿using Microsoft.Dynamics365.UIAutomation.Api;
+﻿using DTCM_Automation.project.Properties;
+using Microsoft.Dynamics365.UIAutomation.Api;
 using Microsoft.Dynamics365.UIAutomation.Browser;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -9,10 +10,11 @@ using System.Security;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace DTCM_Automation.project.CommonFunctions
 {
-    public class CommonFunctions
+    public class CommonFunctions 
     {
         public enum Users
         {
@@ -40,6 +42,32 @@ namespace DTCM_Automation.project.CommonFunctions
             Managerdecision
 
         }
+
+        public enum AccountType
+        { 
+            Retailer,
+            POI,
+            RetailerandPOI
+        }
+
+        public enum LisenceNumber
+        {
+            DED,
+            NonDED
+        }
+
+        public enum CalendarType
+        {
+            RetailCalendar,
+            OffSeasonCalendar
+        }
+
+        public enum EventType
+        {
+            Festival,
+            Activation,
+            Offseasonperiod
+        }
         public Dictionary<Stages, string> StagesValues = new Dictionary<Stages, string>()
         {
             // Done
@@ -48,10 +76,41 @@ namespace DTCM_Automation.project.CommonFunctions
             { Stages.Employeedecision,"Employee Decision" },
             { Stages.Managerdecision,"Manager Decision" }
         };
+
+        public Dictionary<AccountType, string> Accounttype = new Dictionary<AccountType, string>()
+        {
+            // Done
+
+            { AccountType.Retailer,"Retailer" },
+            { AccountType.POI,"POI"},
+            { AccountType.RetailerandPOI,"Retailer and POI" }
+        };
+
+        public Dictionary<LisenceNumber, string> lisenceNumber = new Dictionary<LisenceNumber, string>()
+        {
+            // Done
+
+            { LisenceNumber.DED,"DED" },
+            { LisenceNumber.NonDED,"Non DED"},
+        };
+
+        public Dictionary<CalendarType, string> calendarType = new Dictionary<CalendarType, string>()
+        {
+            // Done
+
+            { CalendarType.RetailCalendar,"Retail Calendar" },
+            { CalendarType.OffSeasonCalendar,"Off Season Calendar"},
+        };
+
         private  SecureString _username = Properties.Settings.Default.OnlineUsername.ToSecureString(); 
         private  SecureString _password = Properties.Settings.Default.OnlinePassword.ToSecureString(); 
         private  Uri _xrmUri = new Uri(Properties.Settings.Default.OnlineCrmUrl.ToString());
-
+        public string RandomNumber()
+        {
+            var random = new Random();
+            var rand = random.Next(0000, 9999);
+            return rand.ToString() ;
+        }
         public void CRMLoginAs(Browser xrmBrowser, Users User)
         {
             switch (User)
@@ -229,6 +288,14 @@ namespace DTCM_Automation.project.CommonFunctions
             //xrmBrowser.Lookup.SelectItem(0)
            return xrmBrowser.Lookup.Add();
         }
+
+
+
+
+       
+
+       
+
 
     }
 }

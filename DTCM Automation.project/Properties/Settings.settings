@@ -44,5 +44,14 @@
     <Setting Name="toMails" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="portalLoginURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/en/home</Value>
+    </Setting>
+    <Setting Name="username" Type="System.String" Scope="User">
+      <Value Profile="(Default)">amir@dtcm.com</Value>
+    </Setting>
+    <Setting Name="password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">P@ssw0rd</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

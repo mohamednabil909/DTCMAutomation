@@ -14,6 +14,7 @@ namespace DTCM_Automation.project
     {
         internal Settings Settings = Properties.Settings.Default;
 
+
         public enum LocalizationKeys
         {
             RequestSubmittedSuccessfullyMessage

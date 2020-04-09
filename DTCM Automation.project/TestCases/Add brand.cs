@@ -24,8 +24,9 @@ namespace DTCM_Automation.project
             Thread.Sleep(10000);
             xrmBrowser.Entity.SetValue("ldv_tradename_en", "brand new");
 
+            // use account as parameter
             xrmBrowser.Entity.SelectLookup("parentaccountid");
-            xrmBrowser.Lookup.SelectItem(4);
+            xrmBrowser.Lookup.Search("");
             xrmBrowser.Lookup.Add();
 
 
