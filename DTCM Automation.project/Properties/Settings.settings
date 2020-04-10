@@ -45,7 +45,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="portalLoginURL" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/en/home</Value>
+      <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/en</Value>
     </Setting>
     <Setting Name="username" Type="System.String" Scope="User">
       <Value Profile="(Default)">amir@dtcm.com</Value>

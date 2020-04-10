@@ -192,7 +192,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://ld-iis-dtcm.cloudapp.net/en/home")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://ld-iis-dtcm.cloudapp.net/en")]
         public string portalLoginURL {
             get {
                 return ((string)(this["portalLoginURL"]));

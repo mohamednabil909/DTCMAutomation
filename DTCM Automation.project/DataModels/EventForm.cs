@@ -20,7 +20,7 @@ namespace DTCM_Automation.project.DataModels
         }
 
         
-        public void FilCalendarform(Browser xrmbrowser, CommonFunctions.CommonFunctions.EventType eventType, string CalendarName, string EventName)
+        public void FillCalendarform(Browser xrmbrowser, CommonFunctions.CommonFunctions.EventType eventType, string CalendarName, string EventName)
         {
             if (eventType == CommonFunctions.CommonFunctions.EventType.Festival)
             {

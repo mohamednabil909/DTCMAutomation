@@ -1673,6 +1673,14 @@ namespace DTCM_Automation.project
 
         #endregion
 
+        public static string GetRequestID(IWebDriver driver, WebDriverWait wait)
+        {
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("popup-text")));
+            
+            var elements = wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(By.ClassName("col-sm-12 col-md-6 col-12")));
+
+            return elements[0].FindElement(By.CssSelector(".DisplayBlock.ng-binding")).Text;
+        }
         #endregion
 
         #region Send Scripts to Browser Functions
