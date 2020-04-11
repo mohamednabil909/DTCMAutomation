@@ -24,10 +24,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Frontend_URL" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/</Value>
     </Setting>
     <Setting Name="Backend_URL" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">https://dtcmqc.linkdev.com/main.aspx</Value>
     </Setting>
     <Setting Name="SENDGRID_API_KEY" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -45,13 +45,13 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="portalLoginURL" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/en</Value>
+      <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/</Value>
     </Setting>
     <Setting Name="username" Type="System.String" Scope="User">
       <Value Profile="(Default)">amir@dtcm.com</Value>
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">P@ssw0rd</Value>
+      <Value Profile="(Default)">P@ssw0rd1</Value>
     </Setting>
   </Settings>
 </SettingsFile>

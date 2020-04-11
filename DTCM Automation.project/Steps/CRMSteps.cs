@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTCM_Automation.project.CommonFunctions;
+using DTCM_Automation.project.DataModels;
+using System.Threading;
 
 namespace DTCM_Automation.project.Steps
 {
@@ -14,6 +16,19 @@ namespace DTCM_Automation.project.Steps
 
         CommonFunctions.CommonFunctions commonFunctions = new CommonFunctions.CommonFunctions();
         CRMFormsClass CRMFormsClass = new CRMFormsClass();
+
+        public string OpenActivationEmail(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, string RequestNumber)
+        {
+            ProfileManagement Profile = new ProfileManagement();
+
+            commonFunctions.CRMLoginAs(xrmBrowser, User);
+            return Profile.GetActivationLink(xrmBrowser, RequestNumber);
+            
+        }
+
+
+
+
 
         public bool CompanyCreationDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
         {

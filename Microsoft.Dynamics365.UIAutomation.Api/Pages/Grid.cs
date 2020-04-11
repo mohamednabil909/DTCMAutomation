@@ -69,8 +69,8 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
 
                     var strId = viewItem.GetAttribute("id");
                     var parseSuccess = Guid.TryParse(strId, out var id);
-                    if (!parseSuccess)
-                        continue;
+                    //if (!parseSuccess)
+                    //    continue;
 
                     //Handle Duplicate View Names
                     //Temp Fix

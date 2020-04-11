@@ -291,6 +291,38 @@ namespace Microsoft.Dynamics365.UIAutomation.Api.Pages
         }
 
         /// <summary>
+        /// Adds Email to the activity feed
+        /// </summary>
+        /// <param name="thinkTime">Used to simulate a wait time between human interactions. The Default is 2 seconds.</param>
+        /// <example>xrmBrowser.ActivityFeed.AddEmail();</example>
+        public BrowserCommandResult<string> getEmailText(int thinkTime = Constants.DefaultThinkTime)
+        {
+            Browser.ThinkTime(thinkTime);
+
+            return this.Execute(GetOptions($"Open Email from Activity Feed"), driver =>
+            {
+                if (!driver.HasElement(By.XPath(Elements.Xpath[Reference.ActivityFeed.ActivityWall])))
+                    throw new InvalidOperationException("The Activity Feed is not available. Please check that the Activities tab is selected.");
+                
+                var activitiesList = driver.FindElement(By.Id("wall"));
+                var email = activitiesList.FindElements(By.ClassName("emailContainer"))[0];
+                email.Click();
+                try
+                {
+                    email.FindElement(By.ClassName("openrecord")).Click();
+                }
+                catch(StaleElementReferenceException ex)
+                {
+
+                }
+
+                driver.SwitchTo().Frame("descriptionIFrame");
+                return  driver.FindElement(By.TagName("a")).GetAttribute("href");
+                //return true;
+            });
+        }
+
+        /// <summary>
         /// Adds Appointment to the activity feed
         /// </summary>
         /// <param name="thinkTime">Used to simulate a wait time between human interactions. The Default is 2 seconds.</param>

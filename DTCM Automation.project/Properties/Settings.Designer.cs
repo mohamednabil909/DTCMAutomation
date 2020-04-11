@@ -12,7 +12,7 @@ namespace DTCM_Automation.project.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -109,7 +109,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://ld-iis-dtcm.cloudapp.net/")]
         public string Frontend_URL {
             get {
                 return ((string)(this["Frontend_URL"]));
@@ -121,7 +121,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://dtcmqc.linkdev.com/main.aspx")]
         public string Backend_URL {
             get {
                 return ((string)(this["Backend_URL"]));
@@ -192,7 +192,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://ld-iis-dtcm.cloudapp.net/en")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://ld-iis-dtcm.cloudapp.net/")]
         public string portalLoginURL {
             get {
                 return ((string)(this["portalLoginURL"]));
@@ -216,7 +216,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("P@ssw0rd")]
+        [global::System.Configuration.DefaultSettingValueAttribute("P@ssw0rd1")]
         public string password {
             get {
                 return ((string)(this["password"]));

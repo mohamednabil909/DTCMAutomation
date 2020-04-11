@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using DTCM_Automation.project.CommonFunctions;
 using DTCM_Automation.project.DataModels;
-
+using OpenQA.Selenium;
 
 namespace DTCM_Automation.project.DataModels
 {
@@ -19,20 +19,30 @@ namespace DTCM_Automation.project.DataModels
         {
             commonFunctions.NavigateTo(xrmBrowser, "Profile Management", "Profile Management Requests");
         }
+        public void NavigatetoContacts(Browser xrmBrowser)
+        {
+            commonFunctions.NavigateTo(xrmBrowser, "Profile Management", "Contacts");
+        }
 
-        string brandname;
-        public string fillbrandform(Browser xrmBrowser, string company_Name)
+        public string GetActivationLink(Browser xrmBrowser, string email)
+        {
+            NavigatetoContacts(xrmBrowser);
+
+            xrmBrowser.Grid.Search(email);
+            xrmBrowser.Grid.OpenRecord(0);
+            xrmBrowser.ActivityFeed.getEmailText();
+            return "";
+        }
+        string brandname="";// TODO not do that da5alo gwa el method
+        public string fillbrandform(Browser xrmBrowser, string companyName)
         {
             
             xrmBrowser.Entity.SetValue("ldv_tradename_en", "brand new");
             xrmBrowser.Entity.SelectLookup("parentaccountid");
-            xrmBrowser.Lookup.Search(company_Name.ToString());
+            xrmBrowser.Lookup.Search(companyName.ToString());
             xrmBrowser.Lookup.Add();
 
-            xrmBrowser.Entity.SelectLookup("ldv_categoryid");
-            xrmBrowser.Lookup.SelectItem(2);
-            xrmBrowser.Lookup.Add();
-
+            xrmBrowser.Entity.SelectLookup("ldv_categoryid",2);
             xrmBrowser.CommandBar.ClickCommand("Save");
             return brandname;
         }

@@ -1918,7 +1918,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+               // throw e;
             }
         }
 
@@ -2942,7 +2942,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+               // throw e;
             }
         }
 

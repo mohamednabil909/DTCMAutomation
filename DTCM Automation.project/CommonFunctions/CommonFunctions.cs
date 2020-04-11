@@ -129,11 +129,12 @@ namespace DTCM_Automation.project.CommonFunctions
             Thread.Sleep(5000);
             xrmBrowser.LoginPage.Login(_xrmUri, _username, _password);
             TestSettings.Options.PageLoadStrategyValue = OpenQA.Selenium.PageLoadStrategy.Default;
+
+           
         }
 
         public void dismissPopup(Browser xrmBrowser)
         {
-            xrmBrowser.Driver.WaitForPageToLoad();
             xrmBrowser.Dialogs.CloseWarningDialog(2);
         }
 
@@ -141,26 +142,13 @@ namespace DTCM_Automation.project.CommonFunctions
         {
             xrmBrowser.ThinkTime(5000);
             dismissPopup(xrmBrowser);
-            try
-            {
-                xrmBrowser.Navigation.OpenHomePage();
-
-                Thread.Sleep(2000);
-                xrmBrowser.Entity.DismissAlertIfPresent(false);
-            }
-            catch (UnhandledAlertException)
-            {
-                xrmBrowser.Entity.DismissAlertIfPresent(false);
-            }
-
-            xrmBrowser.Driver.WaitForPageToLoad();
+          
 
             xrmBrowser.Navigation.OpenSubArea(Area, subArea);
 
             if (view != null)
             {
                 Thread.Sleep(5000);
-                // ClickOnMenue(xrmBrowser);
                 xrmBrowser.Grid.SwitchView(view);
             }
         }
