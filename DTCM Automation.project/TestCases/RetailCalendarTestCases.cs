@@ -46,13 +46,13 @@ namespace DTCM_Automation.project.Portal
         {
          string Guid=   CommonFunctions.RandomNumber();
             portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
-            portalForms.RetailCalendarParticipationRequest_description_and_details("katry".ToLower(),"Retail Calendar 2020".ToLower());
-            portalForms.RetailCalendarParticipationRequest_branches_brands();
-            portalForms.RetailCalendarParticipationRequest_Payment_Details();
+            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep("katry".ToLower(),"Retail Calendar 2020".ToLower());
+            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches();
+            portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CalendarCreationDecisionStep_FestivalDecision(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
             }
         }
     }

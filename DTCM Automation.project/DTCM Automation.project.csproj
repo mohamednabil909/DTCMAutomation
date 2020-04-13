@@ -144,13 +144,8 @@
     <Compile Include="Helpers\ITestHelper.cs" />
     <Compile Include="Helpers\OneTimeSetupAndTearDown.cs" />
     <Compile Include="Helpers\TestHelper.cs" />
-    <Compile Include="TestCases\AddNewCompanyPOI.cs" />
-    <Compile Include="TestCases\AssociateCompanyToGOC.cs" />
-    <Compile Include="TestCases\ChangeBrandCategoryTestCase.cs" />
-    <Compile Include="TestCases\ChangeClusterTestCase.cs" />
-    <Compile Include="TestCases\ChangePOIType.cs" />
+    <Compile Include="TestCases\CompanyTestcases.cs" />
     <Compile Include="TestCases\FestivalPArticipationTestCases.cs" />
-    <Compile Include="TestCases\RegisterNewCompanyTestCases.cs" />
     <Compile Include="TestCases\RegistrationTestCases.cs" />
     <Compile Include="TestCases\RetailCalendarTestCases.cs" />
     <Compile Include="Reporting\ReportingManager.cs" />

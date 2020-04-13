@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -40,19 +41,26 @@ namespace DTCM_Automation.project.TestCases
             portalForms.CloseDriver();
         }
 
+        // TODO Use company, event from settings,
         [TestMethod]
-        public void TC_FestivlRequestpromotions()
+        public void TC_FestivlRequest_()
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-            portalForms.FestivalParticipationRequest_description_and_details("Katry Company distributor", "Event Auto", Participationtype.promotion);
-            portalForms.FestivalParticipationRequest_branches_brands();
-            portalForms.FestivalParticipation_Add_promotion_discount();
-            portalForms.FestivalAttachment();
-            portalForms.FestivalParticipationRequest_Payment_Details();
+
+            //TODO send promotion Type
+            portalForms.FestivalParticipationRequestDescriptionAndDetailsStep("Katry Company distributor", "Event Auto", Participationtype.promotion);
+
+            portalForms.FestivalParticipationRequest_SelectBransAndBranches();
+
+            portalForms.FestivalParticipationAddDiscount();
+
+            portalForms.FestivalAttachmentsStep();
+
+            portalForms.FestivalParticipationRequest_PaymentDetailsStep();
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CalendarCreationDecisionStep_FestivalDecision(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
             }
         }
     }

@@ -20,12 +20,14 @@ namespace DTCM_Automation.project.Steps
         {
             
             // Done
-            Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL+ "/" + serviceName);
+            Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL+ "/" + ServiceName.Login);
             WaitForPageToLoad();
-            ClickOn(By.Id("login"),false);
-            Thread.Sleep(5000);
+            //ClickOn(By.Id("login"),false);
+            //Thread.Sleep(5000);
             PortalLogin();
             WaitForPageToLoad();
+
+            Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + serviceName);
 
         }
 
@@ -76,6 +78,14 @@ namespace DTCM_Automation.project.Steps
 
             }
         }
+
+        public string GetRquestId()
+            {
+            string MessageText = Driver.FindElements(By.ClassName("popup-text"))[2].Text;
+            return GetRequestId(MessageText, "#", " ");
+        }
+
+
         public string RegisterationForm( string firstname,string lastname,string Email,String pass)
         {
             
@@ -165,11 +175,12 @@ namespace DTCM_Automation.project.Steps
             SelectByText(By.Id("company"), CompanyName);
             SendKeys(By.Id("PoiName_"), "Poi Name" + Guid);
             SelectByText(By.Id("poitype"), poiType.ToString());
-            SelectByText(By.Id("poi1subtype1"), poiSubType.ToString());
+            //SelectByText(By.Id("poi1subtype1"), poiSubType.ToString());
             SendKeys(By.Id("BriefDescription_"), "Test Brief Description" + Guid);
             ClickOn(By.Id("submit"), false);
-           String RequestID= GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return RequestID; // Done return created requestID
+            WaitForPageToLoad();
+            
+            return GetRquestId(); 
         }
 
         public string AssociateToGOCRequest( string CompanyName, string ParentGOC, String Guid)
@@ -229,7 +240,7 @@ namespace DTCM_Automation.project.Steps
             return RequestID; // Done return created requestID
         }
 
-        public void FestivalParticipationRequest_description_and_details( string CompanyName, string EventName, Participationtype participationtype)
+        public void FestivalParticipationRequestDescriptionAndDetailsStep( string CompanyName, string EventName, Participationtype participationtype)
         {
             ClickOn(By.Id("ServicesDropdown"), false);
             ClickOn(By.Id("calendarmanagement"), false);
@@ -247,26 +258,27 @@ namespace DTCM_Automation.project.Steps
 
         }
 
-        public void FestivalParticipationRequest_branches_brands( )
+        public void FestivalParticipationRequest_SelectBransAndBranches( )
         {
             var allBranches_festival = FindElement(By.XPath("/ html / body / app - root / div / app - initiative - participation - request / div / div / div / form / div[2] / div[1] / app - participation - request - accounts / form / div[1] / div / table / tbody / tr[1] / td / div / label"));
             allBranches_festival.Click();
 
         }
 
-        public void FestivalParticipation_Add_promotion_discount()
+        public void FestivalParticipationAddDiscount()
         {
             ClickOn(By.Id("Discount"), false);
             //kolha calendar :(
         }
 
 
-        public void FestivalAttachment()
+        public void FestivalAttachmentsStep()
         {
             ClickOn(By.Id("next"), false);
         }
-        public void FestivalParticipationRequest_Payment_Details()
+        public void FestivalParticipationRequest_PaymentDetailsStep()
         {
+            // TODO add step to check payments created correctly
             ClickOn(By.XPath("/html/body/app-root/div/app-initiative-participation-request/div/div/div/form/div[2]/div[2]/div[3]/div/div/label"), false);
             ClickOn(By.Id("submit"), false);
         }
@@ -277,7 +289,7 @@ namespace DTCM_Automation.project.Steps
             WaitTillPageLoad(By.ClassName(LoaderClassName));
         }
 
-        public void RetailCalendarParticipationRequest_description_and_details( string CompanyName, string CalendarName)
+        public void RetailCalendarParticipationRequestDescriptionAndDetailsStep( string CompanyName, string CalendarName)
         {
             ClickOn(By.Id("ServicesDropdown"), false);
             ClickOn(By.Id("calendarmanagement"), false);
@@ -298,7 +310,7 @@ namespace DTCM_Automation.project.Steps
         }
 
 
-        public void RetailCalendarParticipationRequest_branches_brands( )
+        public void RetailCalendarParticipationRequest_AddBransAndBranches( )
         {
             
             //if (cluster == Cluster.Multiplebrand.ToString() || cluster == Cluster.Singlebrand.ToString() ||cluster == Cluster.Multiplebrandanddistributor.ToString() || cluster == Cluster.Restaurant.ToString())// Branches 
@@ -317,7 +329,7 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("next"), false);
         }
 
-        public void RetailCalendarParticipationRequest_Payment_Details( ) 
+        public void RetailCalendarParticipationRequest_PaymentDetailsStep( ) 
         {
             ClickOn(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/div[3]/div/div/div/label"),false);
             ClickOn(By.Id("submit"), false);

@@ -53,5 +53,8 @@
     <Setting Name="password" Type="System.String" Scope="User">
       <Value Profile="(Default)">P@ssw0rd</Value>
     </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Katary</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

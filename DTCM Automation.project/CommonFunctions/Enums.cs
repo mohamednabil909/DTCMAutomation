@@ -15,6 +15,7 @@ namespace DTCM_Automation.project.CommonFunctions
         }
         public enum ServiceName
         {// Done
+            Login,
             Register,
             accountregistration,
             RequestChangeCompanyCluster,

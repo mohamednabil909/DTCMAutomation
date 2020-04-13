@@ -182,7 +182,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -295,7 +295,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -387,7 +387,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return false;
             }
         }
 
@@ -467,7 +467,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -499,7 +499,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -532,7 +532,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -565,7 +565,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -635,7 +635,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -658,7 +658,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -682,7 +682,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -730,7 +730,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -767,7 +767,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -797,7 +797,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -825,7 +825,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -848,7 +848,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -871,7 +871,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -895,7 +895,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -915,7 +915,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -938,7 +938,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -961,7 +961,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -983,7 +983,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -1005,7 +1005,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -1055,7 +1055,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1105,7 +1105,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1162,7 +1162,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1218,7 +1218,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1242,7 +1242,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1264,7 +1264,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1286,7 +1286,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+               // return null;
             }
         }
 
@@ -1308,7 +1308,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1330,7 +1330,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1352,7 +1352,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1373,7 +1373,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -1394,7 +1394,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -1418,7 +1418,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1438,7 +1438,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1459,7 +1459,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1480,7 +1480,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1500,7 +1500,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1520,7 +1520,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1791,7 +1791,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1842,7 +1842,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1882,7 +1882,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -1918,7 +1918,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-               // throw e;
+               // return null;
             }
         }
 
@@ -1950,7 +1950,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2004,7 +2004,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2029,7 +2029,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return false;
             }
         }
 
@@ -2051,7 +2051,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return false;
             }
         }
 
@@ -2105,7 +2105,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return false;
             }
         }
 
@@ -2137,7 +2137,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2170,7 +2170,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2193,7 +2193,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2223,7 +2223,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return false;
             }
         }
 
@@ -2289,7 +2289,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2314,7 +2314,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2335,7 +2335,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2356,7 +2356,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2377,7 +2377,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2398,7 +2398,8 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //throw e;
+                return null;
             }
         }
 
@@ -2419,7 +2420,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;;
             }
         }
 
@@ -2440,7 +2441,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;;
             }
         }
 
@@ -2461,7 +2462,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;;
             }
         }
 
@@ -2480,7 +2481,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;;
             }
         }
 
@@ -2499,7 +2500,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;;
             }
         }
 
@@ -2529,7 +2530,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;;
             }
         }
 
@@ -2563,7 +2564,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;;
             }
         }
 
@@ -2603,7 +2604,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2644,7 +2645,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -2797,7 +2798,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2823,7 +2824,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2849,7 +2850,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2896,7 +2897,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2914,7 +2915,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -2942,7 +2943,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-               // throw e;
+               // return null;
             }
         }
 
@@ -3004,7 +3005,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -3101,7 +3102,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -3119,7 +3120,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -3138,7 +3139,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
 
             LogCommands("", GetCurrentMethod() + $" {frameId}", false, true);
@@ -3572,7 +3573,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -3703,7 +3704,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -3907,7 +3908,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 
@@ -4408,7 +4409,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -4567,7 +4568,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                //return null;
             }
         }
 
@@ -4786,7 +4787,7 @@ namespace DTCM_Automation.project
             catch (Exception e)
             {
                 LogIssue("", "Exception occurred in function \"" + GetCurrentMethod() + "\". Please check attached screenshot: " + TakeScreenshot(), false, true);
-                throw e;
+                return null;
             }
         }
 

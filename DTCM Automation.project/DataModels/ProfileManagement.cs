@@ -30,8 +30,8 @@ namespace DTCM_Automation.project.DataModels
 
             xrmBrowser.Grid.Search(email);
             xrmBrowser.Grid.OpenRecord(0);
-            xrmBrowser.ActivityFeed.getEmailText();
-            return "";
+            string emailText = xrmBrowser.ActivityFeed.getEmailText();
+            return emailText;
         }
         string brandname="";// TODO not do that da5alo gwa el method
         public string fillbrandform(Browser xrmBrowser, string companyName)

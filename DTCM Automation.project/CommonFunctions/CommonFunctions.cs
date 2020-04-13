@@ -159,13 +159,12 @@ namespace DTCM_Automation.project.CommonFunctions
                 new CommonFunctions().CRMLoginAs(xrmBrowser, User);
             }
             // Done
-            xrmBrowser.Navigation.OpenSubArea("Profile Management", "Queue Items");
+            NavigateTo(xrmBrowser,"Profile Management", "Queue Items", "Items available to work on");
             xrmBrowser.Driver.WaitForPageToLoad();
             Thread.Sleep(5000);
+
+
             xrmBrowser.Grid.Search(RequestNumber);
-
-
-            //xrmBrowser.Grid.Search(RequestNumber);
             var GridItems = xrmBrowser.Grid.GetGridItems().Value;
             if (GridItems != null && GridItems.Count > 0)
             {
@@ -175,7 +174,7 @@ namespace DTCM_Automation.project.CommonFunctions
             }
             else
             {
-                //Assert.Fail(RequestNumber + " Not exist");
+                // assert error
             }
         }
 
