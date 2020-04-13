@@ -1324,7 +1324,7 @@ namespace DTCM_Automation.project
             LogCommands("", GetCurrentMethod() + $" \"{index}\" from " + (string.IsNullOrEmpty(locatorDescription) ? ("Element with Locator: " + locator.ToString()) : locatorDescription), false, true);
 
             try
-            {
+             {
                 new SelectElement(FindElement(locator)).SelectByIndex(index);
             }
             catch (Exception e)

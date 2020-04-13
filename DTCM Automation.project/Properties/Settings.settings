@@ -51,7 +51,7 @@
       <Value Profile="(Default)">amir@dtcm.com</Value>
     </Setting>
     <Setting Name="password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">P@ssw0rd1</Value>
+      <Value Profile="(Default)">P@ssw0rd</Value>
     </Setting>
   </Settings>
 </SettingsFile>

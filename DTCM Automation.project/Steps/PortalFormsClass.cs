@@ -14,14 +14,17 @@ namespace DTCM_Automation.project.Steps
    public class PortalFormsClass: TestHelper
     {
         private string LoaderClassName = "overlay";
+        public string cluster;
  
         public void Portal_LoginAndNavigateTo( ServiceName serviceName)
         {
-            PortalLogin();
+            
             // Done
             Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL+ "/" + serviceName);
+            WaitForPageToLoad();
+            ClickOn(By.Id("login"),false);
             Thread.Sleep(5000);
-
+            PortalLogin();
             WaitForPageToLoad();
 
         }
@@ -55,7 +58,7 @@ namespace DTCM_Automation.project.Steps
              // Done
              By.Id("email"),
              By.Id("password"),
-             By.Id("login")
+             By.XPath("//*[@id=\"signin\"]")
              };
 
             FrontendLogin(Properties.Settings.Default.username, Properties.Settings.Default.password, LoginLocators);
@@ -75,7 +78,7 @@ namespace DTCM_Automation.project.Steps
         }
         public string RegisterationForm( string firstname,string lastname,string Email,String pass)
         {
-            //TODO 7ad yb3at el landline w el mobile int???
+            
             Portal_NavigateToRegister();
             SelectByIndex(By.Id("title"),1);
             SendKeys(By.Id("firstname"),firstname);
@@ -92,18 +95,25 @@ namespace DTCM_Automation.project.Steps
 
             WaitForPageToLoad();
             // check confirmation message
-            SpanTextContains("Your email is not confirmed yet. Please follow the link sent to your inbox to activate it.");
+            IsTextVisible("Your email is not confirmed yet. Please follow the link sent to your inbox to activate it. Resend");
+            //SpanTextContains("Your email is not confirmed yet. Please follow the link sent to your inbox to activate it.");
             return "";
         }
 
         public string RegisterCompanyDED( Lisencetype lisencetype, string LisenceNumber)
         {
-            SelectByText(By.Id("licensetype"), lisencetype.ToString());
+
+            ClickOn(By.Id("ServicesDropdown"),false);
+            ClickOn(By.Id("retailservices"), false);
+            ClickOn(By.Id("RegisterNewCompany"), false);
+            WaitForPageToLoad();
+            SelectByText(By.XPath("//*[@id=\"licensetype\"]"), lisencetype.ToString());
             SendKeys(By.Id("licenseno"), LisenceNumber);
-            SetDate(DateTime.Today.AddDays(2),By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/div/button"),
-                By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker"),
-                By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker/div[1]/ngb-datepicker-navigation/div[1]/button"),
-                By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker/div[1]/ngb-datepicker-navigation/div[2]"));
+            //SetDate(new DateTime(2006, 11, 16),By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/div/button"),
+            //    By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker"),
+            //    By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker/div[1]/ngb-datepicker-navigation/div[1]/button"),
+            //    By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker/div[1]/ngb-datepicker-navigation/div[2]/button"));
+
             ClickOn(By.Id("gettid"), false);
             WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
@@ -121,6 +131,34 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("submit"), false);
             String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
             return RequestID; // Done return created requestID
+        }
+
+        //Fill form brand
+        public void Fillbrandform(String CompanyName)
+        {
+            ClickOn(By.Id("ManagementDropdown"), false);
+            ClickOn(By.Id("Companies"), false);
+            //open the created company
+            
+            ClickOn(By.Id("addnewbrand"), false);
+            SendKeys(By.Id("brandnameen"), "testBrand");
+            SelectByText(By.Id("category"), "Accessories");
+            ClickOn(By.Id("submit"), false);
+        }
+
+        //Fill Branch Form
+        public void Fillbranchform()
+        {
+            ClickOn(By.Id("ManagementDropdown"), false);
+            ClickOn(By.Id("Companies"), false);
+            //open the created company
+
+            //open the created brand
+            
+            ClickOn(By.Id("addnewbranch"), false);
+            ClickOn(By.Id("typestandalone"),false);
+            SendKeys(By.Id("licenseno"), "458de");
+
         }
         public string ADDNewPOICompany( string CompanyName, String Guid, PoiType poiType, PoiSubType poiSubType)
         {
@@ -148,10 +186,22 @@ namespace DTCM_Automation.project.Steps
 
         public string ChangeBrandRequest( string CompanyName)
         {
+            ClickOn(By.Id("ServicesDropdown"), false);
+            ClickOn(By.Id("retailservices"), false);
+            ClickOn(By.Id("ChangeBrandCategoryRequest"), false);
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             SelectByIndex(By.Id("newcategory"), 2); //new category
+            WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
-            String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
+            
+            //var req = GetTextOf(By.Id("message"));
+            //var msg = FindElement(By.Id("message"));
+            //var el = FindElement(By.Id("message"));
+            //var ell = FindElement(By.ClassName("popup-text"));
+            //var requestId = GetTextOf(By.Id("message")).Split('#')[1].Substring(0, 11);
+            String RequestID= GetRequestId(By.Id("message"), "Request", "has");
+             //= GetRequestId("Request #REQ-388497 has been created", "Request", "has");
             return RequestID; // Done return created requestID
         }
 
@@ -181,34 +231,46 @@ namespace DTCM_Automation.project.Steps
 
         public void FestivalParticipationRequest_description_and_details( string CompanyName, string EventName, Participationtype participationtype)
         {
+            ClickOn(By.Id("ServicesDropdown"), false);
+            ClickOn(By.Id("calendarmanagement"), false);
+            ClickOn(By.Id("initiativeparticipationrequest"), false);
 
             ClickOn(By.Id("next"),false);
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
             SelectByText(By.Id("event"), EventName); 
             WaitForPageToLoad();
-            SelectByText(By.Id("participationtype"), participationtype.ToString()); 
+            //SelectByText(By.XPath("//*[@id=\"participationtype\"]"), participationtype.ToString()); 
             WaitForPageToLoad();
-            ClickOn(By.Id("mat - radio - 12"), false);
+            ClickOn(By.Id("Discount, Sale, Part sale"), false);
             ClickOn(By.Id("next"), false);
 
         }
 
         public void FestivalParticipationRequest_branches_brands( )
         {
-            String participationlabel = "";
-            if (participationlabel == "participation branches".ToLower())
-            {
-                ClickOn(By.Id(""), false);
-            }
-
-            else if (participationlabel == "participation brands".ToLower())
-            {
-                ClickOn(By.Id(""), false);
-            }
-            ClickOn(By.Id("next"), false);
+            var allBranches_festival = FindElement(By.XPath("/ html / body / app - root / div / app - initiative - participation - request / div / div / div / form / div[2] / div[1] / app - participation - request - accounts / form / div[1] / div / table / tbody / tr[1] / td / div / label"));
+            allBranches_festival.Click();
 
         }
+
+        public void FestivalParticipation_Add_promotion_discount()
+        {
+            ClickOn(By.Id("Discount"), false);
+            //kolha calendar :(
+        }
+
+
+        public void FestivalAttachment()
+        {
+            ClickOn(By.Id("next"), false);
+        }
+        public void FestivalParticipationRequest_Payment_Details()
+        {
+            ClickOn(By.XPath("/html/body/app-root/div/app-initiative-participation-request/div/div/div/form/div[2]/div[2]/div[3]/div/div/label"), false);
+            ClickOn(By.Id("submit"), false);
+        }
+
 
         private void WaitForPageToLoad()
         {
@@ -217,10 +279,20 @@ namespace DTCM_Automation.project.Steps
 
         public void RetailCalendarParticipationRequest_description_and_details( string CompanyName, string CalendarName)
         {
+            ClickOn(By.Id("ServicesDropdown"), false);
+            ClickOn(By.Id("calendarmanagement"), false);
+            ClickOn(By.Id("CalendarParticicpationRequest"), false);
+
             ClickOn(By.Id("next"), false);
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
-            SelectByText(By.Id("calendar"), CalendarName);
+           
+            // SelectByText(By.Id("calendar"), CalendarName);
+           // SelectByValue(By.Id("calendar"), CalendarName);
+            //  SelectByText(By.XPath("//*[@id=\"calendar\"]"), CalendarName);
+            //cluster = GetTextOf(By.Id("Cluster"));
+            //cluster = FindElement(By.XPath("//*[@id=\"Cluster\"]")).Text;
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
@@ -228,23 +300,26 @@ namespace DTCM_Automation.project.Steps
 
         public void RetailCalendarParticipationRequest_branches_brands( )
         {
-            String participationlabel = "";
-            if (participationlabel == "participation branches".ToLower())
-            {
-                ClickOn(By.Id(""), false);
-            }
-
-            else if (participationlabel == "participation brands".ToLower())
-            {
-                ClickOn(By.Id(""), false);
-            }
+            
+            //if (cluster == Cluster.Multiplebrand.ToString() || cluster == Cluster.Singlebrand.ToString() ||cluster == Cluster.Multiplebrandanddistributor.ToString() || cluster == Cluster.Restaurant.ToString())// Branches 
+           // {
+                var allBranches = FindElement(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/app-participation-request-accounts/form/div[1]/div/table/tbody/tr[1]/td/div/label"));
+                allBranches.Click();
+                
+            //}
+            //if (cluster == Cluster.Multiplebrandanddistributor.ToString() || cluster == Cluster.Distributor.ToString() || cluster == Cluster.Singlebrandanddistributor.ToString() || cluster == Cluster.Estore.ToString()) //brands 
+            
+            //{
+            //    var allBrands = FindElement(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/app-participation-request-accounts/form/div[1]/div/table/tbody/tr[1]/td/div/label"));
+            //    allBrands.Click();
+            //}
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
 
         public void RetailCalendarParticipationRequest_Payment_Details( ) 
         {
-            ClickOn(By.Id("checkedcontrol"),false);
+            ClickOn(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/div[3]/div/div/div/label"),false);
             ClickOn(By.Id("submit"), false);
         }
 

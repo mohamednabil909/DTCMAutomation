@@ -12,10 +12,10 @@ using Microsoft.Dynamics365.UIAutomation.Browser;
 namespace DTCM_Automation.project.TestCases
 {
     /// <summary>
-    /// Summary description for RegistrationTestCases
+    /// Summary description for ChangeClusterTestCases
     /// </summary>
     [TestClass]
-    public class RegistrationTestCases
+   public class ChangeClusterTestCase
     {
         PortalFormsClass portalForms = new PortalFormsClass();
         CRMSteps CRMSteps = new CRMSteps();
@@ -25,7 +25,7 @@ namespace DTCM_Automation.project.TestCases
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
-      //  [TestInitialize]
+        [TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
@@ -42,26 +42,15 @@ namespace DTCM_Automation.project.TestCases
         }
 
         [TestMethod]
-        public void TC_RegisterNewUser_OpenSentEmail_ActivateAccount_Login()
+        public void TC_ChangeCluster()
         {
-            string Guid = CommonFunctions.RandomNumber();
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeCompanyCluster);
+            portalForms.ChangeClusterRequest("", Cluster.Multiplebrand, "4785");
 
-
-            //Registeration
-            portalForms.RegisterationForm("FirstName", Guid, "Test" + Guid + "Atomation@test.com", "P@ssw0rd1");
-
-
-
-            // portalSteps.RegiterNewUser( guid);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-
-
-                string actvatinLink = CRMSteps.OpenActivationEmail(xrmBrowser, Users.Admin, "Test" + Guid + "Atomation@test.com");
-
-                portalForms.NavigateToActivationLink(actvatinLink);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
             }
-
         }
     }
 }

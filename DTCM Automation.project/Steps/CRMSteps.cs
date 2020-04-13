@@ -70,7 +70,7 @@ namespace DTCM_Automation.project.Steps
 
 
 
-        public bool CalendarCreationDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
+        public bool CalendarCreationDecisionStep_FestivalDecision(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
         {
             bool checkStageIsCorrect = true;
 

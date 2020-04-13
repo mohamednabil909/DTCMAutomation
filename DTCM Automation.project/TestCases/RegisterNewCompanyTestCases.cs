@@ -9,23 +9,24 @@ using static DTCM_Automation.project.CommonFunctions.Enums;
 using Microsoft.Dynamics365.UIAutomation.Api;
 using Microsoft.Dynamics365.UIAutomation.Browser;
 
-namespace DTCM_Automation.project.TestCases
+namespace DTCM_Automation.project.Portal
 {
     /// <summary>
-    /// Summary description for RegistrationTestCases
+    /// Summary description for RegisterNewCompanyDED&NONDEDTestCases
     /// </summary>
     [TestClass]
-    public class RegistrationTestCases
+    public class RegisterNewCompanyTestCases
     {
         PortalFormsClass portalForms = new PortalFormsClass();
         CRMSteps CRMSteps = new CRMSteps();
 
         CommonFunctions.CommonFunctions CommonFunctions = new CommonFunctions.CommonFunctions();
         string guid, RequestId;
+
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
-     * Opens New Driver and Initializes its Wait
-     */
-      //  [TestInitialize]
+    * Opens New Driver and Initializes its Wait
+    */
+        //[TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
@@ -42,26 +43,31 @@ namespace DTCM_Automation.project.TestCases
         }
 
         [TestMethod]
-        public void TC_RegisterNewUser_OpenSentEmail_ActivateAccount_Login()
+        public void TC_CreateCompanyDED()
         {
-            string Guid = CommonFunctions.RandomNumber();
+            //string Guid = CommonFunctions.RandomNumber();
 
+            
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
+            portalForms.RegisterCompanyDED(Lisencetype.DED, "588082");
 
-            //Registeration
-            portalForms.RegisterationForm("FirstName", Guid, "Test" + Guid + "Atomation@test.com", "P@ssw0rd1");
-
-
-
-            // portalSteps.RegiterNewUser( guid);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-
-
-                string actvatinLink = CRMSteps.OpenActivationEmail(xrmBrowser, Users.Admin, "Test" + Guid + "Atomation@test.com");
-
-                portalForms.NavigateToActivationLink(actvatinLink);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
             }
-
         }
+
+        
+
+
+        //public void TC_CreateCompanyNONDED()
+        //{
+        //    string Guid = CommonFunctions.RandomNumber();
+        //    portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
+        //    portalForms.RegisterCompanyNonDED(Lisencetype.NONDED);
+
+        //}
+
+
     }
 }
