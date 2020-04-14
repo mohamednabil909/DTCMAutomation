@@ -144,6 +144,7 @@
     <Compile Include="Helpers\ITestHelper.cs" />
     <Compile Include="Helpers\OneTimeSetupAndTearDown.cs" />
     <Compile Include="Helpers\TestHelper.cs" />
+    <Compile Include="TestCases\ActivationParticipationTestCases.cs" />
     <Compile Include="TestCases\CompanyTestcases.cs" />
     <Compile Include="TestCases\FestivalPArticipationTestCases.cs" />
     <Compile Include="TestCases\RegistrationTestCases.cs" />

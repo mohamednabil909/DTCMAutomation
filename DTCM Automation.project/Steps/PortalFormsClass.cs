@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using DTCM_Automation.project.CommonFunctions;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,22 @@ namespace DTCM_Automation.project.Steps
             //Thread.Sleep(5000);
             PortalLogin();
             WaitForPageToLoad();
-
-            Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + serviceName);
+            if(serviceName == ServiceName.accountregistration)
+            {
+                var serviceNameValue = "";
+                servicename.TryGetValue(serviceName, out serviceNameValue);
+                Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + serviceNameValue);
+            }
+            else if(serviceName == ServiceName.CreateBrand38fa9f745801ea11aa79000d3a2dd09b)
+            {
+                var brandvalue = "";
+                servicename.TryGetValue(serviceName, out brandvalue);
+                Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + brandvalue);
+            }
+            else
+            {
+                Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + serviceName);
+            }
 
         }
 
@@ -80,7 +95,7 @@ namespace DTCM_Automation.project.Steps
         }
 
         public string GetRquestId()
-            {
+        {
             string MessageText = Driver.FindElements(By.ClassName("popup-text"))[2].Text;
             return GetRequestId(MessageText, "#", " ");
         }
@@ -131,28 +146,43 @@ namespace DTCM_Automation.project.Steps
             return RequestID; // Done return created requestID
         }
 
-        public string RegisterCompanyNonDED(  Lisencetype lisencetype)
+        public string RegisterCompanyNonDED(Lisencetype lisencetype,string Guid)
         {
-            SelectByText(By.Id("licensetype"), lisencetype.ToString());
-
-            UploadAttachments(By.Id("3ac210ab-feef-ad63-6677-19ed57a761ce"),FileType.Txt); // 7ass enha 3'lt
-            
+            var licensetypevalue = "";
+            Enums.lisencetype.TryGetValue(lisencetype, out licensetypevalue);
+            SelectByText(By.XPath("//*[@id=\"licensetype\"]"), licensetypevalue);
+            SendKeys(By.Id("licenseno"), Properties.Settings.Default.lisenceNumber);
+            UploadAttachments(By.Id("bfeaa6c2-9a35-ec0c-0a00-a9218126e00e"),FileType.Txt); // Msh sh3'ala
             WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
-            String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return RequestID; // Done return created requestID
+            WaitForPageToLoad();
+            return GetRquestId();
+        }
+
+        public string ADDNewPOICompany(string CompanyName, String Guid, PoiType poiType, PoiSubType poiSubType)
+        {
+            SelectByText(By.Id("company"), CompanyName);
+            SendKeys(By.Id("PoiName_"), "Poi Name" + Guid);
+            SelectByText(By.Id("poitype"), poiType.ToString());
+            //SelectByText(By.Id("poi1subtype1"), poiSubType.ToString());
+            SendKeys(By.Id("BriefDescription_"), "Test Brief Description" + Guid);
+            ClickOn(By.Id("submit"), false);
+            WaitForPageToLoad();
+
+            return GetRquestId();
         }
 
         //Fill form brand
-        public void Fillbrandform(String CompanyName)
+        public void Fillbrandform()
         {
-            ClickOn(By.Id("ManagementDropdown"), false);
-            ClickOn(By.Id("Companies"), false);
+            //ClickOn(By.Id("ManagementDropdown"), false);
+            //ClickOn(By.Id("Companies"), false);
             //open the created company
             
-            ClickOn(By.Id("addnewbrand"), false);
+            //ClickOn(By.Id("addnewbrand"), false);
+            
             SendKeys(By.Id("brandnameen"), "testBrand");
-            SelectByText(By.Id("category"), "Accessories");
+            SelectByText(By.Id("category"), "Fashion Clothing".ToLower());
             ClickOn(By.Id("submit"), false);
         }
 
@@ -170,38 +200,23 @@ namespace DTCM_Automation.project.Steps
             SendKeys(By.Id("licenseno"), "458de");
 
         }
-        public string ADDNewPOICompany( string CompanyName, String Guid, PoiType poiType, PoiSubType poiSubType)
-        {
-            SelectByText(By.Id("company"), CompanyName);
-            SendKeys(By.Id("PoiName_"), "Poi Name" + Guid);
-            SelectByText(By.Id("poitype"), poiType.ToString());
-            //SelectByText(By.Id("poi1subtype1"), poiSubType.ToString());
-            SendKeys(By.Id("BriefDescription_"), "Test Brief Description" + Guid);
-            ClickOn(By.Id("submit"), false);
-            WaitForPageToLoad();
-            
-            return GetRquestId(); 
-        }
-
+        
         public string AssociateToGOCRequest( string CompanyName, string ParentGOC, String Guid)
         {
-            ClickOn(By.Id("AssociatetoGOCRequest"), false);
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             SelectByText(By.Id("gocname"), ParentGOC); //parent GOC
-            SendKeys(By.Id("RequestDetails"), "Request Details"+Guid);
+            SendKeys(By.Id("RequestDetails"), "Request Details" +Guid);
             ClickOn(By.Id("submit"),false);
-            String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return RequestID; // Done return created requestID
+            //String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
+            return ""; // TODO after solving getrequest id method
 
         }
 
-        public string ChangeBrandRequest( string CompanyName)
+        public string ChangeBrandRequest( string BrandName)
         {
-            ClickOn(By.Id("ServicesDropdown"), false);
-            ClickOn(By.Id("retailservices"), false);
-            ClickOn(By.Id("ChangeBrandCategoryRequest"), false);
             WaitForPageToLoad();
-            SelectByText(By.Id("company"), CompanyName);
+            SelectByText(By.Id("company"), BrandName);
             SelectByIndex(By.Id("newcategory"), 2); //new category
             WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
@@ -211,19 +226,23 @@ namespace DTCM_Automation.project.Steps
             //var el = FindElement(By.Id("message"));
             //var ell = FindElement(By.ClassName("popup-text"));
             //var requestId = GetTextOf(By.Id("message")).Split('#')[1].Substring(0, 11);
-            String RequestID= GetRequestId(By.Id("message"), "Request", "has");
+           // String RequestID= GetRequestId(By.Id("message"), "Request", "has");
              //= GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return RequestID; // Done return created requestID
+            return ""; // Done return created requestID
         }
 
         public string ChangeClusterRequest( string CompanyName, Cluster cluster,string Guid)
         {
             SelectByText(By.Id("company"), CompanyName);
-            SelectByText(By.Id("newcluster"), cluster.ToString());
+
+            var clustervalue = "";
+            Enums.cluster.TryGetValue(cluster, out clustervalue);
+            SelectByText(By.Id("newcluster"), clustervalue);
+
             SendKeys(By.Id("RequestJustification"), "Test Request Justification" + Guid);
             ClickOn(By.Id("submit"), false);
-            String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return RequestID; // Done return created requestID
+            //String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
+            return " "; // Done return created requestID
 
         }
 
@@ -236,42 +255,127 @@ namespace DTCM_Automation.project.Steps
             SelectByText(By.Id("poi1subtype1"), poiSubType.ToString());
             SendKeys(By.Id("RequestJustification"), "Test Request Justification" + Guid);
             ClickOn(By.Id("submit"), false);
-            String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return RequestID; // Done return created requestID
+            //String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
+            return ""; // Done return created requestID
         }
 
-        public void FestivalParticipationRequestDescriptionAndDetailsStep( string CompanyName, string EventName, Participationtype participationtype)
+       
+        private void WaitForPageToLoad()
         {
-            ClickOn(By.Id("ServicesDropdown"), false);
-            ClickOn(By.Id("calendarmanagement"), false);
-            ClickOn(By.Id("initiativeparticipationrequest"), false);
+            WaitTillPageLoad(By.ClassName(LoaderClassName));
+        }
 
-            ClickOn(By.Id("next"),false);
+        //RetailCalendar Request
+        public void RetailCalendarParticipationRequestDescriptionAndDetailsStep( string CompanyName, string CalendarName)
+        {
+            ClickOn(By.Id("next"), false);
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
-            SelectByText(By.Id("event"), EventName); 
+            SelectByText(By.Id("calendar"), CalendarName);
+            //cluster = GetTextOf(By.Id("Cluster"));
+            //cluster = FindElement(By.XPath("//*[@id=\"Cluster\"]")).Text;
             WaitForPageToLoad();
-            //SelectByText(By.XPath("//*[@id=\"participationtype\"]"), participationtype.ToString()); 
+            ClickOn(By.Id("next"), false);
+        }
+        public void RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection participationselection)
+        {
+            
+            if(participationselection == Participationselection.Branchs)
+            {
+                //var allBranches = FindElement(By.Id("selectallbranches"));
+                //allBranches.Click();
+
+                ClickOn(By.Id("selectallbranches"),true);
+
+            }
+
+           else if(participationselection == Participationselection.Brands)
+            {
+                //var allBrands = FindElement(By.Id("selectallbrands"));
+                //allBrands.Click();
+                ClickOn(By.Id("selectallbrands"), true);
+            }
+
+            else
+            {
+                
+                ClickOn(By.Id("selectallbranches"),true);
+                ClickOn(By.Id("selectallbrands"), true);
+
+               
+            }
+
+
+            WaitForPageToLoad();
+            ClickOn(By.Id("next"), false);
+        }
+        public void RetailCalendarParticipationRequest_PaymentDetailsStep( ) 
+        {
+            ClickOn(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/div[3]/div/div/div/label"),false);
+            ClickOn(By.Id("submit"), false);
+        }
+
+        //Festival Request
+        public void FestivalParticipationRequest_Description_DetailsStep(string CompanyName, string EventName)
+        {
+
+            ClickOn(By.Id("next"), false);
+            SelectByText(By.Id("company"), CompanyName);
+            WaitForPageToLoad();
+            SelectByText(By.Id("event"), EventName);
+            WaitForPageToLoad();
+            SelectByText(By.XPath("//*[@id=\"participationtype\"]"), "Promotions");
             WaitForPageToLoad();
             ClickOn(By.Id("Discount, Sale, Part sale"), false);
             ClickOn(By.Id("next"), false);
 
         }
-
-        public void FestivalParticipationRequest_SelectBransAndBranches( )
+        public void FestivalParticipationRequest_SelectBransAndBranches(Participationselection participationselection)
         {
-            var allBranches_festival = FindElement(By.XPath("/ html / body / app - root / div / app - initiative - participation - request / div / div / div / form / div[2] / div[1] / app - participation - request - accounts / form / div[1] / div / table / tbody / tr[1] / td / div / label"));
-            allBranches_festival.Click();
+            if (participationselection == Participationselection.Branchs)
+            {
+                //var allBranches = FindElement(By.Id("selectallbranches"));
+                //allBranches.Click();
+                ClickOn(By.Id("selectallbranches"), true);
+            }
+
+            else if (participationselection == Participationselection.Brands)
+            {
+                //var allBrands = FindElement(By.Id("selectallbrands"));
+                //allBrands.Click();
+                ClickOn(By.Id("selectallbrands"), true);
+            }
+
+            else
+            {
+
+                ClickOn(By.Id("selectallbranches"), true);
+                ClickOn(By.Id("selectallbrands"), true);
+            }
+            WaitForPageToLoad();
+            ClickOn(By.Id("next"), false);
 
         }
-
-        public void FestivalParticipationAddDiscount()
+        public void FestivalParticipationAddDiscount_Sale_PartSale(Promotions promotions)
         {
-            ClickOn(By.Id("Discount"), false);
-            //kolha calendar :(
+            if (promotions == Promotions.Discount)
+            {
+                ClickOn(By.Id("Discount"), false);
+                //kolha calendar :(
+            }
+            else if (promotions == Promotions.Sale)
+            {
+                ClickOn(By.Id("Sale"), false);
+                //kolha calendar :(
+            }
+
+            else if (promotions == Promotions.PartSale)
+            {
+                ClickOn(By.Id("Part Sale"), false);
+                //kolha calendar :(
+            }
         }
-
-
         public void FestivalAttachmentsStep()
         {
             ClickOn(By.Id("next"), false);
@@ -283,57 +387,74 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("submit"), false);
         }
 
-
-        private void WaitForPageToLoad()
+        //Activation
+        public void ActivationParticipationRequest_Description_DetailsStep(string CompanyName, string EventName)
         {
-            WaitTillPageLoad(By.ClassName(LoaderClassName));
-        }
-
-        public void RetailCalendarParticipationRequestDescriptionAndDetailsStep( string CompanyName, string CalendarName)
-        {
-            ClickOn(By.Id("ServicesDropdown"), false);
-            ClickOn(By.Id("calendarmanagement"), false);
-            ClickOn(By.Id("CalendarParticicpationRequest"), false);
 
             ClickOn(By.Id("next"), false);
-            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
-           
-            // SelectByText(By.Id("calendar"), CalendarName);
-           // SelectByValue(By.Id("calendar"), CalendarName);
-            //  SelectByText(By.XPath("//*[@id=\"calendar\"]"), CalendarName);
-            //cluster = GetTextOf(By.Id("Cluster"));
-            //cluster = FindElement(By.XPath("//*[@id=\"Cluster\"]")).Text;
+            SelectByText(By.Id("event"), EventName);
+            WaitForPageToLoad();
+            ClickOn(By.Id("Discount, Sale, Part sale"), false);
+            ClickOn(By.Id("next"), false);
+
+        }
+
+        public void ActivationParticipationRequest_SelectBransAndBranches(Participationselection participationselection)
+        {
+            if (participationselection == Participationselection.Branchs)
+            {
+                //var allBranches = FindElement(By.Id("selectallbranches"));
+                //allBranches.Click();
+                ClickOn(By.Id("selectallbranches"), true);
+            }
+
+            else if (participationselection == Participationselection.Brands)
+            {
+                //var allBrands = FindElement(By.Id("selectallbrands"));
+                //allBrands.Click();
+                ClickOn(By.Id("selectallbrands"), true);
+            }
+            else
+            {
+                ClickOn(By.Id("selectallbranches"), true);
+                ClickOn(By.Id("selectallbrands"), true);
+            }
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
 
-
-        public void RetailCalendarParticipationRequest_AddBransAndBranches( )
+        public void ActivationParticipationAddDiscount_Sale_PartSale(Promotions promotions)
         {
-            
-            //if (cluster == Cluster.Multiplebrand.ToString() || cluster == Cluster.Singlebrand.ToString() ||cluster == Cluster.Multiplebrandanddistributor.ToString() || cluster == Cluster.Restaurant.ToString())// Branches 
-           // {
-                var allBranches = FindElement(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/app-participation-request-accounts/form/div[1]/div/table/tbody/tr[1]/td/div/label"));
-                allBranches.Click();
-                
-            //}
-            //if (cluster == Cluster.Multiplebrandanddistributor.ToString() || cluster == Cluster.Distributor.ToString() || cluster == Cluster.Singlebrandanddistributor.ToString() || cluster == Cluster.Estore.ToString()) //brands 
-            
-            //{
-            //    var allBrands = FindElement(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/app-participation-request-accounts/form/div[1]/div/table/tbody/tr[1]/td/div/label"));
-            //    allBrands.Click();
-            //}
-            WaitForPageToLoad();
+            if (promotions == Promotions.Discount)
+            {
+                ClickOn(By.Id("Discount"), false);
+                //kolha calendar :(
+            }
+            else if (promotions == Promotions.Sale)
+            {
+                ClickOn(By.Id("Sale"), false);
+                //kolha calendar :(
+            }
+
+            else if (promotions == Promotions.PartSale)
+            {
+                ClickOn(By.Id("Part Sale"), false);
+                //kolha calendar :(
+            }
+        }
+
+        public void ActivationAttachmentsStep()
+        {
             ClickOn(By.Id("next"), false);
         }
 
-        public void RetailCalendarParticipationRequest_PaymentDetailsStep( ) 
+        public void ActivationParticipationRequest_PaymentDetailsStep()
         {
-            ClickOn(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/div[3]/div/div/div/label"),false);
+            // TODO add step to check payments created correctly
+            ClickOn(By.XPath("/html/body/app-root/div/app-initiative-participation-request/div/div/div/form/div[2]/div[2]/div[3]/div/div/label"), false);
             ClickOn(By.Id("submit"), false);
         }
-
     }
 }

@@ -8,30 +8,29 @@ namespace DTCM_Automation.project.CommonFunctions
 {
    public class Enums
     {
-        public enum Participationtype
-        {
-            promotion,
-            participation
-        }
-        public enum ServiceName
+        
+        public enum ServiceName 
         {// Done
             Login,
             Register,
             accountregistration,
+            CreateBrand38fa9f745801ea11aa79000d3a2dd09b,
             RequestChangeCompanyCluster,
             RequestChangeBrandCategory,
             RequestAssociatetogoc,
             AddNewPoi,
             UpdatePoiType,
             calendarparticipationrequest,
-            initiativeparticipationrequest
+            initiativeparticipationrequest,
+            SubInitiativeParticipationReq
         };
+        
 
-        public Dictionary<ServiceName, string> servicename = new Dictionary<ServiceName, string>()
+        public static Dictionary<ServiceName, string> servicename = new Dictionary<ServiceName, string>()
         {
             { ServiceName.Register,"register".ToLower()},
             { ServiceName.accountregistration,"account-registration".ToLower()},
-
+            {ServiceName.CreateBrand38fa9f745801ea11aa79000d3a2dd09b,"CreateBrand/38fa9f74-5801-ea11-aa79-000d3a2dd09b".ToLower() }
         };
 
         public enum Lisencetype
@@ -39,11 +38,11 @@ namespace DTCM_Automation.project.CommonFunctions
             DED,
             NONDED
         }
-        public Dictionary<Lisencetype, string> lisencetype = new Dictionary<Lisencetype, string>()
+        public static Dictionary<Lisencetype, string> lisencetype = new Dictionary<Lisencetype, string>()
         {
 
             { Lisencetype.DED,"DED".ToLower()},
-            { Lisencetype.NONDED,"NON DED".ToLower()}
+            { Lisencetype.NONDED,"Non DED"}
 
         };
 
@@ -61,7 +60,7 @@ namespace DTCM_Automation.project.CommonFunctions
             Multiplebrandanddistributor
         }
 
-        public Dictionary<Cluster, string> cluster = new Dictionary<Cluster, string>()
+        public static Dictionary<Cluster, string> cluster = new Dictionary<Cluster, string>()
         {
 
             { Cluster.Singlebrand,"Single brand".ToLower()},
@@ -114,6 +113,24 @@ namespace DTCM_Automation.project.CommonFunctions
             { PositionLevel.testposition,"Position Level".ToLower()},
 
         };
+
+        public enum Participationselection
+        {
+            Brands,
+            Branchs,
+            Both
+        }
+
+        public enum Promotions
+        {
+            Discount,
+            Sale,
+            PartSale,
+            Offer,
+            Kiosk,
+            Raffle,
+            Scratchandwin
+        }
 
     }
 }

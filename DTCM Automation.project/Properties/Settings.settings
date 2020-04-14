@@ -54,7 +54,34 @@
       <Value Profile="(Default)">P@ssw0rd</Value>
     </Setting>
     <Setting Name="CompanyName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Katary</Value>
+      <Value Profile="(Default)">Katry Company distributor</Value>
+    </Setting>
+    <Setting Name="lisenceNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">103165</Value>
+    </Setting>
+    <Setting Name="GOCCompany" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MAF Fashion</Value>
+    </Setting>
+    <Setting Name="Stackhoder_user" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CRM365DC\stakeholder.user1</Value>
+    </Setting>
+    <Setting Name="Retailer_user" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CRM365DC\retail.user1</Value>
+    </Setting>
+    <Setting Name="POI_user" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CRM365DC\poi.user1</Value>
+    </Setting>
+    <Setting Name="Brand_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">adfsdf</Value>
+    </Setting>
+    <Setting Name="Calendar" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Retail Calendar 2020</Value>
+    </Setting>
+    <Setting Name="Event" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Event Auto</Value>
+    </Setting>
+    <Setting Name="ActivationEvent" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Activation Auto</Value>
     </Setting>
   </Settings>
 </SettingsFile>
