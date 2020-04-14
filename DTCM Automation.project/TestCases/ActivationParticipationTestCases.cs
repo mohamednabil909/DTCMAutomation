@@ -12,10 +12,10 @@ using Microsoft.Dynamics365.UIAutomation.Browser;
 namespace DTCM_Automation.project.TestCases
 {
     /// <summary>
-    /// Summary description for Festival
+    /// Summary description for Activation
     /// </summary>
     [TestClass]
-    public class FestivalPArticipationTestCases
+    class ActivationParticipationTestCases
     {
         PortalFormsClass portalForms = new PortalFormsClass();
         CRMSteps CRMSteps = new CRMSteps();
@@ -24,7 +24,7 @@ namespace DTCM_Automation.project.TestCases
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
-       // [TestInitialize]
+     //   [TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
@@ -40,27 +40,17 @@ namespace DTCM_Automation.project.TestCases
             portalForms.CloseDriver();
         }
 
-        
+
         [TestMethod]
-        public void TC_FestivlRequest_RetailerApproveFromCRM()
+        public void TC_ActivationRequest_RetailerApproveFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
 
-            
-            portalForms.FestivalParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName,Properties.Settings.Default.Event);
-
-            portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-
-            portalForms.FestivalParticipationAddDiscount_Sale_PartSale(Promotions.Discount);
-
-            portalForms.FestivalAttachmentsStep();
-
-            portalForms.FestivalParticipationRequest_PaymentDetailsStep();
-
-            using (var xrmBrowser = new Browser(TestSettings.Options))
-            {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
-            }
+            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName,Properties.Settings.Default.ActivationEvent);
+            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
+            portalForms.ActivationParticipationAddDiscount_Sale_PartSale(Promotions.Discount);
+            portalForms.ActivationAttachmentsStep();
+            portalForms.ActivationParticipationRequest_PaymentDetailsStep();
         }
     }
 }

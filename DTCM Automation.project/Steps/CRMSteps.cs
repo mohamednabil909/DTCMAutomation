@@ -38,9 +38,9 @@ namespace DTCM_Automation.project.Steps
             {
                 if (PickRequest)
                     commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
+
                 // Done
                 checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
-
                 // Done
                CRMFormsClass.CompanyCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve, CommonFunctions.CommonFunctions.AccountType.Retailer);
             }
@@ -53,8 +53,7 @@ namespace DTCM_Automation.project.Steps
                     else
                     {
                         // TODO open existing request 
-                       commonFunctions.CRMLoginAs(xrmBrowser1, User);
-                       
+                       commonFunctions.CRMLoginAs(xrmBrowser1, User); 
                     }
 
                     // Done

@@ -15,7 +15,7 @@ namespace DTCM_Automation.project.TestCases
     /// Summary description for ADDNEWPOITestCases
     /// </summary>
     [TestClass]
-  public  class CompanyTestcases
+    public class CompanyTestcases
     {
         /// <summary>
         /// TODO in all test cases[- edit add steps that serve your test case like create company to change its custer, create create company,add brand then add a branch under it and so on
@@ -68,26 +68,48 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true,true, true, RequestId, Decisions.Approve);
             }
         }
+        
+        //Create NONDED company from portal then take decision approve from CRM
+        [TestMethod]
+        public void TC_CreateNONDEDCompany_StackHolderApproveFromCRM()
+        {
+            Guid = CommonFunctions.RandomNumber();
 
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
+            RequestId=portalForms.RegisterCompanyNonDED(Lisencetype.NONDED,Guid);
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true, true, true, RequestId, Decisions.Approve);
+            }
+
+        }
+
+        [TestMethod]
+        public void TC_CreateBrandfromportal()
+        {
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.CreateBrand38fa9f745801ea11aa79000d3a2dd09b);
+            portalForms.Fillbrandform();
+        }
 
         [TestMethod]
         public void TC_AddGOCCompany_AddCompanyChild_AssoicateCompanyytoGOCParent()
         {
             Guid = CommonFunctions.RandomNumber();
-            string Company="", GOCCompany="";
             //TODO add steps crete Company and approve it and save its name
             //add coc and also save its name
             // after that the below steps work using the created company and goc
+            
             portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestAssociatetogoc);
 
             // TODO add step create goc company then associate it as aparent
-            // TODO hwa enta btsabet el guid leh?
-           RequestId= portalForms.AssociateToGOCRequest(Company, GOCCompany, Guid); //parent GOC yt3m enum!?
+            
+           RequestId= portalForms.AssociateToGOCRequest(Properties.Settings.Default.CompanyName, Properties.Settings.Default.GOCCompany, Guid);
 
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true, true, true, "", Decisions.Approve);
             }
         }
 
@@ -101,7 +123,7 @@ namespace DTCM_Automation.project.TestCases
         {
 
             portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
-            portalForms.ChangeBrandRequest("brand621");
+            portalForms.ChangeBrandRequest(Properties.Settings.Default.Brand_Name);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -118,10 +140,11 @@ namespace DTCM_Automation.project.TestCases
         /// change test case name to be moredetailed withsteps
         /// </summary>
         [TestMethod]
-        public void TC_ChangeCluster()
+        public void TC_ChangeCluster_AproveFromCRM()
         {
+            Guid = CommonFunctions.RandomNumber();
             portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeCompanyCluster);
-            portalForms.ChangeClusterRequest("", Cluster.Multiplebrand, "4785");
+            portalForms.ChangeClusterRequest(Properties.Settings.Default.CompanyName, Cluster.Multiplebrand, Guid);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -130,12 +153,12 @@ namespace DTCM_Automation.project.TestCases
         }
 
         [TestMethod]
-        public void TC_ChangePOIType()
+        public void TC_ChangePOIType_AproveFromCRM()
         {
             string Guid = CommonFunctions.RandomNumber();
 
             portalForms.Portal_LoginAndNavigateTo(ServiceName.UpdatePoiType);
-            portalForms.ChangePoiTypeRequest("", PoiType.type1, PoiSubType.type2, "5472");
+            portalForms.ChangePoiTypeRequest(Properties.Settings.Default.CompanyName, PoiType.type1, PoiSubType.type2, Guid);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -143,9 +166,6 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
-        /// <summary>
-        /// TODO add license number to conig(settings) and use it like username
-        /// </summary>
         [TestMethod]
         public void TC_CreateCompanyDED()
         {
@@ -160,18 +180,6 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
             }
         }
-
-
-
-
-        //public void TC_CreateCompanyNONDED()
-        //{
-        //    string Guid = CommonFunctions.RandomNumber();
-        //    portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
-        //    portalForms.RegisterCompanyNonDED(Lisencetype.NONDED);
-
-        //}
-
 
 
     }

@@ -121,7 +121,25 @@ namespace DTCM_Automation.project.CommonFunctions
                     _username = Properties.Settings.Default.CRMAdminUsername.ToSecureString();
                     _password = Properties.Settings.Default.CRMAdminPassword.ToSecureString();
                     break;
-               
+
+                case Users.Stackholder:
+                    TestSettings.Options.PageLoadStrategyValue = OpenQA.Selenium.PageLoadStrategy.None;
+                    _username = Properties.Settings.Default.Stackhoder_user.ToSecureString();
+                    _password = Properties.Settings.Default.CRMAdminPassword.ToSecureString();
+                    break;
+
+                case Users.Retailer:
+                    TestSettings.Options.PageLoadStrategyValue = OpenQA.Selenium.PageLoadStrategy.None;
+                    _username = Properties.Settings.Default.Retailer_user.ToSecureString();
+                    _password = Properties.Settings.Default.CRMAdminPassword.ToSecureString();
+                    break;
+
+                case Users.Poi:
+                    TestSettings.Options.PageLoadStrategyValue = OpenQA.Selenium.PageLoadStrategy.None;
+                    _username = Properties.Settings.Default.POI_user.ToSecureString();
+                    _password = Properties.Settings.Default.CRMAdminPassword.ToSecureString();
+                    break;
+
             };
 
 
@@ -171,8 +189,7 @@ namespace DTCM_Automation.project.CommonFunctions
                 xrmBrowser.Grid.SelectRecord(0);
                 xrmBrowser.CommandBar.ClickCommand("PICK");
                 xrmBrowser.Dialogs.PickDialog();
-
-
+               //Openrequest
             }
             else
             {

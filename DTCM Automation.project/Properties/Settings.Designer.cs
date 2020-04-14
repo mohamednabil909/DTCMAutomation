@@ -12,7 +12,7 @@ namespace DTCM_Automation.project.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -228,13 +228,121 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Katary")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Katry Company distributor")]
         public string CompanyName {
             get {
                 return ((string)(this["CompanyName"]));
             }
             set {
                 this["CompanyName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("103165")]
+        public string lisenceNumber {
+            get {
+                return ((string)(this["lisenceNumber"]));
+            }
+            set {
+                this["lisenceNumber"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MAF Fashion")]
+        public string GOCCompany {
+            get {
+                return ((string)(this["GOCCompany"]));
+            }
+            set {
+                this["GOCCompany"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\stakeholder.user1")]
+        public string Stackhoder_user {
+            get {
+                return ((string)(this["Stackhoder_user"]));
+            }
+            set {
+                this["Stackhoder_user"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\retail.user1")]
+        public string Retailer_user {
+            get {
+                return ((string)(this["Retailer_user"]));
+            }
+            set {
+                this["Retailer_user"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\poi.user1")]
+        public string POI_user {
+            get {
+                return ((string)(this["POI_user"]));
+            }
+            set {
+                this["POI_user"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("adfsdf")]
+        public string Brand_Name {
+            get {
+                return ((string)(this["Brand_Name"]));
+            }
+            set {
+                this["Brand_Name"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Retail Calendar 2020")]
+        public string Calendar {
+            get {
+                return ((string)(this["Calendar"]));
+            }
+            set {
+                this["Calendar"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Event Auto")]
+        public string Event {
+            get {
+                return ((string)(this["Event"]));
+            }
+            set {
+                this["Event"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Activation Auto")]
+        public string ActivationEvent {
+            get {
+                return ((string)(this["ActivationEvent"]));
+            }
+            set {
+                this["ActivationEvent"] = value;
             }
         }
     }
