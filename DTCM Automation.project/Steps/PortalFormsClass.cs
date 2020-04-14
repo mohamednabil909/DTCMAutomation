@@ -242,15 +242,12 @@ namespace DTCM_Automation.project.Steps
 
         public void FestivalParticipationRequestDescriptionAndDetailsStep( string CompanyName, string EventName, Participationtype participationtype)
         {
-            ClickOn(By.Id("ServicesDropdown"), false);
-            ClickOn(By.Id("calendarmanagement"), false);
-            ClickOn(By.Id("initiativeparticipationrequest"), false);
-
             ClickOn(By.Id("next"),false);
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
             SelectByText(By.Id("event"), EventName); 
             WaitForPageToLoad();
+            SelectByText(By.Id("participationtype"), "Promotions");
             //SelectByText(By.XPath("//*[@id=\"participationtype\"]"), participationtype.ToString()); 
             WaitForPageToLoad();
             ClickOn(By.Id("Discount, Sale, Part sale"), false);
@@ -260,14 +257,16 @@ namespace DTCM_Automation.project.Steps
 
         public void FestivalParticipationRequest_SelectBransAndBranches( )
         {
-            var allBranches_festival = FindElement(By.XPath("/ html / body / app - root / div / app - initiative - participation - request / div / div / div / form / div[2] / div[1] / app - participation - request - accounts / form / div[1] / div / table / tbody / tr[1] / td / div / label"));
-            allBranches_festival.Click();
+            ClickOn(By.Id("allBrands"),true);
+            ClickOn(By.Id("next"), false);
+            // allBranches_festival.Click();
 
         }
 
         public void FestivalParticipationAddDiscount()
         {
             ClickOn(By.Id("Discount"), false);
+           // SetDate(DateTime.Now.AddMonths(-1),By.Id( "startdatebtn"),By.XPath("")
             //kolha calendar :(
         }
 
