@@ -47,7 +47,7 @@ namespace DTCM_Automation.project.TestCases
             portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
 
             
-            portalForms.FestivalParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName,Properties.Settings.Default.Event);
+            portalForms.FestivalParticipationRequest_DetailsStep(Properties.Settings.Default.CompanyName,Properties.Settings.Default.Event);
 
             portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 

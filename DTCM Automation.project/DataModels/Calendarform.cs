@@ -6,9 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using DTCM_Automation.project.CommonFunctions;
-using DTCM_Automation.project.DataModels;
-
 
 namespace DTCM_Automation.project.DataModels
 {

@@ -25,7 +25,7 @@ namespace DTCM_Automation.project.Portal
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
-       //[TestInitialize]
+       [TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
@@ -45,14 +45,19 @@ namespace DTCM_Automation.project.Portal
         public void TC_CreateCalendarRequest_RetailerApproveFromCRM()
         {
          string Guid=   CommonFunctions.RandomNumber();
+
             portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
+
             portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.CompanyName,Properties.Settings.Default.Calendar);
+
             portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
-            portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+
+            //need to validate and add code and retaurn request id
+            string requestid= portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, "", Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
     }

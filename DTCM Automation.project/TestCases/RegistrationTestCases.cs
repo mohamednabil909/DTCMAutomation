@@ -25,7 +25,7 @@ namespace DTCM_Automation.project.TestCases
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
-      //  [TestInitialize]
+       [TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
@@ -45,8 +45,8 @@ namespace DTCM_Automation.project.TestCases
         public void TC_RegisterNewUser_OpenSentEmail_ActivateAccount_Login()
         {
             string Guid = CommonFunctions.RandomNumber();
-
-
+            bool confirmed;
+            portalForms.Portal_NavigateToRegister();
             //Registeration
             portalForms.RegisterationForm("FirstName", Guid, "Test" + Guid + "Atomation@test.com", "P@ssw0rd1");
 
@@ -59,7 +59,13 @@ namespace DTCM_Automation.project.TestCases
 
                 string actvatinLink = CRMSteps.OpenActivationEmail(xrmBrowser, Users.Admin, "Test" + Guid + "Atomation@test.com");
 
-                portalForms.NavigateToActivationLink(actvatinLink);
+                confirmed= portalForms.NavigateToActivationLink(actvatinLink);
+            }
+
+            // save it on settings
+            if(confirmed)
+            {
+                Properties.Settings.Default.AddedUser = "Test" + Guid + "Atomation@test.com";
             }
 
         }

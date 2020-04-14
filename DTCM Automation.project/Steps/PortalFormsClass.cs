@@ -16,43 +16,31 @@ namespace DTCM_Automation.project.Steps
     {
         private string LoaderClassName = "overlay";
         public string cluster;
- 
-        public void Portal_LoginAndNavigateTo( ServiceName serviceName)
+
+        public void Portal_LoginAndNavigateTo(ServiceName serviceName)
         {
-            
+
             // Done
-            Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL+ "/" + ServiceName.Login);
+            Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + ServiceName.Login);
             WaitForPageToLoad();
-            //ClickOn(By.Id("login"),false);
-            //Thread.Sleep(5000);
             PortalLogin();
             WaitForPageToLoad();
-            if(serviceName == ServiceName.accountregistration)
-            {
-                var serviceNameValue = "";
-                servicename.TryGetValue(serviceName, out serviceNameValue);
-                Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + serviceNameValue);
-            }
-            else if(serviceName == ServiceName.CreateBrand38fa9f745801ea11aa79000d3a2dd09b)
-            {
-                var brandvalue = "";
-                servicename.TryGetValue(serviceName, out brandvalue);
-                Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + brandvalue);
-            }
-            else
-            {
-                Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + serviceName);
-            }
+
+            Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + ServiceNameValue[serviceName]);
+
 
         }
 
 
-        public void NavigateToActivationLink( string Link)
+        public bool NavigateToActivationLink( string Link)
         {
             Driver.Navigate().GoToUrl(Link);
             Thread.Sleep(5000);
 
             WaitForPageToLoad();
+
+            // check message confirmed
+           return IsTextVisible("Email confirmed successfully");
         }
         public void Portal_NavigateToRegister()
         {
@@ -96,15 +84,22 @@ namespace DTCM_Automation.project.Steps
 
         public string GetRquestId()
         {
-            string MessageText = Driver.FindElements(By.ClassName("popup-text"))[2].Text;
-            return GetRequestId(MessageText, "#", " ");
+            var messages = Driver.FindElements(By.ClassName("popup-text"));
+            foreach (var item in messages)
+            {
+                if (item.Text != "")
+                {
+                    return GetRequestId(item.Text, "#", " ");
+                }
+            }
+            return "";
         }
 
 
-        public string RegisterationForm( string firstname,string lastname,string Email,String pass)
+        public bool RegisterationForm( string firstname,string lastname,string Email,String pass)
         {
             
-            Portal_NavigateToRegister();
+            
             SelectByIndex(By.Id("title"),1);
             SendKeys(By.Id("firstname"),firstname);
             SendKeys(By.Id("lastname"), lastname);
@@ -120,9 +115,8 @@ namespace DTCM_Automation.project.Steps
 
             WaitForPageToLoad();
             // check confirmation message
-            IsTextVisible("Your email is not confirmed yet. Please follow the link sent to your inbox to activate it. Resend");
-            //SpanTextContains("Your email is not confirmed yet. Please follow the link sent to your inbox to activate it.");
-            return "";
+           return IsTextVisible("Your email is not confirmed yet. Please follow the link sent to your inbox to activate it. Resend");
+            
         }
 
         public string RegisterCompanyDED( Lisencetype lisencetype, string LisenceNumber)
@@ -268,6 +262,7 @@ namespace DTCM_Automation.project.Steps
         //RetailCalendar Request
         public void RetailCalendarParticipationRequestDescriptionAndDetailsStep( string CompanyName, string CalendarName)
         {
+            WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
             WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
@@ -310,9 +305,17 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
-        public void RetailCalendarParticipationRequest_PaymentDetailsStep( ) 
+        public string RetailCalendarParticipationRequest_PaymentDetailsStep( )
         {
-            ClickOn(By.Id("next"),false);
+            // add validationstep
+            ClickOn(By.Id("checkedcontrol"), true);
+            ClickOn(By.Id("submit"), false);
+            WaitForPageToLoad();
+            return GetRquestId();
+        }
+        public void FestivalParticipationRequest_DetailsStep(string CompanyName,string EventName)
+        {
+            ClickOn(By.Id("next"), false);
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
             SelectByText(By.Id("event"), EventName);

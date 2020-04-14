@@ -88,7 +88,7 @@ namespace DTCM_Automation.project.TestCases
         [TestMethod]
         public void TC_CreateBrandfromportal()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.CreateBrand38fa9f745801ea11aa79000d3a2dd09b);
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.CreateBrand);
             portalForms.Fillbrandform();
         }
 

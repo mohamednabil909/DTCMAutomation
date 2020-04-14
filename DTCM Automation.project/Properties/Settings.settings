@@ -83,5 +83,8 @@
     <Setting Name="ActivationEvent" Type="System.String" Scope="User">
       <Value Profile="(Default)">Activation Auto</Value>
     </Setting>
+    <Setting Name="AddedUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

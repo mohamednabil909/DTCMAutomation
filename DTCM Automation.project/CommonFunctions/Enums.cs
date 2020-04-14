@@ -14,7 +14,7 @@ namespace DTCM_Automation.project.CommonFunctions
             Login,
             Register,
             accountregistration,
-            CreateBrand38fa9f745801ea11aa79000d3a2dd09b,
+            CreateBrand,
             RequestChangeCompanyCluster,
             RequestChangeBrandCategory,
             RequestAssociatetogoc,
@@ -26,11 +26,20 @@ namespace DTCM_Automation.project.CommonFunctions
         };
         
 
-        public static Dictionary<ServiceName, string> servicename = new Dictionary<ServiceName, string>()
+        public static Dictionary<ServiceName, string> ServiceNameValue = new Dictionary<ServiceName, string>()
         {
-            { ServiceName.Register,"register".ToLower()},
-            { ServiceName.accountregistration,"account-registration".ToLower()},
-            {ServiceName.CreateBrand38fa9f745801ea11aa79000d3a2dd09b,"CreateBrand/38fa9f74-5801-ea11-aa79-000d3a2dd09b".ToLower() }
+            { ServiceName.Register,"register"},
+            { ServiceName.accountregistration,"account-registration"},
+            {ServiceName.CreateBrand,"CreateBrand" },
+            { ServiceName.Login,"Login" },
+            { ServiceName.RequestChangeCompanyCluster,"RequestChangeCompanyCluster" },
+            { ServiceName.RequestChangeBrandCategory,"RequestChangeBrandCategory" },
+            { ServiceName.RequestAssociatetogoc,"RequestAssociatetogoc" },
+            { ServiceName.AddNewPoi,"AddNewPoi" },
+            { ServiceName.UpdatePoiType,"UpdatePoiType" },
+            { ServiceName.calendarparticipationrequest,"calendarparticipationrequest" },
+            { ServiceName.initiativeparticipationrequest,"initiativeparticipationrequest" },
+            { ServiceName.SubInitiativeParticipationReq,"SubInitiativeParticipationReq" }
         };
 
         public enum Lisencetype
