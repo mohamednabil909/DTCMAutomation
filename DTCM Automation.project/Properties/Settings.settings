@@ -83,8 +83,8 @@
     <Setting Name="ActivationEvent" Type="System.String" Scope="User">
       <Value Profile="(Default)">Activation Auto</Value>
     </Setting>
-    <Setting Name="AddedUser" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="POICompany" Type="System.String" Scope="User">
+      <Value Profile="(Default)">aya</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -50,7 +50,47 @@ namespace DTCM_Automation.project.TestCases
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
             portalForms.ActivationParticipationAddDiscount_Sale_PartSale(Promotions.Discount);
             portalForms.ActivationAttachmentsStep();
-            portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+           string requestid= portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.ActivatioinCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, requestid, Decisions.Approve);
+            }
+
+        }
+        [TestMethod]
+        public void TC_ActivationRequest_RetailerSendbackFromCRM()
+        {
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
+
+            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
+            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
+            portalForms.ActivationParticipationAddDiscount_Sale_PartSale(Promotions.Discount);
+            portalForms.ActivationAttachmentsStep();
+            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.ActivatioinCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, requestid, Decisions.Sendback);
+            }
+
+        }
+        [TestMethod]
+        public void TC_ActivationRequest_RetailerCancelFromCRM()
+        {
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
+
+            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
+            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
+            portalForms.ActivationParticipationAddDiscount_Sale_PartSale(Promotions.Discount);
+            portalForms.ActivationAttachmentsStep();
+            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.ActivatioinCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, requestid, Decisions.Cancel);
+            }
+
         }
     }
 }

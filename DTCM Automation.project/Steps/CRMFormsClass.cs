@@ -7,6 +7,7 @@ using Microsoft.Dynamics365.UIAutomation.Api;
 using Microsoft.Dynamics365.UIAutomation.Browser;
 using System.Security;
 using System.Threading;
+using DTCM_Automation.project.Steps;
 namespace DTCM_Automation.project.Steps
 {
     public class CRMFormsClass
@@ -84,6 +85,10 @@ namespace DTCM_Automation.project.Steps
             //throw new NotImplementedException();
         }
 
-        
+        internal void CreatContact(Browser xrmBrowser)
+        {
+            CRMSteps cRMSteps = new CRMSteps();
+            cRMSteps.CreateContactfromCRM(xrmBrowser, "Test", "Automation");
+        }
     }
 }

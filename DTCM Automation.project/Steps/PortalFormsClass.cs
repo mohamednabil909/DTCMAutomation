@@ -155,6 +155,7 @@ namespace DTCM_Automation.project.Steps
 
         public string ADDNewPOICompany(string CompanyName, String Guid, PoiType poiType, PoiSubType poiSubType)
         {
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             SendKeys(By.Id("PoiName_"), "Poi Name" + Guid);
             SelectByText(By.Id("poitype"), poiType.ToString());
@@ -167,31 +168,45 @@ namespace DTCM_Automation.project.Steps
         }
 
         //Fill form brand
-        public void Fillbrandform()
+        public string FillBrandForm(string brandNameEnglish, string categoryName, string brandNameArabic ="")
         {
-            //ClickOn(By.Id("ManagementDropdown"), false);
-            //ClickOn(By.Id("Companies"), false);
-            //open the created company
-            
-            //ClickOn(By.Id("addnewbrand"), false);
-            
-            SendKeys(By.Id("brandnameen"), "testBrand");
-            SelectByText(By.Id("category"), "Fashion Clothing".ToLower());
+            WaitForPageToLoad();
+            SendKeys(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[1]/div/div/input"), "cinnabon".ToLower());
+            ClickOn(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[2]/div/div/a/div"),false);
+            ClickOn(By.Id("addnewbrand"),false);
+            SendKeys(By.Id("brandnameen"), brandNameEnglish);
+            SendKeys(By.Id("brandnamear"), brandNameArabic);
+            SelectByText(By.Id("category"),categoryName); 
             ClickOn(By.Id("submit"), false);
+            //click on close
+            //string url = GetUrl();
+            //url = url.Split('/')[5].ToString();
+
+            return brandNameEnglish;
+        }
+
+        public string ChangeBrandRequest(string BrandName)
+        {
+            WaitForPageToLoad();
+            SelectByText(By.Id("company"), BrandName);
+            SelectByIndex(By.Id("newcategory"), 2); //new category
+            WaitForPageToLoad();
+            ClickOn(By.Id("submit"), false);
+            return GetRquestId();
         }
 
         //Fill Branch Form
         public void Fillbranchform()
         {
-            ClickOn(By.Id("ManagementDropdown"), false);
-            ClickOn(By.Id("Companies"), false);
-            //open the created company
 
-            //open the created brand
-            
+            SendKeys(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[1]/div/div/input"), "cinnabon".ToLower());
+            ClickOn(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[2]/div/div/a/div"), false);
+            ClickOn(By.XPath("/html/body/app-root/div/app-company/div/div/div/div[3]/div[1]/div"),false);
             ClickOn(By.Id("addnewbranch"), false);
-            ClickOn(By.Id("typestandalone"),false);
-            SendKeys(By.Id("licenseno"), "458de");
+            ClickOn(By.Id("typemall"), false);
+            SendKeys(By.Id("licenseno"), Properties.Settings.Default.lisenceNumber);
+            SelectByText(By.Id("mall"),"Dubai Mall");
+            ClickOn(By.Id("submit"), false);
 
         }
         
@@ -202,28 +217,12 @@ namespace DTCM_Automation.project.Steps
             SelectByText(By.Id("gocname"), ParentGOC); //parent GOC
             SendKeys(By.Id("RequestDetails"), "Request Details" +Guid);
             ClickOn(By.Id("submit"),false);
-            //String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return ""; // TODO after solving getrequest id method
+
+            return GetRquestId();
 
         }
 
-        public string ChangeBrandRequest( string BrandName)
-        {
-            WaitForPageToLoad();
-            SelectByText(By.Id("company"), BrandName);
-            SelectByIndex(By.Id("newcategory"), 2); //new category
-            WaitForPageToLoad();
-            ClickOn(By.Id("submit"), false);
-            
-            //var req = GetTextOf(By.Id("message"));
-            //var msg = FindElement(By.Id("message"));
-            //var el = FindElement(By.Id("message"));
-            //var ell = FindElement(By.ClassName("popup-text"));
-            //var requestId = GetTextOf(By.Id("message")).Split('#')[1].Substring(0, 11);
-           // String RequestID= GetRequestId(By.Id("message"), "Request", "has");
-             //= GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return ""; // Done return created requestID
-        }
+        
 
         public string ChangeClusterRequest( string CompanyName, Cluster cluster,string Guid)
         {
@@ -235,8 +234,7 @@ namespace DTCM_Automation.project.Steps
 
             SendKeys(By.Id("RequestJustification"), "Test Request Justification" + Guid);
             ClickOn(By.Id("submit"), false);
-            //String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return " "; // Done return created requestID
+            return GetRquestId();
 
         }
 
@@ -249,8 +247,7 @@ namespace DTCM_Automation.project.Steps
             SelectByText(By.Id("poi1subtype1"), poiSubType.ToString());
             SendKeys(By.Id("RequestJustification"), "Test Request Justification" + Guid);
             ClickOn(By.Id("submit"), false);
-            //String RequestID = GetRequestId("Request #REQ-388497 has been created", "Request", "has");
-            return ""; // Done return created requestID
+            return GetRquestId();
         }
 
        
@@ -268,8 +265,7 @@ namespace DTCM_Automation.project.Steps
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
             SelectByText(By.Id("calendar"), CalendarName);
-            //cluster = GetTextOf(By.Id("Cluster"));
-            //cluster = FindElement(By.XPath("//*[@id=\"Cluster\"]")).Text;
+            
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
@@ -376,11 +372,12 @@ namespace DTCM_Automation.project.Steps
         {
             ClickOn(By.Id("next"), false);
         }
-        public void FestivalParticipationRequest_PaymentDetailsStep()
+        public string FestivalParticipationRequest_PaymentDetailsStep()
         {
             // TODO add step to check payments created correctly
             ClickOn(By.XPath("/html/body/app-root/div/app-initiative-participation-request/div/div/div/form/div[2]/div[2]/div[3]/div/div/label"), false);
             ClickOn(By.Id("submit"), false);
+            return GetRquestId();
         }
 
         //Activation
@@ -446,11 +443,12 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("next"), false);
         }
 
-        public void ActivationParticipationRequest_PaymentDetailsStep()
+        public string ActivationParticipationRequest_PaymentDetailsStep()
         {
             // TODO add step to check payments created correctly
             ClickOn(By.XPath("/html/body/app-root/div/app-initiative-participation-request/div/div/div/form/div[2]/div[2]/div[3]/div/div/label"), false);
             ClickOn(By.Id("submit"), false);
+            return GetRquestId();
         }
     }
 }

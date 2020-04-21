@@ -55,12 +55,58 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalAttachmentsStep();
 
-            portalForms.FestivalParticipationRequest_PaymentDetailsStep();
+           string requestid=portalForms.FestivalParticipationRequest_PaymentDetailsStep();
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Admin, true, true, true, "", Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Admin, true, true, true, requestid, Decisions.Approve);
             }
         }
+
+        [TestMethod]
+        public void TC_FestivlRequest_RetailerSendbackFromCRM()
+        {
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
+
+
+            portalForms.FestivalParticipationRequest_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
+
+            portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
+
+            portalForms.FestivalParticipationAddDiscount_Sale_PartSale(Promotions.Discount);
+
+            portalForms.FestivalAttachmentsStep();
+
+           string requestid= portalForms.FestivalParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Admin, true, true, true, requestid, Decisions.Sendback);
+            }
+        }
+
+
+        [TestMethod]
+        public void TC_FestivlRequest_RetailerCancelFromCRM()
+        {
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
+
+
+            portalForms.FestivalParticipationRequest_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
+
+            portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
+
+            portalForms.FestivalParticipationAddDiscount_Sale_PartSale(Promotions.Discount);
+
+            portalForms.FestivalAttachmentsStep();
+
+            string requestid = portalForms.FestivalParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Admin, true, true, true, requestid, Decisions.Cancel);
+            }
+        }
+
     }
 }

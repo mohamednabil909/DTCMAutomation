@@ -14,7 +14,7 @@ namespace DTCM_Automation.project.CommonFunctions
             Login,
             Register,
             accountregistration,
-            CreateBrand,
+            CompanyManagement3,
             RequestChangeCompanyCluster,
             RequestChangeBrandCategory,
             RequestAssociatetogoc,
@@ -30,7 +30,7 @@ namespace DTCM_Automation.project.CommonFunctions
         {
             { ServiceName.Register,"register"},
             { ServiceName.accountregistration,"account-registration"},
-            {ServiceName.CreateBrand,"CreateBrand" },
+            {ServiceName.CompanyManagement3,"CompanyManagement/3" },
             { ServiceName.Login,"Login" },
             { ServiceName.RequestChangeCompanyCluster,"RequestChangeCompanyCluster" },
             { ServiceName.RequestChangeBrandCategory,"RequestChangeBrandCategory" },
