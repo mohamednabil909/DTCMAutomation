@@ -226,14 +226,16 @@ namespace DTCM_Automation.project.Steps
 
         public string ChangeClusterRequest( string CompanyName, Cluster cluster,string Guid)
         {
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
 
-            var clustervalue = "";
-            Enums.cluster.TryGetValue(cluster, out clustervalue);
-            SelectByText(By.Id("newcluster"), clustervalue);
+            var newclustervalue = "";
+            Enums.clustervalue.TryGetValue(cluster, out newclustervalue);
+            SelectByText(By.Id("newcluster"), newclustervalue);
 
             SendKeys(By.Id("RequestJustification"), "Test Request Justification" + Guid);
             ClickOn(By.Id("submit"), false);
+            WaitForPageToLoad();
             return GetRquestId();
 
         }

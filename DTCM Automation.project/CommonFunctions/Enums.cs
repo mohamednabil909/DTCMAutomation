@@ -69,7 +69,7 @@ namespace DTCM_Automation.project.CommonFunctions
             Multiplebrandanddistributor
         }
 
-        public static Dictionary<Cluster, string> cluster = new Dictionary<Cluster, string>()
+        public static Dictionary<Cluster, string> clustervalue = new Dictionary<Cluster, string>()
         {
 
             { Cluster.Singlebrand,"Single brand".ToLower()},

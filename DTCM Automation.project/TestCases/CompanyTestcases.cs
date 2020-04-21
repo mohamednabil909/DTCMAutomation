@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DTCM_Automation.project.CommonFunctions;
+using OpenQA.Selenium;
 using DTCM_Automation.project.Steps;
 using static DTCM_Automation.project.CommonFunctions.CommonFunctions;
 using static DTCM_Automation.project.CommonFunctions.Enums;
@@ -28,9 +29,11 @@ namespace DTCM_Automation.project.TestCases
         /// </summary>
         PortalFormsClass portalForms = new PortalFormsClass();
         CRMSteps CRMSteps = new CRMSteps();
+        IWebDriver Driver;
 
         CommonFunctions.CommonFunctions CommonFunctions = new CommonFunctions.CommonFunctions();
         string Guid, RequestId,RequestbrandID;
+
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
@@ -54,7 +57,7 @@ namespace DTCM_Automation.project.TestCases
         /// Create poi companyfrom portal then take decision approve from CRM
         /// </summary>
         [TestMethod]
-        public void TC_CreatePOICompany_StackHolderApproveFromCRM()
+        public void TC_CreatePOICompany_POIApproveFromCRM()
         {
             Guid = CommonFunctions.RandomNumber();
             
@@ -65,12 +68,12 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true,true, true, RequestId, Decisions.Approve);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi,true,true, true, RequestId, Decisions.Approve);
             }
         }
         
         [TestMethod]
-        public void TC_CreatePOICompany_StackHolderSendbackFromCRM()
+        public void TC_CreatePOICompany_POISendbackFromCRM()
         {
             Guid = CommonFunctions.RandomNumber();
 
@@ -81,11 +84,11 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true, true, true, RequestId, Decisions.Sendback);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Sendback);
             }
         }
         [TestMethod]
-        public void TC_CreatePOICompany_StackHolderCancelFromCRM()
+        public void TC_CreatePOICompany_POICancelFromCRM()
         {
             Guid = CommonFunctions.RandomNumber();
 
@@ -96,7 +99,7 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Cancel);
             }
         }
         
@@ -143,16 +146,7 @@ namespace DTCM_Automation.project.TestCases
             }
 
         }
-
-        //Create brand from portal
-        [TestMethod]
-        public void TC_CreateBrandfromportal()
-        {
-
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
-            var brandName = portalForms.FillBrandForm("Test Brand English", "Food & Beverage", "");
-        }
-
+        
         //Create Branch from Portal
         [TestMethod]
         public void TC_CreateBranchfromportal()
@@ -221,44 +215,51 @@ namespace DTCM_Automation.project.TestCases
         /// return requestid and use it on decision step
         /// </summary>
         [TestMethod]
-        public void TC_AddBrand_ChangeBrandCategory_StackHolderApproveFromCRM()
+        public void TC_AddBrand_ChangeBrandCategory_RetailerApproveFromCRM()
         {
 
             portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
             var brandName= portalForms.FillBrandForm("Test Brand English", "Food & Beverage","");
-          //  portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
-            RequestId= portalForms.ChangeBrandRequest(brandName);
+            //  portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
+            Driver.Navigate().GoToUrl("http://ld-iis-dtcm.cloudapp.net/en/RequestChangeBrandCategory");
+            RequestId = portalForms.ChangeBrandRequest(brandName);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
             }
         }
 
 
         [TestMethod]
-        public void TC_AddBrand_ChangeBrandCategory_StackHolderSendbackFromCRM()
+        public void TC_AddBrand_ChangeBrandCategory_RetailerSendbackFromCRM()
         {
 
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
-            RequestId = portalForms.ChangeBrandRequest(Properties.Settings.Default.Brand_Name);
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
+            var brandName = portalForms.FillBrandForm("Test Brand English", "Food & Beverage", "");
+            //  portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
+            Driver.Navigate().GoToUrl("http://ld-iis-dtcm.cloudapp.net/en/RequestChangeBrandCategory");
+            RequestId = portalForms.ChangeBrandRequest(brandName);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Sendback);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Sendback);
             }
         }
 
         [TestMethod]
-        public void TC_AddBrand_ChangeBrandCategory_StackHolderCancelFromCRM()
+        public void TC_AddBrand_ChangeBrandCategory_RetailerCancelFromCRM()
         {
 
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
-            RequestId = portalForms.ChangeBrandRequest(Properties.Settings.Default.Brand_Name);
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
+            var brandName = portalForms.FillBrandForm("Test Brand English", "Food & Beverage", "");
+            //  portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
+            Driver.Navigate().GoToUrl("http://ld-iis-dtcm.cloudapp.net/en/RequestChangeBrandCategory");
+            RequestId = portalForms.ChangeBrandRequest(brandName);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Cancel);
             }
         }
 
@@ -272,31 +273,20 @@ namespace DTCM_Automation.project.TestCases
         /// change test case name to be moredetailed withsteps
         /// </summary>
         [TestMethod]
-        public void TC_ChangeCluster_StackHolderApproveFromCRM()
+        public void TC_ChangeCluster_RetailerApproveFromCRM()
         {
             Guid = CommonFunctions.RandomNumber();
             portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeCompanyCluster);
-           RequestId= portalForms.ChangeClusterRequest(Properties.Settings.Default.CompanyName, Cluster.Multiplebrand, Guid);
+           
+            RequestId= portalForms.ChangeClusterRequest(Properties.Settings.Default.CompanyName, Cluster.Multiplebrand, Guid);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
             }
         }
         [TestMethod]
-        public void TC_ChangeCluster_StackHolderSendbackFromCRM()
-        {
-            Guid = CommonFunctions.RandomNumber();
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeCompanyCluster);
-            RequestId = portalForms.ChangeClusterRequest(Properties.Settings.Default.CompanyName, Cluster.Multiplebrand, Guid);
-
-            using (var xrmBrowser = new Browser(TestSettings.Options))
-            {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Sendback);
-            }
-        }
-        [TestMethod]
-        public void TC_ChangeCluster_StackHolderCancelFromCRM()
+        public void TC_ChangeCluster_RetailerSendbackFromCRM()
         {
             Guid = CommonFunctions.RandomNumber();
             portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeCompanyCluster);
@@ -304,13 +294,25 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Sendback);
+            }
+        }
+        [TestMethod]
+        public void TC_ChangeCluster_ReatilerCancelFromCRM()
+        {
+            Guid = CommonFunctions.RandomNumber();
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeCompanyCluster);
+            RequestId = portalForms.ChangeClusterRequest(Properties.Settings.Default.CompanyName, Cluster.Multiplebrand, Guid);
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Cancel);
             }
         }
 
 
         [TestMethod]
-        public void TC_ChangePOIType_StackHolderApproveFromCRM()
+        public void TC_ChangePOIType_POIApproveFromCRM()
         {
             string Guid = CommonFunctions.RandomNumber();
 
@@ -319,11 +321,11 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Approve);
             }
         }
         [TestMethod]
-        public void TC_ChangePOIType_StackHolderSendbackFromCRM()
+        public void TC_ChangePOIType_POISendbackFromCRM()
         {
             string Guid = CommonFunctions.RandomNumber();
 
@@ -332,12 +334,12 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Sendback);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Sendback);
             }
         }
 
         [TestMethod]
-        public void TC_ChangePOIType_StackHolderCancelFromCRM()
+        public void TC_ChangePOIType_POICancelFromCRM()
         {
             string Guid = CommonFunctions.RandomNumber();
 
@@ -346,7 +348,7 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Cancel);
             }
         }
 
