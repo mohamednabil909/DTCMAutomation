@@ -15,7 +15,7 @@ namespace DTCM_Automation.project.TestCases
     /// Summary description for Festival
     /// </summary>
     [TestClass]
-    public class FestivalPArticipationTestCases
+    public class FestivalParticipationTestCases
     {
         PortalFormsClass portalForms = new PortalFormsClass();
         CRMSteps CRMSteps = new CRMSteps();
@@ -55,7 +55,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalAttachmentsStep();
 
-            portalForms.FestivalParticipationRequest_PaymentDetailsStep();
+          string RequestId=  portalForms.FestivalParticipationRequest_PaymentDetailsStep();
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
