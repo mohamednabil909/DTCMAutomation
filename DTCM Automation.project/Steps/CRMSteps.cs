@@ -1,5 +1,4 @@
-﻿using DTCM_Automation.project.CommonFunctions;
-using Microsoft.Dynamics365.UIAutomation.Api;
+﻿using Microsoft.Dynamics365.UIAutomation.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,9 +24,6 @@ namespace DTCM_Automation.project.Steps
             return Profile.GetActivationLink(xrmBrowser, RequestNumber);
             
         }
-
-
-
 
 
         public bool CompanyCreationDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
@@ -66,7 +62,6 @@ namespace DTCM_Automation.project.Steps
 
             return checkStageIsCorrect;
         }
-
 
 
         public bool EventFirstDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
@@ -108,7 +103,6 @@ namespace DTCM_Automation.project.Steps
         }
 
 
-
         public bool ActivatioinCreationDecisionStep(Browser xrmBrowser, CommonFunctions.CommonFunctions.Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, CommonFunctions.CommonFunctions.Decisions decision)
         {
             bool checkStageIsCorrect = true;
@@ -145,6 +139,33 @@ namespace DTCM_Automation.project.Steps
             }
 
             return checkStageIsCorrect;
+        }
+
+
+        public string CreateContactfromCRM(Browser xrmBrowser,string firstname,string lastname)
+        {
+            xrmBrowser.Navigation.OpenSubArea("Profile Management", "Contacts");
+            xrmBrowser.CommandBar.ClickCommand("New");
+            xrmBrowser.Entity.SetValue("firstname",firstname);
+            xrmBrowser.Entity.SetValue("lastname", lastname);
+            xrmBrowser.Entity.SelectLookup("ldv_departmentid");
+            Thread.Sleep(5000);
+            xrmBrowser.Lookup.SelectItem(2);
+            xrmBrowser.Lookup.Add();
+
+            xrmBrowser.Entity.SelectLookup("ldv_positionlevelid");
+            Thread.Sleep(5000);
+            xrmBrowser.Lookup.SelectItem(0);
+            xrmBrowser.Lookup.Add();
+
+            xrmBrowser.Entity.SetValue("ldv_landlinenumber","123456789");
+            xrmBrowser.Entity.SetValue("mobilephone", "0123456789");
+            xrmBrowser.Entity.SetValue("emailaddress1", "Test@automation.com");
+
+            xrmBrowser.CommandBar.ClickCommand("Save");
+            
+
+            return firstname + lastname;
         }
 
     }

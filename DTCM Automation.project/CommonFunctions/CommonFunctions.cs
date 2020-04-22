@@ -189,7 +189,8 @@ namespace DTCM_Automation.project.CommonFunctions
                 xrmBrowser.Grid.SelectRecord(0);
                 xrmBrowser.CommandBar.ClickCommand("PICK");
                 xrmBrowser.Dialogs.PickDialog();
-               //Openrequest
+                //Openrequest
+                xrmBrowser.Grid.OpenRecord(0);
             }
             else
             {

@@ -65,7 +65,7 @@ namespace DTCM_Automation.project.TestCases
             // save it on settings
             if(confirmed)
             {
-                Properties.Settings.Default.AddedUser = "Test" + Guid + "Atomation@test.com";
+                Properties.Settings.Default.POICompany = "Test" + Guid + "Atomation@test.com";
             }
 
         }

@@ -66,6 +66,8 @@ namespace DTCM_Automation.project
 //                //companyform field = new Common.companyform();
 //                //field.Addnewcompany(xrmBrowser);
 
+               // companyform field = new Common.companyform();
+                //field.Addnewcompany(xrmBrowser);
 
 
 //                POIcompany poiform = new POIcompany();

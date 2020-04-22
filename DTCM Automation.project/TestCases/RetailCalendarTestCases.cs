@@ -60,5 +60,45 @@ namespace DTCM_Automation.project.Portal
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
+
+        [TestMethod]
+        public void TC_CreateCalendarRequest_RetailerSendbackFromCRM()
+        {
+            string Guid = CommonFunctions.RandomNumber();
+
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
+
+            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Calendar);
+
+            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
+
+            //need to validate and add code and retaurn request id
+            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
+            }
+        }
+
+        [TestMethod]
+        public void TC_CreateCalendarRequest_RetailerCancelFromCRM()
+        {
+            string Guid = CommonFunctions.RandomNumber();
+
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
+
+            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Calendar);
+
+            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
+
+            //need to validate and add code and retaurn request id
+            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
+            }
+        }
     }
 }
