@@ -73,7 +73,7 @@ namespace DTCM_Automation.project.Steps
                 if (PickRequest)
                     commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
                 // Done
-                checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Employeedecision);
+                checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
 
                 // Done
                 CRMFormsClass.CalendarCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
@@ -88,7 +88,7 @@ namespace DTCM_Automation.project.Steps
                     {
                         // TODO open existing request 
                         commonFunctions.CRMLoginAs(xrmBrowser1, User);
-
+                        commonFunctions.OpenRequest(xrmBrowser1, "Profile Management", "Queue Items", "Items available to work on");
                     }
 
                     // Done

@@ -42,24 +42,18 @@ namespace DTCM_Automation.project.Steps
 
         internal void CalendarCreationDecision(Browser xrmBrowser, CommonFunctions.CommonFunctions.Decisions decision)
         {
-            if (decision == CommonFunctions.CommonFunctions.Decisions.Approve)
+            xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_employeedecisioncode", Value = decision.ToString() });
+          if (decision == CommonFunctions.CommonFunctions.Decisions.Cancel)
             {
-                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "ldv_employeedecisioncode", Value = decision.ToString() });
-                xrmBrowser.CommandBar.ClickCommand("Save");
+                xrmBrowser.Entity.SetValue("header_process_ldv_cancelreason", "Test automation Cancel reason");
+                
             }
-            else if (decision == CommonFunctions.CommonFunctions.Decisions.Cancel)
+            else if (decision == CommonFunctions.CommonFunctions.Decisions.Sendback)
             {
-                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "ldv_employeedecisioncode", Value = decision.ToString()});
-                xrmBrowser.Entity.SetValue("ldv_cancelreason", "Cancelled");
-                xrmBrowser.CommandBar.ClickCommand("Save");
+                xrmBrowser.Entity.SetValue("header_process_ldv_sendbackreason", "Test automation sendback reason");
+               
             }
-            else
-            {
-                xrmBrowser.Entity.SetValue("ldv_sendbackreason", "Send back test1234");
-                xrmBrowser.CommandBar.ClickCommand("Save");
-            }
-
-            //throw new NotImplementedException();
+            xrmBrowser.Entity.Save();
         }
 
 

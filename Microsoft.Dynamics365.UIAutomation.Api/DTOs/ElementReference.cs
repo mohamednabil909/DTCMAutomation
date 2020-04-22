@@ -134,6 +134,7 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             { "Grid_GridBodyTable"   , "id(\"gridBodyTable\")" },
             { "Grid_GridBodyTable_Row", "tbody/tr" },
             { "Grid_GridBodyTable_RowCheckbox", "td[1]"},
+            { "Grid_GridBodyTable_RowSpan", "descendant::span[not(ancestor::a) and not(descendant::a)]"},
             { "Grid_DefaultViewIcon"   , "id(\"defaultViewIcon\")" },
             { "Grid_ViewSelector"   , "id(\"crmGrid_SavedNewQuerySelector\")" },
             { "Grid_Refresh"   , "id(\"grid_refresh\")" },
@@ -656,6 +657,7 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             public static string GridBodyTable = "Grid_GridBodyTable";
             public static string GridBodyTableRow = "Grid_GridBodyTable_Row";
             public static string GridBodyTableRowCheckbox = "Grid_GridBodyTable_RowCheckbox";
+            public static string GridBodyTableRowSpan = "Grid_GridBodyTable_RowSpan";
             public static string FindCriteria = "Grid_FindCriteria";
             public static string ViewSelector = "Grid_ViewSelector";
             public static string Refresh = "Grid_Refresh";

@@ -177,7 +177,7 @@ namespace DTCM_Automation.project.CommonFunctions
                 new CommonFunctions().CRMLoginAs(xrmBrowser, User);
             }
             // Done
-            NavigateTo(xrmBrowser,"Profile Management", "Queue Items", "Items available to work on");
+            NavigateTo(xrmBrowser, "Profile Management", "Queue Items", "Items available to work on");
             xrmBrowser.Driver.WaitForPageToLoad();
             Thread.Sleep(5000);
 
@@ -190,14 +190,33 @@ namespace DTCM_Automation.project.CommonFunctions
                 xrmBrowser.CommandBar.ClickCommand("PICK");
                 xrmBrowser.Dialogs.PickDialog();
                 //Openrequest
-                xrmBrowser.Grid.OpenRecord(0);
+                xrmBrowser.Grid.OpenRecord(0, "title");
             }
             else
             {
                 // assert error
             }
         }
+public void OpenRequest(Browser xrmBrowser, string RequestNumber, string area, string subArea,string view= null)
+    {
+            // Done
+            NavigateTo(xrmBrowser, area, subArea, view);
+            xrmBrowser.Driver.WaitForPageToLoad();
+            Thread.Sleep(5000);
 
+
+            xrmBrowser.Grid.Search(RequestNumber);
+            var GridItems = xrmBrowser.Grid.GetGridItems().Value;
+            if (GridItems != null && GridItems.Count > 0)
+            {
+               
+                xrmBrowser.Grid.OpenRecord(0, "title");
+            }
+            else
+            {
+                // assert error
+            }
+        }
         public bool CheckStage(Browser xrmBrowser, Stages ExpectedStage)
         {
             // check current stage

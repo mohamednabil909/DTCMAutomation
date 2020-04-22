@@ -289,6 +289,88 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             });
         }
 
+
+        /// <summary>
+        /// Opens the grid record.
+        /// </summary>
+        /// <param name="index">The index.</param>
+        /// <param name="thinkTime">Used to simulate a wait time between human interactions. The Default is 2 seconds.</param>
+        /// <example>xrmBrowser.Grid.OpenRecord(0);</example>
+        public BrowserCommandResult<bool> OpenRecord(int index,string ColumnName, int thinkTime = Constants.DefaultThinkTime)
+        {
+            Browser.ThinkTime(thinkTime);
+
+            return this.Execute(GetOptions("Open Grid Record"), driver =>
+            {
+                var rowType = driver.FindElement(By.XPath(Elements.Xpath[Reference.Grid.FirstRow])).GetAttribute("otypename");
+
+                var itemsTable = driver.WaitUntilAvailable(By.XPath(Elements.Xpath[Reference.Grid.GridBodyTable]));
+                var columnGroup = driver.FindElement(By.XPath(@"//*[@id=""gridBodyTable""]/colgroup"));
+                var links = itemsTable.FindElements(By.XPath(Elements.Xpath[Reference.Grid.GridBodyTableRow]));
+
+                var clicked = false;
+
+                if (links.Any() && (index) < links.Count)
+                {
+                    // look for any span tag within the tr and click on that
+                    var blankSpans = links[index].FindElements(By.XPath(Elements.Xpath[Reference.Grid.GridBodyTableRowSpan]));
+                    if (ColumnName != "")
+                    {
+                        var cells = links[index].FindElements(By.TagName("td"));
+                        var idx = 0;
+                        foreach (var column in columnGroup.FindElements(By.TagName("col")))
+                        {
+                            var name = column.GetAttribute<string>("name");
+
+                            if (!string.IsNullOrEmpty(name)
+                                && name == ColumnName)
+                            {
+                                driver.DoubleClick(cells[idx]);
+                                break;
+                            }
+                            idx++;
+                        }
+                    }
+                    else if (blankSpans.Any())
+                    {
+                        driver.DoubleClick(blankSpans[0]);
+                    }
+                    else
+                    {
+                        // as a fall back click on the row
+                        driver.DoubleClick(links[index]);
+                    }
+                    clicked = true;
+                }
+                else
+                {
+                    throw new InvalidOperationException($"No record with the index '{index}' exists.");
+                }
+
+                if (clicked)
+                {
+                    if (rowType != "report")
+                    {
+                        SwitchToContent();
+                        driver.WaitForPageToLoad();
+                        driver.WaitUntilClickable(By.XPath(Elements.Xpath[Reference.Entity.Form]),
+                            new TimeSpan(0, 0, 30),
+                            null,
+                            "CRM Record is Unavailable or not finished loading. Timeout Exceeded"
+                        );
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    throw new InvalidOperationException($"No record with the index '{index}' exists.");
+                }
+            });
+        }
+        
+
+
         /// <summary>
         /// Selects the grid record.
         /// </summary>
