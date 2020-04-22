@@ -37,7 +37,7 @@ namespace DTCM_Automation.project.TestCases
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
-        [TestInitialize]
+        //[TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
