@@ -303,7 +303,7 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
-        public string RetailCalendarParticipationRequest_PaymentDetailsStep( )
+        public string RetailCalendarParticipationRequest_PaymentDetailsStep(string product,string productvalue)
         {
             // add validationstep
             ClickOn(By.Id("checkedcontrol"), true);

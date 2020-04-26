@@ -12,7 +12,7 @@ namespace DTCM_Automation.project.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -355,6 +355,270 @@ namespace DTCM_Automation.project.Properties {
             }
             set {
                 this["POICompany"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Sameh Multible brands")]
+        public string CompanyStratigic {
+            get {
+                return ((string)(this["CompanyStratigic"]));
+            }
+            set {
+                this["CompanyStratigic"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("aya4 multiple brands")]
+        public string CompanySponsor {
+            get {
+                return ((string)(this["CompanySponsor"]));
+            }
+            set {
+                this["CompanySponsor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("sameh single brand")]
+        public string singlebrand1_2 {
+            get {
+                return ((string)(this["singlebrand1_2"]));
+            }
+            set {
+                this["singlebrand1_2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("17500")]
+        public string singlebrand1_2value {
+            get {
+                return ((string)(this["singlebrand1_2value"]));
+            }
+            set {
+                this["singlebrand1_2value"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("aya 24 single brand")]
+        public string singlebrand3_5 {
+            get {
+                return ((string)(this["singlebrand3_5"]));
+            }
+            set {
+                this["singlebrand3_5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("73500")]
+        public string singlebrand3_5Value {
+            get {
+                return ((string)(this["singlebrand3_5Value"]));
+            }
+            set {
+                this["singlebrand3_5Value"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Hesham Multiple Brands")]
+        public string Multiplebrand1_2 {
+            get {
+                return ((string)(this["Multiplebrand1_2"]));
+            }
+            set {
+                this["Multiplebrand1_2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60000")]
+        public string Multiplebrand1_2value {
+            get {
+                return ((string)(this["Multiplebrand1_2value"]));
+            }
+            set {
+                this["Multiplebrand1_2value"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Moamen Multiple Brands")]
+        public string Multiplebrand3_5 {
+            get {
+                return ((string)(this["Multiplebrand3_5"]));
+            }
+            set {
+                this["Multiplebrand3_5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("180000")]
+        public string Multiplebrand3_5value {
+            get {
+                return ((string)(this["Multiplebrand3_5value"]));
+            }
+            set {
+                this["Multiplebrand3_5value"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Sameh Shopping Center")]
+        public string ShoppingCenter100outlet {
+            get {
+                return ((string)(this["ShoppingCenter100outlet"]));
+            }
+            set {
+                this["ShoppingCenter100outlet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200000")]
+        public string ShoppingCenter100outletValue {
+            get {
+                return ((string)(this["ShoppingCenter100outletValue"]));
+            }
+            set {
+                this["ShoppingCenter100outletValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MarianaDistributer")]
+        public string DistributorSinglebrand {
+            get {
+                return ((string)(this["DistributorSinglebrand"]));
+            }
+            set {
+                this["DistributorSinglebrand"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("36000")]
+        public string DistributorSinglebrandValue {
+            get {
+                return ((string)(this["DistributorSinglebrandValue"]));
+            }
+            set {
+                this["DistributorSinglebrandValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Sameh Distributor")]
+        public string Distributorbrand2_10 {
+            get {
+                return ((string)(this["Distributorbrand2_10"]));
+            }
+            set {
+                this["Distributorbrand2_10"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60000")]
+        public string Distributorbrand2_10Value {
+            get {
+                return ((string)(this["Distributorbrand2_10Value"]));
+            }
+            set {
+                this["Distributorbrand2_10Value"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Cinnabon")]
+        public string Restaurant1_2 {
+            get {
+                return ((string)(this["Restaurant1_2"]));
+            }
+            set {
+                this["Restaurant1_2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6000")]
+        public string Restaurant1_2Value {
+            get {
+                return ((string)(this["Restaurant1_2Value"]));
+            }
+            set {
+                this["Restaurant1_2Value"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Company Restaurant")]
+        public string Restaurant3_5 {
+            get {
+                return ((string)(this["Restaurant3_5"]));
+            }
+            set {
+                this["Restaurant3_5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("30000")]
+        public string Restaurant3_5Value {
+            get {
+                return ((string)(this["Restaurant3_5Value"]));
+            }
+            set {
+                this["Restaurant3_5Value"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Sameh EStore")]
+        public string Estore {
+            get {
+                return ((string)(this["Estore"]));
+            }
+            set {
+                this["Estore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50000")]
+        public string EstoreValue {
+            get {
+                return ((string)(this["EstoreValue"]));
+            }
+            set {
+                this["EstoreValue"] = value;
             }
         }
     }

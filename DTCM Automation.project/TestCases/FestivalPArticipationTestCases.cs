@@ -337,5 +337,29 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
+
+
+        //Add promotion of type "Scratch and win" with Sponsor company
+        [TestMethod]
+        public void TC_FestivlRequest_AddScratchandwinfromportal_SponsorComapny_RetailerApproveFromCRM()
+        {
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
+
+            portalForms.FestivalParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanySponsor, Properties.Settings.Default.Event);
+
+            portalForms.FestivalParticipationAddScratchandWin(Promotions.Scratchandwin);
+
+            portalForms.FestivalAttachmentsStep();
+
+            string requestid = portalForms.FestivalParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
+            }
+        }
+
+
+
     }
 }

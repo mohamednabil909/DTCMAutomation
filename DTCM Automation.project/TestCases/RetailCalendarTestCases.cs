@@ -53,7 +53,7 @@ namespace DTCM_Automation.project.Portal
             portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
 
             //need to validate and add code and retaurn request id
-            string requestid= portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+            string requestid= portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep(Properties.Settings.Default.singlebrand1_2,Properties.Settings.Default.singlebrand1_2value);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -61,6 +61,31 @@ namespace DTCM_Automation.project.Portal
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
+
+
+        //Approve Retail Calendar request with Stratigic Company
+        [TestMethod]
+        public void TC_CreateCalendarRequest_StratigicCompany_RetailerApproveFromCRM()
+        {
+            string Guid = CommonFunctions.RandomNumber();
+
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
+
+            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.CompanyStratigic, Properties.Settings.Default.Calendar);
+
+            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
+
+            //need to validate and add code and retaurn request id
+            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                //requestid = "";
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+            }
+        }
+
+
 
         [TestMethod]
         public void TC_CreateCalendarRequest_RetailerSendbackFromCRM()
