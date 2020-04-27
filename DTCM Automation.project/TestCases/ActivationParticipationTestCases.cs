@@ -15,7 +15,7 @@ namespace DTCM_Automation.project.TestCases
     /// Summary description for Activation
     /// </summary>
     [TestClass]
-    class ActivationParticipationTestCases
+   public class ActivationParticipationTestCases
     {
         PortalFormsClass portalForms = new PortalFormsClass();
         CRMSteps CRMSteps = new CRMSteps();
@@ -24,7 +24,7 @@ namespace DTCM_Automation.project.TestCases
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
-     //   [TestInitialize]
+        [TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
@@ -47,9 +47,13 @@ namespace DTCM_Automation.project.TestCases
             portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
 
             portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName,Properties.Settings.Default.ActivationEvent);
+
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
+
             portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Discount);
+
             portalForms.ActivationAttachmentsStep();
+
             portalForms.ActivationParticipationRequest_PaymentDetailsStep();   
         }
 

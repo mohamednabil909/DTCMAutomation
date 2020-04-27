@@ -12,7 +12,7 @@ namespace DTCM_Automation.project.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -397,9 +397,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("17500")]
-        public string singlebrand1_2value {
+        public double singlebrand1_2value {
             get {
-                return ((string)(this["singlebrand1_2value"]));
+                return ((double)(this["singlebrand1_2value"]));
             }
             set {
                 this["singlebrand1_2value"] = value;
@@ -421,9 +421,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("73500")]
-        public string singlebrand3_5Value {
+        public double singlebrand3_5Value {
             get {
-                return ((string)(this["singlebrand3_5Value"]));
+                return ((double)(this["singlebrand3_5Value"]));
             }
             set {
                 this["singlebrand3_5Value"] = value;
@@ -445,9 +445,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("60000")]
-        public string Multiplebrand1_2value {
+        public double Multiplebrand1_2value {
             get {
-                return ((string)(this["Multiplebrand1_2value"]));
+                return ((double)(this["Multiplebrand1_2value"]));
             }
             set {
                 this["Multiplebrand1_2value"] = value;
@@ -469,9 +469,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("180000")]
-        public string Multiplebrand3_5value {
+        public double Multiplebrand3_5value {
             get {
-                return ((string)(this["Multiplebrand3_5value"]));
+                return ((double)(this["Multiplebrand3_5value"]));
             }
             set {
                 this["Multiplebrand3_5value"] = value;
@@ -493,9 +493,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200000")]
-        public string ShoppingCenter100outletValue {
+        public double ShoppingCenter100outletValue {
             get {
-                return ((string)(this["ShoppingCenter100outletValue"]));
+                return ((double)(this["ShoppingCenter100outletValue"]));
             }
             set {
                 this["ShoppingCenter100outletValue"] = value;
@@ -517,9 +517,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("36000")]
-        public string DistributorSinglebrandValue {
+        public double DistributorSinglebrandValue {
             get {
-                return ((string)(this["DistributorSinglebrandValue"]));
+                return ((double)(this["DistributorSinglebrandValue"]));
             }
             set {
                 this["DistributorSinglebrandValue"] = value;
@@ -541,9 +541,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("60000")]
-        public string Distributorbrand2_10Value {
+        public double Distributorbrand2_10Value {
             get {
-                return ((string)(this["Distributorbrand2_10Value"]));
+                return ((double)(this["Distributorbrand2_10Value"]));
             }
             set {
                 this["Distributorbrand2_10Value"] = value;
@@ -565,9 +565,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("6000")]
-        public string Restaurant1_2Value {
+        public double Restaurant1_2Value {
             get {
-                return ((string)(this["Restaurant1_2Value"]));
+                return ((double)(this["Restaurant1_2Value"]));
             }
             set {
                 this["Restaurant1_2Value"] = value;
@@ -589,9 +589,9 @@ namespace DTCM_Automation.project.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("30000")]
-        public string Restaurant3_5Value {
+        public double Restaurant3_5Value {
             get {
-                return ((string)(this["Restaurant3_5Value"]));
+                return ((double)(this["Restaurant3_5Value"]));
             }
             set {
                 this["Restaurant3_5Value"] = value;
@@ -619,6 +619,18 @@ namespace DTCM_Automation.project.Properties {
             }
             set {
                 this["EstoreValue"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
+        public double POAddedValues {
+            get {
+                return ((double)(this["POAddedValues"]));
+            }
+            set {
+                this["POAddedValues"] = value;
             }
         }
     }
