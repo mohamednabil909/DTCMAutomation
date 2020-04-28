@@ -79,10 +79,57 @@ namespace DTCM_Automation.project.Steps
             //throw new NotImplementedException();
         }
 
+        //Create contact
         internal void CreatContact(Browser xrmBrowser)
         {
             CRMSteps cRMSteps = new CRMSteps();
             cRMSteps.CreateContactfromCRM(xrmBrowser, "Test", "Automation");
         }
+
+        //Create Stratigic
+        internal void CreateStratigic(Browser xrmBrowser)
+        {
+            CRMSteps cRMSteps = new CRMSteps();
+            cRMSteps.CreateStratigicfromCRM(xrmBrowser, "New Automation Stratigic", "10000","10");
+        }
+
+        //Create Sponsor
+        internal void CreateSponsor(Browser xrmBrowser)
+        {
+            CRMSteps cRMSteps = new CRMSteps();
+            cRMSteps.CreateStratigicfromCRM(xrmBrowser, "New Automation Sponsor", "10000", "10");
+        }
+
+        //Create Calendar
+        internal void CreateCalendar(Browser xrmBrowser)
+        {
+            CRMSteps cRMSteps = new CRMSteps();
+            cRMSteps.CreateCalendar(xrmBrowser, "New Automation Calendar", "كالندر");
+        }
+        
+        //Create OffSeason
+        internal void CreateOffSeason(Browser xrmBrowser)
+        {
+            CRMSteps cRMSteps = new CRMSteps();
+            cRMSteps.CreateOffSeason(xrmBrowser, "New Automation Offseason", "اوف سيزون اتوميشن");
+        }
+
+
+        //Create Festival
+        internal void CreateFestival(Browser xrmBrowser)
+        {
+            CRMSteps cRMSteps = new CRMSteps();
+            cRMSteps.CreateFestival(xrmBrowser, "New Automation Festival", "فيستيفال اتوميشن");
+        }
+
+
+        //Create Activation
+        internal void CreateActivation(Browser xrmBrowser)
+        {
+            CRMSteps cRMSteps = new CRMSteps();
+            cRMSteps.CreateFestival(xrmBrowser, "New Automation Activation", "اكتيفيشن اتوميشن");
+        }
+
+
     }
 }

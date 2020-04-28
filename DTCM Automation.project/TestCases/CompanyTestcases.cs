@@ -147,15 +147,21 @@ namespace DTCM_Automation.project.TestCases
 
         }
         
-        //Create Branch from Portal
+        //Create Branch from Portal Mall
         [TestMethod]
-        public void TC_CreateBranchfromportal()
+        public void TC_CreateBranchfromportal_Mall()
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
-            portalForms.Fillbranchform();
+            portalForms.Fillbranchform_Mall();
         }
 
-
+        //Create Branch from Portal Standalone
+        [TestMethod]
+        public void TC_CreateBranchfromportal_Standalone()
+        {
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
+            portalForms.Fillbranchform_Standalone();
+        }
         [TestMethod]
         public void TC_AddGOCCompany_AddCompanyChild_AssoicateCompanyytoGOCParent_StackHolderApproveFromCRM()
         {

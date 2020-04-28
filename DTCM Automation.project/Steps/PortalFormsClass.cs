@@ -195,21 +195,35 @@ namespace DTCM_Automation.project.Steps
             return GetRquestId();
         }
 
-        //Fill Branch Form
-        public void Fillbranchform()
+        //Fill Branch Form (Standalone)
+        public void Fillbranchform_Standalone()
         {
 
             SendKeys(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[1]/div/div/input"), "cinnabon".ToLower());
             ClickOn(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[2]/div/div/a/div"), false);
             ClickOn(By.XPath("/html/body/app-root/div/app-company/div/div/div/div[3]/div[1]/div"),false);
             ClickOn(By.Id("addnewbranch"), false);
-            ClickOn(By.Id("typemall"), false);
+            ClickOn(By.Id("typestandalone"), false);
+            SelectByText(By.Id("area"), "Bur Dubai");
             SendKeys(By.Id("licenseno"), Properties.Settings.Default.lisenceNumber);
-            SelectByText(By.Id("mall"),"Dubai Mall");
+            SendKeys(By.Id("Street1"), "Street11212");
             ClickOn(By.Id("submit"), false);
-
         }
         
+        //Fill Branch Form (Mall)
+        public void Fillbranchform_Mall()
+        {
+            SendKeys(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[1]/div/div/input"), "cinnabon".ToLower());
+            ClickOn(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[2]/div/div/a/div"), false);
+            ClickOn(By.XPath("/html/body/app-root/div/app-company/div/div/div/div[3]/div[1]/div"), false);
+            ClickOn(By.Id("addnewbranch"), false);
+            ClickOn(By.Id("typemall"), false);
+            SendKeys(By.Id("licenseno"), Properties.Settings.Default.lisenceNumber);
+            SelectByText(By.Id("mall"), "Dubai Mall");
+            ClickOn(By.Id("submit"), false);
+        }
+
+
         public string AssociateToGOCRequest( string CompanyName, string ParentGOC, String Guid)
         {
             WaitForPageToLoad();
