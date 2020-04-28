@@ -317,9 +317,17 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
-        public string RetailCalendarParticipationRequest_PaymentDetailsStep(string product,string productvalue)
+        public string RetailCalendarParticipationRequest_PaymentDetailsStep(string product,double productvalue)
         {
             // add validationstep
+            // TODO Add id of total price
+            string Actual_price = GetTextOf(By.Id(""));
+            double Expected_value = productvalue+ Properties.Settings.Default.POAddedValues;
+            if(Convert.ToDouble(Actual_price)!= Expected_value)
+            {
+                // Log exception po not calculated correctly 
+                // take screenshot
+            }
             ClickOn(By.Id("checkedcontrol"), true);
             ClickOn(By.Id("submit"), false);
             WaitForPageToLoad();

@@ -76,7 +76,7 @@ namespace DTCM_Automation.project.Portal
             portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
 
             //need to validate and add code and retaurn request id
-            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.singlebrand1_2value);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -99,7 +99,7 @@ namespace DTCM_Automation.project.Portal
             portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
 
             //need to validate and add code and retaurn request id
-            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.singlebrand1_2value);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -119,7 +119,7 @@ namespace DTCM_Automation.project.Portal
             portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
 
             //need to validate and add code and retaurn request id
-            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep();
+            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.singlebrand1_2value);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {

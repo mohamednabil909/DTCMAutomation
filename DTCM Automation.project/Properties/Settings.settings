@@ -95,55 +95,55 @@
     <Setting Name="singlebrand1_2" Type="System.String" Scope="User">
       <Value Profile="(Default)">sameh single brand</Value>
     </Setting>
-    <Setting Name="singlebrand1_2value" Type="System.String" Scope="User">
+    <Setting Name="singlebrand1_2value" Type="System.Double" Scope="User">
       <Value Profile="(Default)">17500</Value>
     </Setting>
     <Setting Name="singlebrand3_5" Type="System.String" Scope="User">
       <Value Profile="(Default)">aya 24 single brand</Value>
     </Setting>
-    <Setting Name="singlebrand3_5Value" Type="System.String" Scope="User">
+    <Setting Name="singlebrand3_5Value" Type="System.Double" Scope="User">
       <Value Profile="(Default)">73500</Value>
     </Setting>
     <Setting Name="Multiplebrand1_2" Type="System.String" Scope="User">
       <Value Profile="(Default)">Hesham Multiple Brands</Value>
     </Setting>
-    <Setting Name="Multiplebrand1_2value" Type="System.String" Scope="User">
+    <Setting Name="Multiplebrand1_2value" Type="System.Double" Scope="User">
       <Value Profile="(Default)">60000</Value>
     </Setting>
     <Setting Name="Multiplebrand3_5" Type="System.String" Scope="User">
       <Value Profile="(Default)">Moamen Multiple Brands</Value>
     </Setting>
-    <Setting Name="Multiplebrand3_5value" Type="System.String" Scope="User">
+    <Setting Name="Multiplebrand3_5value" Type="System.Double" Scope="User">
       <Value Profile="(Default)">180000</Value>
     </Setting>
     <Setting Name="ShoppingCenter100outlet" Type="System.String" Scope="User">
       <Value Profile="(Default)">Sameh Shopping Center</Value>
     </Setting>
-    <Setting Name="ShoppingCenter100outletValue" Type="System.String" Scope="User">
+    <Setting Name="ShoppingCenter100outletValue" Type="System.Double" Scope="User">
       <Value Profile="(Default)">200000</Value>
     </Setting>
     <Setting Name="DistributorSinglebrand" Type="System.String" Scope="User">
       <Value Profile="(Default)">MarianaDistributer</Value>
     </Setting>
-    <Setting Name="DistributorSinglebrandValue" Type="System.String" Scope="User">
+    <Setting Name="DistributorSinglebrandValue" Type="System.Double" Scope="User">
       <Value Profile="(Default)">36000</Value>
     </Setting>
     <Setting Name="Distributorbrand2_10" Type="System.String" Scope="User">
       <Value Profile="(Default)">Sameh Distributor</Value>
     </Setting>
-    <Setting Name="Distributorbrand2_10Value" Type="System.String" Scope="User">
+    <Setting Name="Distributorbrand2_10Value" Type="System.Double" Scope="User">
       <Value Profile="(Default)">60000</Value>
     </Setting>
     <Setting Name="Restaurant1_2" Type="System.String" Scope="User">
       <Value Profile="(Default)">Cinnabon</Value>
     </Setting>
-    <Setting Name="Restaurant1_2Value" Type="System.String" Scope="User">
+    <Setting Name="Restaurant1_2Value" Type="System.Double" Scope="User">
       <Value Profile="(Default)">6000</Value>
     </Setting>
     <Setting Name="Restaurant3_5" Type="System.String" Scope="User">
       <Value Profile="(Default)">Company Restaurant</Value>
     </Setting>
-    <Setting Name="Restaurant3_5Value" Type="System.String" Scope="User">
+    <Setting Name="Restaurant3_5Value" Type="System.Double" Scope="User">
       <Value Profile="(Default)">30000</Value>
     </Setting>
     <Setting Name="Estore" Type="System.String" Scope="User">
@@ -151,6 +151,9 @@
     </Setting>
     <Setting Name="EstoreValue" Type="System.String" Scope="User">
       <Value Profile="(Default)">50000</Value>
+    </Setting>
+    <Setting Name="POAddedValues" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.2</Value>
     </Setting>
   </Settings>
 </SettingsFile>
