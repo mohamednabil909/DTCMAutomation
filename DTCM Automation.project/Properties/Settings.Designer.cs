@@ -336,7 +336,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Activation Auto")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Activation auto")]
         public string ActivationEvent {
             get {
                 return ((string)(this["ActivationEvent"]));

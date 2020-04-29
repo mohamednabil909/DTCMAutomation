@@ -317,12 +317,12 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
-        public string RetailCalendarParticipationRequest_PaymentDetailsStep(string product,double productvalue)
+        public string RetailCalendarParticipationRequest_PaymentDetailsStep(double productPrice, SponsorType sponsorType = SponsorType.None, double discountValue=0)
         {
             // add validationstep
             // TODO Add id of total price
             string Actual_price = GetTextOf(By.Id(""));
-            double Expected_value = productvalue+ Properties.Settings.Default.POAddedValues;
+            double Expected_value = productPrice + Properties.Settings.Default.POAddedValues;
             if(Convert.ToDouble(Actual_price)!= Expected_value)
             {
                 // Log exception po not calculated correctly 
@@ -545,7 +545,7 @@ namespace DTCM_Automation.project.Steps
         // Activation Request
         public void ActivationParticipationRequest_Description_DetailsStep(string CompanyName, string EventName)
         {
-
+            WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
@@ -556,7 +556,11 @@ namespace DTCM_Automation.project.Steps
 
         }
 
-
+        /// <summary>
+        ///  TODO add one for all types and make promotion type as parameter
+        /// </summary>
+        /// <param name="CompanyName"></param>
+        /// <param name="EventName"></param>
         public void ActivationParticipationRequest_DetailsStepkiosk(string CompanyName, string EventName)
         {
             ClickOn(By.Id("next"), false);
@@ -603,6 +607,8 @@ namespace DTCM_Automation.project.Steps
 
         public void ActivationParticipationRequest_SelectBransAndBranches(Participationselection participationselection)
         {
+            Thread.Sleep(1000);
+            WaitForPageToLoad();
             if (participationselection == Participationselection.Branchs)
             {
                 //var allBranches = FindElement(By.Id("selectallbranches"));
@@ -627,46 +633,60 @@ namespace DTCM_Automation.project.Steps
 
         public void ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions promotions)
         {
-            if (promotions == Promotions.Discount)
+            try
             {
-                ClickOn(By.Id("Discount"), false);
-                //2 fields of calendar
-                SendKeys(By.Id("DiscountPercentage"), "50");
-                SelectByText(By.Id("discounttype"), "On All Items".ToLower());
-                ClickOn(By.Id("submit"), false);
-                WaitForPageToLoad();
-                ClickOn(By.Id("next"), false);
-            }
-            else if (promotions == Promotions.Sale)
-            {
-                ClickOn(By.Id("Sale"), false);
-                //2 fields of calendar
-                SendKeys(By.Id("MinValue"), "60");
-                SendKeys(By.Id("MaxValue"), "70");
-                ClickOn(By.Id("submit"), false);
-                WaitForPageToLoad();
-                ClickOn(By.Id("next"), false);
-            }
+                if (promotions == Promotions.Discount)
+                {
+                    ClickOn(By.Id("Discount"), false);
+                    //2 fields of calendar
+                    SendKeys(By.Id("DiscountPercentage"), "50");
+                    SelectByText(By.Id("discounttype"), "On All Items");
+                    //var CalendarElement = FindElement(By.Id("startdatebtn")).FindElement(By.TagName("ngb-datepicker"));
+                    //var PreviousMonthElement = FindElement(By.Id("startdatebtn")).FindElements(By.TagName("button"))[0];
+                    //var NextMonthElement = FindElement(By.Id("startdatebtn")).FindElements(By.TagName("button"))[1];
 
-            else if (promotions == Promotions.PartSale)
-            {
-                ClickOn(By.Id("Part Sale"), false);
-                //2 fields of calendar
-                SendKeys(By.Id("MinValue"), "50");
-                SendKeys(By.Id("MaxValue"), "60");
-                ClickOn(By.Id("submit"), false);
-                WaitForPageToLoad();
-                ClickOn(By.Id("next"), false);
-            }
+                    SetDate(DateTime.Now.AddDays(-10), By.Id("startdatebtn"), By.XPath("//input[@id='startdatebtn'/ngb-datepicker"), By.XPath("//input[@id='startdatebtn'/ngb-datepicker/button[0]"), By.XPath("//input[@id='startdatebtn'/ngb-datepicker/button[1]"));
 
-            else if (promotions == Promotions.Offer)
+
+                    ClickOn(By.Id("submit"), false);
+                    WaitForPageToLoad();
+                    ClickOn(By.Id("next"), false);
+                }
+                else if (promotions == Promotions.Sale)
+                {
+                    ClickOn(By.Id("Sale"), false);
+                    //2 fields of calendar
+                    SendKeys(By.Id("MinValue"), "60");
+                    SendKeys(By.Id("MaxValue"), "70");
+                    ClickOn(By.Id("submit"), false);
+                    WaitForPageToLoad();
+                    ClickOn(By.Id("next"), false);
+                }
+
+                else if (promotions == Promotions.PartSale)
+                {
+                    ClickOn(By.Id("Part Sale"), false);
+                    //2 fields of calendar
+                    SendKeys(By.Id("MinValue"), "50");
+                    SendKeys(By.Id("MaxValue"), "60");
+                    ClickOn(By.Id("submit"), false);
+                    WaitForPageToLoad();
+                    ClickOn(By.Id("next"), false);
+                }
+
+                else if (promotions == Promotions.Offer)
+                {
+                    ClickOn(By.Id("Offer"), false);
+                    //2 fields of calendar
+                    SendKeys(By.Id("offerdetails"), "offertest");
+                    ClickOn(By.Id("submit"), false);
+                    WaitForPageToLoad();
+                    ClickOn(By.Id("next"), false);
+                }
+            }
+            catch(Exception ex)
             {
-                ClickOn(By.Id("Offer"), false);
-                //2 fields of calendar
-                SendKeys(By.Id("offerdetails"), "offertest");
-                ClickOn(By.Id("submit"), false);
-                WaitForPageToLoad();
-                ClickOn(By.Id("next"), false);
+                // handleexception
             }
 
         }
