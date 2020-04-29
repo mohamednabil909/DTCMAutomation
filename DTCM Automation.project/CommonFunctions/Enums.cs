@@ -140,6 +140,12 @@ namespace DTCM_Automation.project.CommonFunctions
             Raffle,
             Scratchandwin
         }
+        public enum SponsorType
+        {
+            None,
+            Strategic,
+            Sponsor
+        }
 
     }
 }
