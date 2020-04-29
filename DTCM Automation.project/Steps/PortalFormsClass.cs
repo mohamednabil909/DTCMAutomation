@@ -746,6 +746,7 @@ namespace DTCM_Automation.project.Steps
         public string ActivationParticipationRequest_PaymentDetailsStep()
         {
             // TODO add step to check payments created correctly
+            WaitForPageToLoad();
             ClickOn(By.XPath("/html/body/app-root/div/app-initiative-participation-request/div/div/div/form/div[2]/div[2]/div[3]/div/div/label"), false);
             ClickOn(By.Id("submit"), false);
             return GetRquestId();
