@@ -50,7 +50,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Discount);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Discount);
 
             portalForms.ActivationAttachmentsStep();
 
@@ -65,8 +65,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Sale
-);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Sale);
             portalForms.ActivationAttachmentsStep();
             portalForms.ActivationParticipationRequest_PaymentDetailsStep();
         }
@@ -79,7 +78,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.PartSale);
+            portalForms.ActivationParticipationAddpromotins(Promotions.PartSale);
             portalForms.ActivationAttachmentsStep();
             portalForms.ActivationParticipationRequest_PaymentDetailsStep();
         }
@@ -93,7 +92,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Offer);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Offer);
             portalForms.ActivationAttachmentsStep();
             string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
 
@@ -110,7 +109,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Offer);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Offer);
             portalForms.ActivationAttachmentsStep();
             string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
 
@@ -127,7 +126,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
             portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Offer);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Offer);
             portalForms.ActivationAttachmentsStep();
             string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
 
@@ -146,7 +145,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddKiosk(Promotions.Kiosk);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Kiosk);
 
             portalForms.ActivationAttachmentsStepKiosk();
 
@@ -165,7 +164,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddKiosk(Promotions.Kiosk);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Kiosk);
 
             portalForms.ActivationAttachmentsStepKiosk();
 
@@ -184,7 +183,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddKiosk(Promotions.Kiosk);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Kiosk);
 
             portalForms.ActivationAttachmentsStepKiosk();
 
@@ -205,7 +204,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddRaffle(Promotions.Raffle);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Raffle);
 
             portalForms.ActivationAttachmentsStep();
 
@@ -225,7 +224,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddRaffle(Promotions.Raffle);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Raffle);
 
             portalForms.ActivationAttachmentsStep();
 
@@ -245,7 +244,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddRaffle(Promotions.Raffle);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Raffle);
 
             portalForms.ActivationAttachmentsStep();
 
@@ -267,7 +266,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddScratchandWin(Promotions.Scratchandwin);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Scratchandwin);
 
             portalForms.ActivationAttachmentsStep();
 
@@ -286,7 +285,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddScratchandWin(Promotions.Scratchandwin);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Scratchandwin);
 
             portalForms.ActivationAttachmentsStep();
 
@@ -305,7 +304,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
 
-            portalForms.ActivationParticipationAddScratchandWin(Promotions.Scratchandwin);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Scratchandwin);
 
             portalForms.ActivationAttachmentsStep();
 

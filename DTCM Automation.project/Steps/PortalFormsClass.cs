@@ -321,9 +321,9 @@ namespace DTCM_Automation.project.Steps
         {
             // add validationstep
             // TODO Add id of total price
-            string Actual_price = GetTextOf(By.Id(""));
+            string Actual_price = GetTextOf(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/div[2]/div/h2/span"));
             double Expected_value = productPrice + Properties.Settings.Default.POAddedValues;
-            if(Convert.ToDouble(Actual_price)!= Expected_value)
+            if (Convert.ToDouble(Actual_price)!= Expected_value)
             {
                 // Log exception po not calculated correctly 
                 // take screenshot
@@ -333,6 +333,7 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             return GetRquestId();
         }
+       
         //Festival Request
         public void FestivalParticipationRequest_DetailsStep(string CompanyName,string EventName)
         {
@@ -366,6 +367,7 @@ namespace DTCM_Automation.project.Steps
 
         public void FestivalParticipationRequest_DetailsStepRaffle(string CompanyName, string EventName)
         {
+            WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
             WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
@@ -380,6 +382,7 @@ namespace DTCM_Automation.project.Steps
 
         public void FestivalParticipationRequest_DetailsStepScratchandwin(string CompanyName, string EventName)
         {
+            WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
             WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
@@ -418,8 +421,9 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("next"), false);
 
         }
-        public void FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions promotions)
+        public void FestivalParticipationAddPromotions(Promotions promotions)
         {
+            WaitForPageToLoad();
             if (promotions == Promotions.Discount)
             {
                 ClickOn(By.Id("Discount"), false);
@@ -462,66 +466,64 @@ namespace DTCM_Automation.project.Steps
                 ClickOn(By.Id("next"), false);
             }
 
+            else if (promotions == Promotions.Kiosk)
+            {
+                ClickOn(By.Id("Kiosk"), false);
+                //2 fields of calendar
+                SendKeys(By.Id("KioskLocation"), "Test Kiosk Location");
+                SelectByText(By.Id("kiosktype"), "Commercial");
+                SendKeys(By.Id("kioskdetails"), "Test Kiosk details");
+                ClickOn(By.XPath("/html/body/app-root/div/app-initiative-participation-request/div/div/div/form/div[2]/div[1]/div[1]/div[3]/app-kiosk/form/div[4]/div/input"), false);
+                WaitForPageToLoad();
+                ClickOn(By.Id("next"), false);
+            }
+
+            else if (promotions == Promotions.Raffle)
+            {
+                ClickOn(By.Id("Raffle"), false);
+                //2 fields of calendar
+                SelectByText(By.Id("raffletype"), "Online");
+                SendKeys(By.Id("raffledetails"), "Raffle Details");
+                SendKeys(By.Id("TotalNoOfWinners"), "7");
+                SendKeys(By.Id("ContactPersonName"), "Test Raffle");
+                SendKeys(By.Id("ContactPersonEmail"), "Test@Raffle.com");
+                SendKeys(By.Id("ContactPersonMobile"), "1234567890");
+
+                ClickOn(By.Id("addrafflelocation"), false);
+                SendKeys(By.Id("rafflelocation"), "Location");
+                //Calendar
+                ClickOn(By.Id("save"), false);
+                ClickOn(By.Id("addgift"), false);
+                SendKeys(By.Id("GiftName"), "Prize");
+                SendKeys(By.Id("NoOfGifts"), "4");
+                SendKeys(By.Id("PricePerEachGift"), "4");
+                ClickOn(By.XPath("//*[@id=\"save\"]"), false);
+                ClickOn(By.Id("submit"), false);
+                WaitForPageToLoad();
+                ClickOn(By.Id("next"), false);
+            }
+            else if (promotions==Promotions.Scratchandwin)
+            {
+                ClickOn(By.Id("Scratch & Win"), false);
+                //2 fields of calendar
+
+                SendKeys(By.Id("details"), "Details");
+                SendKeys(By.Id("numberofwinners"), "4");
+                SendKeys(By.Id("contactpersonname"), "Test Scratch");
+                SendKeys(By.Id("contactpersonemail"), "Test@Scratch.com");
+                SendKeys(By.Id("contactpersonmobile"), "1234567800");
+
+                ClickOn(By.Id("addgift"), false);
+                SendKeys(By.Id("GiftName"), "Prize1");
+                SendKeys(By.Id("NoOfGifts"), "42");
+                SendKeys(By.Id("PricePerEachGift"), "24");
+                ClickOn(By.Id("save"), false);
+                ClickOn(By.Id("submit"), false);
+                WaitForPageToLoad();
+                ClickOn(By.Id("next"), false);
+            }
         }
-
-        public void FestivalParticipationAddKiosk(Promotions promotions)
-        {
-            ClickOn(By.Id("Kiosk"), false);
-            //2 fields of calendar
-            SendKeys(By.Id("KioskLocation"), "Test Kiosk Location");
-            SelectByText(By.Id("kiosktype"), "Commercial");
-            SendKeys(By.Id("kioskdetails"), "Test Kiosk details");
-            ClickOn(By.Id("submit"), false);
-            WaitForPageToLoad();
-            ClickOn(By.Id("next"), false);
-        }
-
-        public void FestivalParticipationAddRaffle(Promotions promotions)
-        {
-            ClickOn(By.Id("Raffle"), false);
-            //2 fields of calendar
-            SelectByText(By.Id("raffletype"), "Online");
-            SendKeys(By.Id("raffledetails"), "Raffle Details");
-            SendKeys(By.Id("TotalNoOfWinners"), "7");
-            SendKeys(By.Id("ContactPersonName"), "Test Raffle");
-            SendKeys(By.Id("ContactPersonEmail"), "Test@Raffle.com");
-            SendKeys(By.Id("ContactPersonMobile"), "1234567890");
-
-            ClickOn(By.Id("addrafflelocation"),false);
-            SendKeys(By.Id("rafflelocation"),"Location");
-            //Calendar
-            ClickOn(By.Id("save"),false);
-            ClickOn(By.Id("addgift"),false);
-            SendKeys(By.Id("GiftName"),"Prize");
-            SendKeys(By.Id("NoOfGifts"), "4");
-            SendKeys(By.Id("PricePerEachGift"), "4");
-            ClickOn(By.Id("save"), false);
-            ClickOn(By.Id("submit"), false);
-            WaitForPageToLoad();
-            ClickOn(By.Id("next"), false);
-        }
-
-        public void FestivalParticipationAddScratchandWin(Promotions promotions)
-        {
-            ClickOn(By.Id("Scratch & Win"), false);
-            //2 fields of calendar
-            
-            SendKeys(By.Id("details"), "Details");
-            SendKeys(By.Id("numberofwinners"), "4");
-            SendKeys(By.Id("contactpersonname"), "Test Scratch");
-            SendKeys(By.Id("contactpersonemail"), "Test@Scratch.com");
-            SendKeys(By.Id("contactpersonmobile"), "1234567800");
-            
-            ClickOn(By.Id("addgift"), false);
-            SendKeys(By.Id("GiftName"), "Prize1");
-            SendKeys(By.Id("NoOfGifts"), "42");
-            SendKeys(By.Id("PricePerEachGift"), "24");
-            ClickOn(By.Id("save"), false);
-            ClickOn(By.Id("submit"), false);
-            WaitForPageToLoad();
-            ClickOn(By.Id("next"), false);
-        }
-
+        
         public void FestivalAttachmentsStep()
         {
             ClickOn(By.Id("next"), false);
@@ -547,6 +549,7 @@ namespace DTCM_Automation.project.Steps
         {
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
             SelectByText(By.Id("event"), EventName);
@@ -602,9 +605,7 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("Scratch and win"), false);
             ClickOn(By.Id("next"), false);
         }
-
-
-
+        
         public void ActivationParticipationRequest_SelectBransAndBranches(Participationselection participationselection)
         {
             Thread.Sleep(1000);
@@ -631,8 +632,9 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("next"), false);
         }
 
-        public void ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions promotions)
+        public void ActivationParticipationAddpromotins(Promotions promotions)
         {
+            WaitForPageToLoad();
             try
             {
                 if (promotions == Promotions.Discount)
@@ -646,8 +648,6 @@ namespace DTCM_Automation.project.Steps
                     //var NextMonthElement = FindElement(By.Id("startdatebtn")).FindElements(By.TagName("button"))[1];
 
                     SetDate(DateTime.Now.AddDays(-10), By.Id("startdatebtn"), By.XPath("//input[@id='startdatebtn'/ngb-datepicker"), By.XPath("//input[@id='startdatebtn'/ngb-datepicker/button[0]"), By.XPath("//input[@id='startdatebtn'/ngb-datepicker/button[1]"));
-
-
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
@@ -683,72 +683,74 @@ namespace DTCM_Automation.project.Steps
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
                 }
+
+                else if (promotions==Promotions.Kiosk)
+                {
+                    ClickOn(By.Id("Kiosk"), false);
+                    //2 fields of calendar
+                    SendKeys(By.Id("KioskLocation"), "Test Kiosk Location");
+                    SelectByText(By.Id("kiosktype"), "Commercial");
+                    SendKeys(By.Id("kioskdetails"), "Test Kiosk details");
+                    ClickOn(By.XPath("/html/body/app-root/div/app-sub-initiative-participation-request/div/div/div/form/div[2]/div[1]/div/div[3]/app-kiosk/form/div[4]/div/input"), false);
+                    WaitForPageToLoad();
+                    ClickOn(By.Id("next"), false);
+                }
+
+                else if (promotions == Promotions.Raffle)
+                {
+                    ClickOn(By.Id("Raffle"), false);
+                    //2 fields of calendar
+                    SelectByText(By.Id("raffletype"), "Online");
+                    SendKeys(By.Id("raffledetails"), "Raffle Details");
+                    SendKeys(By.Id("TotalNoOfWinners"), "7");
+                    SendKeys(By.Id("ContactPersonName"), "Test Raffle");
+                    SendKeys(By.Id("ContactPersonEmail"), "Test@Raffle.com");
+                    SendKeys(By.Id("ContactPersonMobile"), "1234567890");
+
+                    ClickOn(By.Id("addrafflelocation"), false);
+                    SendKeys(By.Id("rafflelocation"), "Location");
+                    //Calendar
+                    ClickOn(By.Id("save"), false);
+                    ClickOn(By.Id("addgift"), false);
+                    SendKeys(By.Id("GiftName"), "Prize");
+                    SendKeys(By.Id("NoOfGifts"), "4");
+                    SendKeys(By.Id("PricePerEachGift"), "4");
+                    ClickOn(By.XPath("//*[@id=\"save\"]"), false);
+                    ClickOn(By.Id("submit"), false);
+                    WaitForPageToLoad();
+                    ClickOn(By.Id("next"), false);
+
+                }
+
+                else if (promotions == Promotions.Scratchandwin)
+                {
+                    ClickOn(By.Id("Scratch & Win"), false);
+                    //2 fields of calendar
+
+                    SendKeys(By.Id("details"), "Details");
+                    SendKeys(By.Id("numberofwinners"), "4");
+                    SendKeys(By.Id("contactpersonname"), "Test Scratch");
+                    SendKeys(By.Id("contactpersonemail"), "Test@Scratch.com");
+                    SendKeys(By.Id("contactpersonmobile"), "1234567800");
+
+                    ClickOn(By.Id("addgift"), false);
+                    SendKeys(By.Id("GiftName"), "Prize1");
+                    SendKeys(By.Id("NoOfGifts"), "42");
+                    SendKeys(By.Id("PricePerEachGift"), "24");
+                    ClickOn(By.Id("save"), false);
+                    ClickOn(By.Id("submit"), false);
+                    WaitForPageToLoad();
+                    ClickOn(By.Id("next"), false);
+                }
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 // handleexception
             }
 
         }
 
-
-        public void ActivationParticipationAddKiosk(Promotions promotions)
-        {
-            ClickOn(By.Id("Kiosk"), false);
-            //2 fields of calendar
-            SendKeys(By.Id("KioskLocation"), "Test Kiosk Location");
-            SelectByText(By.Id("kiosktype"), "Commercial");
-            SendKeys(By.Id("kioskdetails"), "Test Kiosk details");
-            ClickOn(By.Id("submit"), false);
-            WaitForPageToLoad();
-            ClickOn(By.Id("next"), false);
-        }
-
-        public void ActivationParticipationAddRaffle(Promotions promotions)
-        {
-            ClickOn(By.Id("Raffle"), false);
-            //2 fields of calendar
-            SelectByText(By.Id("raffletype"), "Online");
-            SendKeys(By.Id("raffledetails"), "Raffle Details");
-            SendKeys(By.Id("TotalNoOfWinners"), "7");
-            SendKeys(By.Id("ContactPersonName"), "Test Raffle");
-            SendKeys(By.Id("ContactPersonEmail"), "Test@Raffle.com");
-            SendKeys(By.Id("ContactPersonMobile"), "1234567890");
-
-            ClickOn(By.Id("addrafflelocation"), false);
-            SendKeys(By.Id("rafflelocation"), "Location");
-            //Calendar
-            ClickOn(By.Id("save"), false);
-            ClickOn(By.Id("addgift"), false);
-            SendKeys(By.Id("GiftName"), "Prize");
-            SendKeys(By.Id("NoOfGifts"), "4");
-            SendKeys(By.Id("PricePerEachGift"), "4");
-            ClickOn(By.Id("save"), false);
-            ClickOn(By.Id("submit"), false);
-            WaitForPageToLoad();
-            ClickOn(By.Id("next"), false);
-        }
-
-        public void ActivationParticipationAddScratchandWin(Promotions promotions)
-        {
-            ClickOn(By.Id("Scratch & Win"), false);
-            //2 fields of calendar
-
-            SendKeys(By.Id("details"), "Details");
-            SendKeys(By.Id("numberofwinners"), "4");
-            SendKeys(By.Id("contactpersonname"), "Test Scratch");
-            SendKeys(By.Id("contactpersonemail"), "Test@Scratch.com");
-            SendKeys(By.Id("contactpersonmobile"), "1234567800");
-
-            ClickOn(By.Id("addgift"), false);
-            SendKeys(By.Id("GiftName"), "Prize1");
-            SendKeys(By.Id("NoOfGifts"), "42");
-            SendKeys(By.Id("PricePerEachGift"), "24");
-            ClickOn(By.Id("save"), false);
-            ClickOn(By.Id("submit"), false);
-            WaitForPageToLoad();
-            ClickOn(By.Id("next"), false);
-        }
 
         public void ActivationAttachmentsStepKiosk()
         {

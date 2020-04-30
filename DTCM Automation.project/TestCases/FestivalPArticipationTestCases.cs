@@ -50,7 +50,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 
-            portalForms.FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Discount);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Discount);
 
             portalForms.FestivalAttachmentsStep();
             
@@ -67,13 +67,11 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 
-            portalForms.FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Sale);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Sale);
 
             portalForms.FestivalAttachmentsStep();
 
             string requestid = portalForms.FestivalParticipationRequest_PaymentDetailsStep();
-
-            
         }
 
         // Add promotion of type "PartSale"
@@ -86,7 +84,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 
-            portalForms.FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions.PartSale);
+            portalForms.FestivalParticipationAddPromotions(Promotions.PartSale);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -104,7 +102,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 
-            portalForms.FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Offer);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Offer);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -117,7 +115,7 @@ namespace DTCM_Automation.project.TestCases
         }
 
         [TestMethod]
-        public void TC_FestivlRequest_AddOfferfromportal_RetailerSendbaclFromCRM()
+        public void TC_FestivlRequest_AddOfferfromportal_RetailerSendbackFromCRM()
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
 
@@ -125,7 +123,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 
-            portalForms.FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Offer);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Offer);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -146,7 +144,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
 
-            portalForms.FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Offer);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Offer);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -167,7 +165,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
             
-            portalForms.FestivalParticipationAddKiosk(Promotions.Kiosk);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Kiosk);
 
             portalForms.FestivalAttachmentsStepKiosk();
 
@@ -186,7 +184,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddKiosk(Promotions.Kiosk);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Kiosk);
 
             portalForms.FestivalAttachmentsStepKiosk();
 
@@ -205,7 +203,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddKiosk(Promotions.Kiosk);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Kiosk);
 
             portalForms.FestivalAttachmentsStepKiosk();
 
@@ -226,7 +224,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddRaffle(Promotions.Raffle);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Raffle);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -245,7 +243,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddRaffle(Promotions.Raffle);
+            portalForms.ActivationParticipationAddpromotins(Promotions.Raffle);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -264,7 +262,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddRaffle(Promotions.Raffle);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Raffle);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -285,7 +283,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddScratchandWin(Promotions.Scratchandwin);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Scratchandwin);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -305,7 +303,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddScratchandWin(Promotions.Scratchandwin);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Scratchandwin);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -325,7 +323,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddScratchandWin(Promotions.Scratchandwin);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Scratchandwin);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -337,8 +335,6 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
-
-
         //Add promotion of type "Scratch and win" with Sponsor company
         [TestMethod]
         public void TC_FestivlRequest_AddScratchandwinfromportal_SponsorComapny_RetailerApproveFromCRM()
@@ -347,7 +343,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.FestivalParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanySponsor, Properties.Settings.Default.Event);
 
-            portalForms.FestivalParticipationAddScratchandWin(Promotions.Scratchandwin);
+            portalForms.FestivalParticipationAddPromotions(Promotions.Scratchandwin);
 
             portalForms.FestivalAttachmentsStep();
 
@@ -358,8 +354,5 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
             }
         }
-
-
-
     }
 }
