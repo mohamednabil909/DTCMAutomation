@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DTCM_Automation.project.CommonFunctions;
@@ -48,7 +50,7 @@ namespace DTCM_Automation.project.TestCases
         /// <param name="eventName"></param>
         /// <param name="participationselection"></param>
         /// <param name="SelectedPromotion"></param>
-        public string AddActivationRequestFromPortal(string Company, string eventName, Participationselection participationselection, Promotions SelectedPromotion)
+        public string AddActivationRequestFromPortal(string Company, string eventName, Participationselection participationselection, Promotions SelectedPromotion,DateTime StartDate,DateTime EndDate)
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
 
@@ -56,7 +58,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.SelectBrandsAndBranchesStep(participationselection);
 
-            portalForms.ActivationParticipationAddPromotion(SelectedPromotion);
+            portalForms.ActivationParticipationAddPromotion(SelectedPromotion,StartDate,EndDate);
 
             portalForms.AddAttachmentsStep();
 
@@ -66,7 +68,8 @@ namespace DTCM_Automation.project.TestCases
         [TestMethod]
         public void TC_PortalAddActivationRequest_AddDiscountPromotion_ApproveFromCRMRetailer_ApproveFromCRMManager()
         {
-            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Discount);
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent
+                , Participationselection.Brands, Promotions.Discount, SetDate(DateTime.Now.AddDays(40), By.Id("startdatebtn"), By.Id("startdate"), null, null));
         }
 
         // Add promotion of type "Sale"
@@ -84,7 +87,7 @@ namespace DTCM_Automation.project.TestCases
         }
 
 
-        // Add promotion of type "Offer"
+        // Add promotion of type "Offer" Approve from CRM
         [TestMethod]
         public void TC_PortalAddActivationRequest_AddOfferPromotion_ApproveFromCRMRetailer_ApproveFromCRMManager()
         {
@@ -92,221 +95,134 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
+        // Add promotion of type "Offer" Sendback from CRM
         [TestMethod]
         public void TC_ActivationRequest_AddOfferfromportal_RetailerSendbackFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
-
-            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddpromotins(Promotions.Offer);
-            portalForms.ActivationAttachmentsStep();
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Offer);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Sendback);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
-        
+
+
+        // Add promotion of type "Offer" Cancel from CRM
         [TestMethod]
         public void TC_ActivationRequest_AddOfferfromportal_RetailerCancelFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
-
-            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddpromotins(Promotions.Offer);
-            portalForms.ActivationAttachmentsStep();
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Offer);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
 
-        // Add promotion of type "Kiosk"
+        // Add promotion of type "Kiosk" Approve from CRM
         [TestMethod]
         public void TC_ActivationRequest_AddKioskfromportal_RetailerApproveFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Kiosk);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Kiosk);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
+        // Add promotion of type "Kiosk" Sendback from CRM
         [TestMethod]
         public void TC_ActivationRequest_AddKioskfromportal_RetailerSendbackFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Kiosk);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Kiosk);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Sendback);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
+        // Add promotion of type "Kiosk" Cancel from CRM
         [TestMethod]
         public void TC_ActivationRequest_AddKioskfromportal_RetailerCancelFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepkiosk(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Kiosk);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Kiosk);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
-        // Add promotion of type "Raffle"
+        // Add promotion of type "Raffle" Approve from CRM
 
         [TestMethod]
         public void TC_ActivationRequest_AddRafflefromportal_RetailerApproveFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Raffle);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Raffle);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
-
+        // Add promotion of type "Raffle" Sendback from CRM
         [TestMethod]
         public void TC_ActivationRequest_AddRafflefromportal_RetailerSendbackFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Raffle);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Raffle);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Sendback);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
-
+        // Add promotion of type "Raffle" Cancel from CRM
         [TestMethod]
         public void TC_ActivationRequest_AddRafflefromportal_RetailerCancelFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepRaffle(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Raffle);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Raffle);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
 
-        // Add promotion of type "Scratch and win"
+        // Add promotion of type "Scratch and win" Approve From CRM
 
         [TestMethod]
         public void TC_ActivationRequest_AddScratchandWinfromportal_RetailerApproveFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Scratchandwin);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Scratchandwin);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
+        // Add promotion of type "Scratch and win" Sendback From CRM
         [TestMethod]
         public void TC_ActivationRequest_AddScratchandWinfromportal_RetailerSendbackFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Scratchandwin);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Scratchandwin);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Sendback);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
+        // Add promotion of type "Scratch and win" Cancel From CRM
         [TestMethod]
         public void TC_ActivationRequest_AddScratchandWinfromportal_RetailerCancelFromCRM()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
-
-            portalForms.ActivationParticipationRequest_DetailsStepScratchandwin(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-
-            portalForms.ActivationParticipationAddpromotins(Promotions.Scratchandwin);
-
-            portalForms.ActivationAttachmentsStep();
-
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
-
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Scratchandwin);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Cancel);
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 

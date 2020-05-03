@@ -54,10 +54,11 @@ namespace DTCM_Automation.project.Portal
             //need to validate and add code and retaurn request id
            return portalForms.PaymentDetailsStep(Product,sponsorType);
         }
+
         [TestMethod]
         public void TC_SingleBrandCompany_CreateCalendarRequest_RetailerApproveFromCRM()
         {
-            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands,Properties.Settings.Default.singlebrand1_2value);
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands,Properties.Settings.Default.singlebrand1_2value.ToDouble());
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -71,7 +72,7 @@ namespace DTCM_Automation.project.Portal
         [TestMethod]
         public void TC_CreateCalendarRequest_StratigicCompany_RetailerApproveFromCRM()
         {
-            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value, SponsorType.Strategic);
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value.ToDouble(), SponsorType.Strategic);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -81,11 +82,11 @@ namespace DTCM_Automation.project.Portal
         }
 
 
-
+        //Sendback Retail Calendar request
         [TestMethod]
         public void TC_CreateCalendarRequest_RetailerSendbackFromCRM()
         {
-            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value);
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value.ToDouble());
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -93,10 +94,11 @@ namespace DTCM_Automation.project.Portal
             }
         }
 
+        //Cancel Retail Calendar request
         [TestMethod]
         public void TC_CreateCalendarRequest_RetailerCancelFromCRM()
         {
-            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value);
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value.ToDouble());
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
