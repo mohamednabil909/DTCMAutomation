@@ -411,8 +411,8 @@ namespace DTCM_Automation.project.Steps
 
 
 
-        }
-        public void FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions promotions)
+        
+        public void FestivalParticipationAddDiscount_SelectPromotions(Promotions promotions)
         {
             WaitForPageToLoad();
             if (promotions == Promotions.Discount)
@@ -549,11 +549,11 @@ namespace DTCM_Automation.project.Steps
 
 
 
-        public void ActivationParticipationRequest_SelectBransAndBranches(Participationselection participationselection)
+        public void ActivationParticipationAddPromotion(Promotions selectedPromotion)
         {
             try
             {
-                if (promotions == Promotions.Discount)
+                if (selectedPromotion == Promotions.Discount)
                 {
                     ClickOn(By.Id("Discount"), false);
                     //2 fields of calendar
@@ -566,7 +566,7 @@ namespace DTCM_Automation.project.Steps
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
                 }
-                else if (promotions == Promotions.Sale)
+                else if (selectedPromotion == Promotions.Sale)
                 {
                     ClickOn(By.Id("Sale"), false);
                     //2 fields of calendar
@@ -577,7 +577,7 @@ namespace DTCM_Automation.project.Steps
                     ClickOn(By.Id("next"), false);
                 }
 
-                else if (promotions == Promotions.PartSale)
+                else if (selectedPromotion == Promotions.PartSale)
                 {
                     ClickOn(By.Id("Part Sale"), false);
                     //2 fields of calendar
@@ -588,7 +588,7 @@ namespace DTCM_Automation.project.Steps
                     ClickOn(By.Id("next"), false);
                 }
 
-                else if (promotions == Promotions.Offer)
+                else if (selectedPromotion == Promotions.Offer)
                 {
                     ClickOn(By.Id("Offer"), false);
                     //2 fields of calendar
@@ -597,7 +597,7 @@ namespace DTCM_Automation.project.Steps
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
                 }
-                else if (promotions == Promotions.Kiosk)
+                else if (selectedPromotion == Promotions.Kiosk)
                 {
                     ClickOn(By.Id("Kiosk"), false);
                     //2 fields of calendar
@@ -609,7 +609,7 @@ namespace DTCM_Automation.project.Steps
                     ClickOn(By.Id("next"), false);
                 }
 
-                else if (promotions == Promotions.Raffle)
+                else if (selectedPromotion == Promotions.Raffle)
                 {
                     ClickOn(By.Id("Raffle"), false);
                     //2 fields of calendar
@@ -633,7 +633,7 @@ namespace DTCM_Automation.project.Steps
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
                 }
-                else if (promotions == Promotions.Scratchandwin)
+                else if (selectedPromotion == Promotions.Scratchandwin)
                 {
                     ClickOn(By.Id("Scratch & Win"), false);
                     //2 fields of calendar
