@@ -360,7 +360,7 @@ namespace DTCM_Automation.project.Steps
         {
             // add validationstep
             // TODO Add id of total price
-            string Actual_price = GetTextOf(By.Id(""));
+            string Actual_price = GetTextOf(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/div[2]/div/h2/span"));
             double Expected_value = productPrice + Properties.Settings.Default.POAddedValues;
             if (Convert.ToDouble(Actual_price) != Expected_value)
             {
@@ -411,12 +411,10 @@ namespace DTCM_Automation.project.Steps
 
 
 
-        /// <summary>
-        /// promotion selection and fill data step
-        /// </summary>
-        /// <param name="promotions"></param>
-        public void FestivalParticipationAddPromotionStep(Promotions promotions, DateTime StartDate, DateTime EndDate)
+        }
+        public void FestivalParticipationAddDiscount_Sale_PartSale_Offer(Promotions promotions)
         {
+            WaitForPageToLoad();
             if (promotions == Promotions.Discount)
             {
                 ClickOn(By.Id("Discount"), false);
@@ -528,6 +526,7 @@ namespace DTCM_Automation.project.Steps
         {
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
             SelectByText(By.Id("event"), EventName);
@@ -550,7 +549,7 @@ namespace DTCM_Automation.project.Steps
 
 
 
-        public void ActivationParticipationAddPromotion(Promotions promotions)
+        public void ActivationParticipationRequest_SelectBransAndBranches(Participationselection participationselection)
         {
             try
             {
