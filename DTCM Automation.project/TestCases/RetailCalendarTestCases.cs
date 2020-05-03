@@ -41,19 +41,23 @@ namespace DTCM_Automation.project.Portal
             portalForms.CloseDriver();
         }
         
-        [TestMethod]
-        public void TC_SingleBrandCompany_CreateCalendarRequest_RetailerApproveFromCRM()
+
+        public string SubmitRetailCalendarRequest(string Company, string eventName, Participationselection participationselection, double Product,  SponsorType  sponsorType = SponsorType.None)
         {
-         string Guid=   CommonFunctions.RandomNumber();
 
             portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
 
-            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar);
+            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Company,eventName);
 
-            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
+            portalForms.SelectBrandsAndBranchesStep(participationselection);
 
             //need to validate and add code and retaurn request id
-            string requestid= portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep(Properties.Settings.Default.singlebrand1_2value.ToDouble());
+           return portalForms.PaymentDetailsStep(Product,sponsorType);
+        }
+        [TestMethod]
+        public void TC_SingleBrandCompany_CreateCalendarRequest_RetailerApproveFromCRM()
+        {
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands,Properties.Settings.Default.singlebrand1_2value);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -67,16 +71,7 @@ namespace DTCM_Automation.project.Portal
         [TestMethod]
         public void TC_CreateCalendarRequest_StratigicCompany_RetailerApproveFromCRM()
         {
-            string Guid = CommonFunctions.RandomNumber();
-
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
-
-            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.CompanyStratigic, Properties.Settings.Default.Calendar);
-
-            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
-
-            //need to validate and add code and retaurn request id
-            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep( Properties.Settings.Default.singlebrand1_2value,SponsorType.Strategic);
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value, SponsorType.Strategic);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -90,16 +85,7 @@ namespace DTCM_Automation.project.Portal
         [TestMethod]
         public void TC_CreateCalendarRequest_RetailerSendbackFromCRM()
         {
-            string Guid = CommonFunctions.RandomNumber();
-
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
-
-            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Calendar);
-
-            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
-
-            //need to validate and add code and retaurn request id
-            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep( Properties.Settings.Default.singlebrand1_2value);
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -110,16 +96,7 @@ namespace DTCM_Automation.project.Portal
         [TestMethod]
         public void TC_CreateCalendarRequest_RetailerCancelFromCRM()
         {
-            string Guid = CommonFunctions.RandomNumber();
-
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.calendarparticipationrequest);
-
-            portalForms.RetailCalendarParticipationRequestDescriptionAndDetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Calendar);
-
-            portalForms.RetailCalendarParticipationRequest_AddBransAndBranches(Participationselection.Brands);
-
-            //need to validate and add code and retaurn request id
-            string requestid = portalForms.RetailCalendarParticipationRequest_PaymentDetailsStep( Properties.Settings.Default.singlebrand1_2value);
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands, Properties.Settings.Default.singlebrand1_2value);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {

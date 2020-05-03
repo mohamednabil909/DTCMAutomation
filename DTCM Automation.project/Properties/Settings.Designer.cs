@@ -23,93 +23,83 @@ namespace DTCM_Automation.project.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\crmadmin")]
         public string OnlineUsername {
             get {
                 return ((string)(this["OnlineUsername"]));
             }
-            set {
-                this["OnlineUsername"] = value;
-            }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection toMails {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["toMails"]));
+            }
+            set {
+                this["toMails"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("linkP@ss")]
         public string OnlinePassword {
             get {
                 return ((string)(this["OnlinePassword"]));
             }
-            set {
-                this["OnlinePassword"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://dtcmqc.linkdev.com/main.aspx")]
         public string OnlineCrmUrl {
             get {
                 return ((string)(this["OnlineCrmUrl"]));
             }
-            set {
-                this["OnlineCrmUrl"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
         public string BrowserType {
             get {
                 return ((string)(this["BrowserType"]));
             }
-            set {
-                this["BrowserType"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\crmadmin")]
         public string CRMAdminUsername {
             get {
                 return ((string)(this["CRMAdminUsername"]));
             }
-            set {
-                this["CRMAdminUsername"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("linkP@ss")]
         public string CRMAdminPassword {
             get {
                 return ((string)(this["CRMAdminPassword"]));
             }
-            set {
-                this["CRMAdminPassword"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Language {
             get {
                 return ((string)(this["Language"]));
             }
-            set {
-                this["Language"] = value;
-            }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://ld-iis-dtcm.cloudapp.net/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Frontend_URL {
             get {
                 return ((string)(this["Frontend_URL"]));
@@ -121,7 +111,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://dtcmqc.linkdev.com/main.aspx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Backend_URL {
             get {
                 return ((string)(this["Backend_URL"]));
@@ -179,458 +169,348 @@ namespace DTCM_Automation.project.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Specialized.StringCollection toMails {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["toMails"]));
-            }
-            set {
-                this["toMails"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("http://ld-iis-dtcm.cloudapp.net/")]
         public string portalLoginURL {
             get {
                 return ((string)(this["portalLoginURL"]));
             }
-            set {
-                this["portalLoginURL"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("amir@dtcm.com")]
         public string username {
             get {
                 return ((string)(this["username"]));
             }
-            set {
-                this["username"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("P@ssw0rd")]
         public string password {
             get {
                 return ((string)(this["password"]));
             }
-            set {
-                this["password"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Katry Company distributor")]
         public string CompanyName {
             get {
                 return ((string)(this["CompanyName"]));
             }
-            set {
-                this["CompanyName"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("103165")]
         public string lisenceNumber {
             get {
                 return ((string)(this["lisenceNumber"]));
             }
-            set {
-                this["lisenceNumber"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("MAF Fashion")]
         public string GOCCompany {
             get {
                 return ((string)(this["GOCCompany"]));
             }
-            set {
-                this["GOCCompany"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\stakeholder.user1")]
         public string Stackhoder_user {
             get {
                 return ((string)(this["Stackhoder_user"]));
             }
-            set {
-                this["Stackhoder_user"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\retail.user1")]
         public string Retailer_user {
             get {
                 return ((string)(this["Retailer_user"]));
             }
-            set {
-                this["Retailer_user"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("CRM365DC\\poi.user1")]
         public string POI_user {
             get {
                 return ((string)(this["POI_user"]));
             }
-            set {
-                this["POI_user"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("adfsdf")]
         public string Brand_Name {
             get {
                 return ((string)(this["Brand_Name"]));
             }
-            set {
-                this["Brand_Name"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Retail Calendar 2020")]
         public string Calendar {
             get {
                 return ((string)(this["Calendar"]));
             }
-            set {
-                this["Calendar"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Event Auto")]
         public string Event {
             get {
                 return ((string)(this["Event"]));
             }
-            set {
-                this["Event"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Activation auto")]
         public string ActivationEvent {
             get {
                 return ((string)(this["ActivationEvent"]));
             }
-            set {
-                this["ActivationEvent"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("aya")]
         public string POICompany {
             get {
                 return ((string)(this["POICompany"]));
             }
-            set {
-                this["POICompany"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Sameh Multible brands")]
         public string CompanyStratigic {
             get {
                 return ((string)(this["CompanyStratigic"]));
             }
-            set {
-                this["CompanyStratigic"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("aya4 multiple brands")]
         public string CompanySponsor {
             get {
                 return ((string)(this["CompanySponsor"]));
             }
-            set {
-                this["CompanySponsor"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("sameh single brand")]
         public string singlebrand1_2 {
             get {
                 return ((string)(this["singlebrand1_2"]));
             }
-            set {
-                this["singlebrand1_2"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("17500")]
         public double singlebrand1_2value {
             get {
                 return ((double)(this["singlebrand1_2value"]));
             }
-            set {
-                this["singlebrand1_2value"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("aya 24 single brand")]
         public string singlebrand3_5 {
             get {
                 return ((string)(this["singlebrand3_5"]));
             }
-            set {
-                this["singlebrand3_5"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("73500")]
         public double singlebrand3_5Value {
             get {
                 return ((double)(this["singlebrand3_5Value"]));
             }
-            set {
-                this["singlebrand3_5Value"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Hesham Multiple Brands")]
         public string Multiplebrand1_2 {
             get {
                 return ((string)(this["Multiplebrand1_2"]));
             }
-            set {
-                this["Multiplebrand1_2"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("60000")]
         public double Multiplebrand1_2value {
             get {
                 return ((double)(this["Multiplebrand1_2value"]));
             }
-            set {
-                this["Multiplebrand1_2value"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Moamen Multiple Brands")]
         public string Multiplebrand3_5 {
             get {
                 return ((string)(this["Multiplebrand3_5"]));
             }
-            set {
-                this["Multiplebrand3_5"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("180000")]
         public double Multiplebrand3_5value {
             get {
                 return ((double)(this["Multiplebrand3_5value"]));
             }
-            set {
-                this["Multiplebrand3_5value"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Sameh Shopping Center")]
         public string ShoppingCenter100outlet {
             get {
                 return ((string)(this["ShoppingCenter100outlet"]));
             }
-            set {
-                this["ShoppingCenter100outlet"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200000")]
         public double ShoppingCenter100outletValue {
             get {
                 return ((double)(this["ShoppingCenter100outletValue"]));
             }
-            set {
-                this["ShoppingCenter100outletValue"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("MarianaDistributer")]
         public string DistributorSinglebrand {
             get {
                 return ((string)(this["DistributorSinglebrand"]));
             }
-            set {
-                this["DistributorSinglebrand"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("36000")]
         public double DistributorSinglebrandValue {
             get {
                 return ((double)(this["DistributorSinglebrandValue"]));
             }
-            set {
-                this["DistributorSinglebrandValue"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Sameh Distributor")]
         public string Distributorbrand2_10 {
             get {
                 return ((string)(this["Distributorbrand2_10"]));
             }
-            set {
-                this["Distributorbrand2_10"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("60000")]
         public double Distributorbrand2_10Value {
             get {
                 return ((double)(this["Distributorbrand2_10Value"]));
             }
-            set {
-                this["Distributorbrand2_10Value"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Cinnabon")]
         public string Restaurant1_2 {
             get {
                 return ((string)(this["Restaurant1_2"]));
             }
-            set {
-                this["Restaurant1_2"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("6000")]
         public double Restaurant1_2Value {
             get {
                 return ((double)(this["Restaurant1_2Value"]));
             }
-            set {
-                this["Restaurant1_2Value"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Company Restaurant")]
         public string Restaurant3_5 {
             get {
                 return ((string)(this["Restaurant3_5"]));
             }
-            set {
-                this["Restaurant3_5"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("30000")]
         public double Restaurant3_5Value {
             get {
                 return ((double)(this["Restaurant3_5Value"]));
             }
-            set {
-                this["Restaurant3_5Value"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Sameh EStore")]
         public string Estore {
             get {
                 return ((string)(this["Estore"]));
             }
-            set {
-                this["Estore"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("50000")]
         public string EstoreValue {
             get {
                 return ((string)(this["EstoreValue"]));
             }
-            set {
-                this["EstoreValue"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
         public double POAddedValues {
             get {
                 return ((double)(this["POAddedValues"]));
             }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CreatedUser {
+            get {
+                return ((string)(this["CreatedUser"]));
+            }
             set {
-                this["POAddedValues"] = value;
+                this["CreatedUser"] = value;
             }
         }
     }

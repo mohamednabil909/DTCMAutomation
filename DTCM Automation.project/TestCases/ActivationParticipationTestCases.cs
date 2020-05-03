@@ -40,62 +40,55 @@ namespace DTCM_Automation.project.TestCases
             portalForms.CloseDriver();
         }
 
-        // Add promotion of type "Discount"
-        [TestMethod]
-        public void TC_ActivationRequest_AddDiscountfromportal()
+
+        /// <summary>
+        /// to complete all activation request steps, submit the request and return request id
+        /// </summary>
+        /// <param name="Company"></param>
+        /// <param name="eventName"></param>
+        /// <param name="participationselection"></param>
+        /// <param name="SelectedPromotion"></param>
+        public string AddActivationRequestFromPortal(string Company, string eventName, Participationselection participationselection, Promotions SelectedPromotion)
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
 
-            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName,Properties.Settings.Default.ActivationEvent);
+            portalForms.ActivationParticipationRequest_DescriptionDetailsStep(Company,eventName, SelectedPromotion);
 
-            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
+            portalForms.SelectBrandsAndBranchesStep(participationselection);
 
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Discount);
+            portalForms.ActivationParticipationAddPromotion(SelectedPromotion);
 
-            portalForms.ActivationAttachmentsStep();
+            portalForms.AddAttachmentsStep();
 
-            portalForms.ActivationParticipationRequest_PaymentDetailsStep();   
+          return  portalForms.PaymentDetailsStep(0);
+        }
+        // Add promotion of type "Discount"
+        [TestMethod]
+        public void TC_PortalAddActivationRequest_AddDiscountPromotion_ApproveFromCRMRetailer_ApproveFromCRMManager()
+        {
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Discount);
         }
 
         // Add promotion of type "Sale"
         [TestMethod]
-        public void TC_ActivationRequest_AddSalefromportal()
+        public void TC_PortalAddActivationRequest_AddSalePromotion_ApproveFromCRMRetailer_ApproveFromCRMManager()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
-
-            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Sale
-);
-            portalForms.ActivationAttachmentsStep();
-            portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Sale);
         }
 
         // Add promotion of type "PartSale"
         [TestMethod]
-        public void TC_ActivationRequest_AddPartSalefromportal()
+        public void TC_PortalAddActivationRequest_AddPartSalePromotion_ApproveFromCRMRetailer_ApproveFromCRMManager()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
-
-            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.PartSale);
-            portalForms.ActivationAttachmentsStep();
-            portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.PartSale);
         }
 
 
         // Add promotion of type "Offer"
         [TestMethod]
-        public void TC_ActivationRequest_AddOfferfromportal_RetailerApproveFromCRM()
+        public void TC_PortalAddActivationRequest_AddOfferPromotion_ApproveFromCRMRetailer_ApproveFromCRMManager()
         {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.SubInitiativeParticipationReq);
-
-            portalForms.ActivationParticipationRequest_Description_DetailsStep(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent);
-            portalForms.ActivationParticipationRequest_SelectBransAndBranches(Participationselection.Brands);
-            portalForms.ActivationParticipationAddDiscount_Sale_PartSale_Offer(Promotions.Offer);
-            portalForms.ActivationAttachmentsStep();
-            string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
+            string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Offer);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -148,7 +141,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationAddKiosk(Promotions.Kiosk);
 
-            portalForms.ActivationAttachmentsStepKiosk();
+            portalForms.ActivationAttachmentsStep();
 
             string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
 
@@ -167,7 +160,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationAddKiosk(Promotions.Kiosk);
 
-            portalForms.ActivationAttachmentsStepKiosk();
+            portalForms.ActivationAttachmentsStep();
 
             string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
 
@@ -186,7 +179,7 @@ namespace DTCM_Automation.project.TestCases
 
             portalForms.ActivationParticipationAddKiosk(Promotions.Kiosk);
 
-            portalForms.ActivationAttachmentsStepKiosk();
+            portalForms.ActivationAttachmentsStep();
 
             string requestid = portalForms.ActivationParticipationRequest_PaymentDetailsStep();
 

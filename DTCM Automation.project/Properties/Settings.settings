@@ -2,32 +2,35 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="DTCM_Automation.project.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="OnlineUsername" Type="System.String" Scope="User">
+    <Setting Name="OnlineUsername" Type="System.String" Scope="Application">
       <Value Profile="(Default)">CRM365DC\crmadmin</Value>
     </Setting>
-    <Setting Name="OnlinePassword" Type="System.String" Scope="User">
+    <Setting Name="toMails" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OnlinePassword" Type="System.String" Scope="Application">
       <Value Profile="(Default)">linkP@ss</Value>
     </Setting>
-    <Setting Name="OnlineCrmUrl" Type="System.String" Scope="User">
+    <Setting Name="OnlineCrmUrl" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://dtcmqc.linkdev.com/main.aspx</Value>
     </Setting>
-    <Setting Name="BrowserType" Type="System.String" Scope="User">
+    <Setting Name="BrowserType" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Chrome</Value>
     </Setting>
-    <Setting Name="CRMAdminUsername" Type="System.String" Scope="User">
+    <Setting Name="CRMAdminUsername" Type="System.String" Scope="Application">
       <Value Profile="(Default)">CRM365DC\crmadmin</Value>
     </Setting>
-    <Setting Name="CRMAdminPassword" Type="System.String" Scope="User">
+    <Setting Name="CRMAdminPassword" Type="System.String" Scope="Application">
       <Value Profile="(Default)">linkP@ss</Value>
     </Setting>
-    <Setting Name="Language" Type="System.String" Scope="User">
+    <Setting Name="Language" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Frontend_URL" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Backend_URL" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://dtcmqc.linkdev.com/main.aspx</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SENDGRID_API_KEY" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -41,119 +44,119 @@
     <Setting Name="RunHeadless" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="toMails" Type="System.Collections.Specialized.StringCollection" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="portalLoginURL" Type="System.String" Scope="User">
+    <Setting Name="portalLoginURL" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://ld-iis-dtcm.cloudapp.net/</Value>
     </Setting>
-    <Setting Name="username" Type="System.String" Scope="User">
+    <Setting Name="username" Type="System.String" Scope="Application">
       <Value Profile="(Default)">amir@dtcm.com</Value>
     </Setting>
-    <Setting Name="password" Type="System.String" Scope="User">
+    <Setting Name="password" Type="System.String" Scope="Application">
       <Value Profile="(Default)">P@ssw0rd</Value>
     </Setting>
-    <Setting Name="CompanyName" Type="System.String" Scope="User">
+    <Setting Name="CompanyName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Katry Company distributor</Value>
     </Setting>
-    <Setting Name="lisenceNumber" Type="System.String" Scope="User">
+    <Setting Name="lisenceNumber" Type="System.String" Scope="Application">
       <Value Profile="(Default)">103165</Value>
     </Setting>
-    <Setting Name="GOCCompany" Type="System.String" Scope="User">
+    <Setting Name="GOCCompany" Type="System.String" Scope="Application">
       <Value Profile="(Default)">MAF Fashion</Value>
     </Setting>
-    <Setting Name="Stackhoder_user" Type="System.String" Scope="User">
+    <Setting Name="Stackhoder_user" Type="System.String" Scope="Application">
       <Value Profile="(Default)">CRM365DC\stakeholder.user1</Value>
     </Setting>
-    <Setting Name="Retailer_user" Type="System.String" Scope="User">
+    <Setting Name="Retailer_user" Type="System.String" Scope="Application">
       <Value Profile="(Default)">CRM365DC\retail.user1</Value>
     </Setting>
-    <Setting Name="POI_user" Type="System.String" Scope="User">
+    <Setting Name="POI_user" Type="System.String" Scope="Application">
       <Value Profile="(Default)">CRM365DC\poi.user1</Value>
     </Setting>
-    <Setting Name="Brand_Name" Type="System.String" Scope="User">
+    <Setting Name="Brand_Name" Type="System.String" Scope="Application">
       <Value Profile="(Default)">adfsdf</Value>
     </Setting>
-    <Setting Name="Calendar" Type="System.String" Scope="User">
+    <Setting Name="Calendar" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Retail Calendar 2020</Value>
     </Setting>
-    <Setting Name="Event" Type="System.String" Scope="User">
+    <Setting Name="Event" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Event Auto</Value>
     </Setting>
-    <Setting Name="ActivationEvent" Type="System.String" Scope="User">
+    <Setting Name="ActivationEvent" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Activation auto</Value>
     </Setting>
-    <Setting Name="POICompany" Type="System.String" Scope="User">
+    <Setting Name="POICompany" Type="System.String" Scope="Application">
       <Value Profile="(Default)">aya</Value>
     </Setting>
-    <Setting Name="CompanyStratigic" Type="System.String" Scope="User">
+    <Setting Name="CompanyStratigic" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Sameh Multible brands</Value>
     </Setting>
-    <Setting Name="CompanySponsor" Type="System.String" Scope="User">
+    <Setting Name="CompanySponsor" Type="System.String" Scope="Application">
       <Value Profile="(Default)">aya4 multiple brands</Value>
     </Setting>
-    <Setting Name="singlebrand1_2" Type="System.String" Scope="User">
+    <Setting Name="singlebrand1_2" Type="System.String" Scope="Application">
       <Value Profile="(Default)">sameh single brand</Value>
     </Setting>
-    <Setting Name="singlebrand1_2value" Type="System.Double" Scope="User">
+    <Setting Name="singlebrand1_2value" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">17500</Value>
     </Setting>
-    <Setting Name="singlebrand3_5" Type="System.String" Scope="User">
+    <Setting Name="singlebrand3_5" Type="System.String" Scope="Application">
       <Value Profile="(Default)">aya 24 single brand</Value>
     </Setting>
-    <Setting Name="singlebrand3_5Value" Type="System.Double" Scope="User">
+    <Setting Name="singlebrand3_5Value" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">73500</Value>
     </Setting>
-    <Setting Name="Multiplebrand1_2" Type="System.String" Scope="User">
+    <Setting Name="Multiplebrand1_2" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Hesham Multiple Brands</Value>
     </Setting>
-    <Setting Name="Multiplebrand1_2value" Type="System.Double" Scope="User">
+    <Setting Name="Multiplebrand1_2value" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">60000</Value>
     </Setting>
-    <Setting Name="Multiplebrand3_5" Type="System.String" Scope="User">
+    <Setting Name="Multiplebrand3_5" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Moamen Multiple Brands</Value>
     </Setting>
-    <Setting Name="Multiplebrand3_5value" Type="System.Double" Scope="User">
+    <Setting Name="Multiplebrand3_5value" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">180000</Value>
     </Setting>
-    <Setting Name="ShoppingCenter100outlet" Type="System.String" Scope="User">
+    <Setting Name="ShoppingCenter100outlet" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Sameh Shopping Center</Value>
     </Setting>
-    <Setting Name="ShoppingCenter100outletValue" Type="System.Double" Scope="User">
+    <Setting Name="ShoppingCenter100outletValue" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">200000</Value>
     </Setting>
-    <Setting Name="DistributorSinglebrand" Type="System.String" Scope="User">
+    <Setting Name="DistributorSinglebrand" Type="System.String" Scope="Application">
       <Value Profile="(Default)">MarianaDistributer</Value>
     </Setting>
-    <Setting Name="DistributorSinglebrandValue" Type="System.Double" Scope="User">
+    <Setting Name="DistributorSinglebrandValue" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">36000</Value>
     </Setting>
-    <Setting Name="Distributorbrand2_10" Type="System.String" Scope="User">
+    <Setting Name="Distributorbrand2_10" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Sameh Distributor</Value>
     </Setting>
-    <Setting Name="Distributorbrand2_10Value" Type="System.Double" Scope="User">
+    <Setting Name="Distributorbrand2_10Value" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">60000</Value>
     </Setting>
-    <Setting Name="Restaurant1_2" Type="System.String" Scope="User">
+    <Setting Name="Restaurant1_2" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Cinnabon</Value>
     </Setting>
-    <Setting Name="Restaurant1_2Value" Type="System.Double" Scope="User">
+    <Setting Name="Restaurant1_2Value" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">6000</Value>
     </Setting>
-    <Setting Name="Restaurant3_5" Type="System.String" Scope="User">
+    <Setting Name="Restaurant3_5" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Company Restaurant</Value>
     </Setting>
-    <Setting Name="Restaurant3_5Value" Type="System.Double" Scope="User">
+    <Setting Name="Restaurant3_5Value" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">30000</Value>
     </Setting>
-    <Setting Name="Estore" Type="System.String" Scope="User">
+    <Setting Name="Estore" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Sameh EStore</Value>
     </Setting>
-    <Setting Name="EstoreValue" Type="System.String" Scope="User">
+    <Setting Name="EstoreValue" Type="System.String" Scope="Application">
       <Value Profile="(Default)">50000</Value>
     </Setting>
-    <Setting Name="POAddedValues" Type="System.Double" Scope="User">
+    <Setting Name="POAddedValues" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">0.2</Value>
+    </Setting>
+    <Setting Name="CreatedUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

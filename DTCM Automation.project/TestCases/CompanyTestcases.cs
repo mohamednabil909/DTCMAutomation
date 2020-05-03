@@ -258,9 +258,9 @@ namespace DTCM_Automation.project.TestCases
         {
 
             portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
-            var brandName = portalForms.FillBrandForm("Test Brand English", "Food & Beverage", "");
-            //  portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
-            Driver.Navigate().GoToUrl("http://ld-iis-dtcm.cloudapp.net/en/RequestChangeBrandCategory");
+            String brandName = portalForms.FillBrandForm("Test Brand English", "Food & Beverage", "");
+              portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
+           // Driver.Navigate().GoToUrl("http://ld-iis-dtcm.cloudapp.net/en/RequestChangeBrandCategory");
             RequestId = portalForms.ChangeBrandRequest(brandName);
 
             using (var xrmBrowser = new Browser(TestSettings.Options))

@@ -2097,8 +2097,9 @@ namespace DTCM_Automation.project
 
                 foreach (var fileUpload in fileUploadersList)
                 {
-                    fileUpload.SendKeys(documentPath);
-
+                    fileUpload.Click();
+                    AutoItX3 AutoItX = new AutoItX3();
+                    AutoItX.Send(documentPath + "{Enter}");
                     WaitForPageReadyState();
                 }
             }
@@ -2241,25 +2242,28 @@ namespace DTCM_Automation.project
             try
             {
                 ClickOn(calenderButton, false);
+                var parentElement = GetParentElement(calendarPopup).FindElements(By.TagName("button"));
+                var nextMonthElement = parentElement[1];//.FindElements(By.TagName("button"))[0];
 
+                var previousMonthElement = parentElement[0];//.FindElements(By.TagName("button"))[1];
                 var noOfClicks = ((date.Year - DateTime.Now.Year) * 12) + (date.Month - DateTime.Now.Month);
 
                 for (var i = 0; i < Math.Abs(noOfClicks); i++)
                 {
-                    var locator = noOfClicks > 0 ? nextMonth : previousMonth;
-                    ClickOn(locator, false);
+                    var locator = noOfClicks > 0 ? nextMonthElement : previousMonthElement;
+                    locator.Click();
                 }
 
                 Thread.Sleep(1000);
 
-                var calendarTable = FindElement(calendarPopup);
-                var calendarTbody = calendarTable.FindElement(By.TagName("tbody"));
-                var rows = calendarTbody.FindElements(By.TagName("tr"));
+                var calendarTable = GetParentElement(calendarPopup).FindElement(By.ClassName("dropdown-menu"));
+                var calendarTbody = calendarTable.FindElement(By.TagName("ngb-datepicker-month-view"));
+                var rows = calendarTbody.FindElements(By.ClassName("ngb-dp-week"));
                 var clicked = false;
 
                 for (var rowsCount = 0; rowsCount < rows.Count; rowsCount++)
                 {
-                    var cells = rows[rowsCount].FindElements(By.TagName("td"));
+                    var cells = rows[rowsCount].FindElements(By.ClassName("ngb-dp-day"));
 
                     for (var cellsCount = 0; cellsCount < cells.Count; cellsCount++)
                     {
@@ -2271,7 +2275,7 @@ namespace DTCM_Automation.project
                             break;
                         }
 
-                        cells = rows[rowsCount].FindElements(By.TagName("td"));
+                         cells = rows[rowsCount].FindElements(By.ClassName("ngb-dp-day"));
                     }
 
                     if (clicked)
@@ -2279,9 +2283,9 @@ namespace DTCM_Automation.project
                         break;
                     }
 
-                    calendarTable = FindElement(calendarPopup);
-                    calendarTbody = calendarTable.FindElement(By.TagName("tbody"));
-                    rows = calendarTbody.FindElements(By.TagName("tr"));
+                     calendarTable = GetParentElement(calendarPopup).FindElement(By.ClassName("dropdown-menu"));
+                     calendarTbody = calendarTable.FindElement(By.TagName("ngb-datepicker-month-view"));
+                     rows = calendarTbody.FindElements(By.ClassName("ngb-dp-week"));
                 }
 
                 LogCommands("", GetCurrentMethod() + " of " + (string.IsNullOrEmpty(dateFieldDescription) ? ("Element with Locator: " + calenderButton.ToString()) : dateFieldDescription) + " to " + date.ToString("dd/MM/yyyy"), false, true);
