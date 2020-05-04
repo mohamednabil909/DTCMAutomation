@@ -15,11 +15,7 @@ namespace DTCM_Automation.project.Steps
     public class PortalFormsClass : TestHelper
     {
         private string LoaderClassName = "overlay";
-
-
-
-
-
+        
         /// <summary>
         /// Wait page to load 
         /// </summary>
@@ -40,10 +36,7 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             PortalLogin();
             WaitForPageToLoad();
-
             Driver.Navigate().GoToUrl(Properties.Settings.Default.portalLoginURL + "/" + ServiceNameValue[serviceName]);
-
-
         }
 
         /// <summary>
@@ -327,7 +320,6 @@ namespace DTCM_Automation.project.Steps
             if (participationselection == Participationselection.Branchs)
             {
                 ClickOn(By.Id("selectallbranches"), true);
-
             }
 
             else if (participationselection == Participationselection.Brands)
@@ -385,6 +377,7 @@ namespace DTCM_Automation.project.Steps
         /// <param name="EventName"></param>
         public void FestivalParticipationRequest_DetailsStep(string CompanyName, string EventName, Promotions selectedPromotion)
         {
+            WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
             WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
@@ -408,11 +401,8 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("next"), false);
 
         }
-
-
-
-
-        public void FestivalParticipationAddPromotion(Promotions selectedPromotion)
+        
+        public void FestivalParticipationAddPromotion(Promotions selectedPromotion,DateTime StartDate,DateTime EndDate)
         {
             WaitForPageToLoad();
             try
@@ -420,7 +410,8 @@ namespace DTCM_Automation.project.Steps
                 if (selectedPromotion == Promotions.Discount)
                 {
                     ClickOn(By.Id("Discount"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("DiscountPercentage"), "50");
                     SelectByText(By.Id("discounttype"), "On All Items".ToLower());
                     ClickOn(By.Id("submit"), false);
@@ -430,7 +421,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Sale)
                 {
                     ClickOn(By.Id("Sale"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("MinValue"), "60");
                     SendKeys(By.Id("MaxValue"), "70");
                     ClickOn(By.Id("submit"), false);
@@ -441,7 +433,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.PartSale)
                 {
                     ClickOn(By.Id("Part Sale"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("MinValue"), "50");
                     SendKeys(By.Id("MaxValue"), "60");
                     ClickOn(By.Id("submit"), false);
@@ -452,7 +445,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Offer)
                 {
                     ClickOn(By.Id("Offer"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("offerdetails"), "offertest");
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
@@ -462,7 +456,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Kiosk)
                 {
                     ClickOn(By.Id("Kiosk"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("KioskLocation"), "Test Kiosk Location");
                     SelectByText(By.Id("kiosktype"), "Commercial");
                     SendKeys(By.Id("kioskdetails"), "Test Kiosk details");
@@ -474,23 +469,23 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Raffle)
                 {
                     ClickOn(By.Id("Raffle"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SelectByText(By.Id("raffletype"), "Online");
                     SendKeys(By.Id("raffledetails"), "Raffle Details");
                     SendKeys(By.Id("TotalNoOfWinners"), "7");
                     SendKeys(By.Id("ContactPersonName"), "Test Raffle");
                     SendKeys(By.Id("ContactPersonEmail"), "Test@Raffle.com");
                     SendKeys(By.Id("ContactPersonMobile"), "1234567890");
-
                     ClickOn(By.Id("addrafflelocation"), false);
                     SendKeys(By.Id("rafflelocation"), "Location");
-                    //Calendar
+                    SetDate(DateTime.Now.AddDays(10), By.Id("drawdatebtn"), By.Id("drawdate"), null, null);
                     ClickOn(By.Id("save"), false);
                     ClickOn(By.Id("addgift"), false);
                     SendKeys(By.Id("GiftName"), "Prize");
                     SendKeys(By.Id("NoOfGifts"), "4");
                     SendKeys(By.Id("PricePerEachGift"), "4");
-                    ClickOn(By.Id("save"), false);
+                    ClickOn(By.Id("savegift"), false);
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
@@ -499,14 +494,13 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Scratchandwin)
                 {
                     ClickOn(By.Id("Scratch & Win"), false);
-                    //2 fields of calendar
-
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("details"), "Details");
                     SendKeys(By.Id("numberofwinners"), "4");
                     SendKeys(By.Id("contactpersonname"), "Test Scratch");
                     SendKeys(By.Id("contactpersonemail"), "Test@Scratch.com");
                     SendKeys(By.Id("contactpersonmobile"), "1234567800");
-
                     ClickOn(By.Id("addgift"), false);
                     SendKeys(By.Id("GiftName"), "Prize1");
                     SendKeys(By.Id("NoOfGifts"), "42");
@@ -523,8 +517,6 @@ namespace DTCM_Automation.project.Steps
             }
         }
     
-
-
         #endregion
         #region Activation Request needed steps
 
@@ -553,21 +545,18 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("next"), false);
 
         }
-
-
-
-        public void ActivationParticipationAddPromotion(Promotions selectedPromotion,DateTime StartDate,DateTime EndDate)
+        
+        public void ActivationParticipationAddPromotion(Promotions selectedPromotion,DateTime StartDate ,DateTime EndDate)
         {
             try
             {
                 if (selectedPromotion == Promotions.Discount)
                 {
                     ClickOn(By.Id("Discount"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("DiscountPercentage"), "50");
                     SelectByText(By.Id("discounttype"), "On All Items");
-                    // SetDate(DateTime.Now.AddDays(40), By.Id("startdatebtn"), By.Id("startdate"), null, null);
-                    // SetDate(DateTime.Now.AddDays(10), By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
@@ -575,7 +564,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Sale)
                 {
                     ClickOn(By.Id("Sale"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("MinValue"), "60");
                     SendKeys(By.Id("MaxValue"), "70");
                     ClickOn(By.Id("submit"), false);
@@ -586,7 +576,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.PartSale)
                 {
                     ClickOn(By.Id("Part Sale"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("MinValue"), "50");
                     SendKeys(By.Id("MaxValue"), "60");
                     ClickOn(By.Id("submit"), false);
@@ -597,7 +588,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Offer)
                 {
                     ClickOn(By.Id("Offer"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("offerdetails"), "offertest");
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
@@ -606,7 +598,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Kiosk)
                 {
                     ClickOn(By.Id("Kiosk"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("KioskLocation"), "Test Kiosk Location");
                     SelectByText(By.Id("kiosktype"), "Commercial");
                     SendKeys(By.Id("kioskdetails"), "Test Kiosk details");
@@ -618,7 +611,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Raffle)
                 {
                     ClickOn(By.Id("Raffle"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SelectByText(By.Id("raffletype"), "Online");
                     SendKeys(By.Id("raffledetails"), "Raffle Details");
                     SendKeys(By.Id("TotalNoOfWinners"), "7");
@@ -628,6 +622,8 @@ namespace DTCM_Automation.project.Steps
 
                     ClickOn(By.Id("addrafflelocation"), false);
                     SendKeys(By.Id("rafflelocation"), "Location");
+                    SetDate(DateTime.Now.AddDays(10), By.Id("drawdatebtn"), By.Id("drawdate"), null, null);
+                    
                     //Calendar
                     ClickOn(By.Id("save"), false);
                     ClickOn(By.Id("addgift"), false);
@@ -642,7 +638,8 @@ namespace DTCM_Automation.project.Steps
                 else if (selectedPromotion == Promotions.Scratchandwin)
                 {
                     ClickOn(By.Id("Scratch & Win"), false);
-                    //2 fields of calendar
+                    SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
+                    SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
 
                     SendKeys(By.Id("details"), "Details");
                     SendKeys(By.Id("numberofwinners"), "4");
@@ -676,6 +673,7 @@ namespace DTCM_Automation.project.Steps
         public void AddAttachmentsStep()
         {
             UploadAttachments(By.XPath("//button[.='Choose file']"), FileType.Txt);
+            WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
         }
 

@@ -43,188 +43,240 @@ namespace DTCM_Automation.project.TestCases
 
 
         /// <summary>
-        /// to complete all activation request steps, submit the request and return request id
+        /// to complete all Festival request steps, submit the request and return request id
         /// </summary>
         /// <param name="Company"></param>
         /// <param name="eventName"></param>
         /// <param name="participationselection"></param>
         /// <param name="SelectedPromotion"></param>
-        public string AddFestivalRequestFromPortal(string Company, string eventName, Participationselection participationselection, Promotions SelectedPromotion)
+        public string AddFestivalRequestFromPortal(string Company, string eventName, Participationselection participationselection, Promotions SelectedPromotion, DateTime StartDate, DateTime EndDate)
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.initiativeparticipationrequest);
 
             portalForms.FestivalParticipationRequest_DetailsStep(Company, eventName, SelectedPromotion);
 
-            portalForms.SelectBrandsAndBranchesStep(participationselection);
-
-            portalForms.FestivalParticipationAddPromotion(SelectedPromotion);
-
-            portalForms.AddAttachmentsStep();
-
-            return portalForms.PaymentDetailsStep(0);
+            if (SelectedPromotion == Promotions.Discount || SelectedPromotion == Promotions.Sale || SelectedPromotion == Promotions.PartSale)
+            {
+                portalForms.SelectBrandsAndBranchesStep(participationselection);
+                portalForms.FestivalParticipationAddPromotion(SelectedPromotion, StartDate, EndDate);
+                portalForms.AddAttachmentsStep();
+                return portalForms.PaymentDetailsStep(0);
+            }
+            else
+            {
+                portalForms.FestivalParticipationAddPromotion(SelectedPromotion, StartDate, EndDate);
+                portalForms.AddAttachmentsStep();
+                return portalForms.PaymentDetailsStep(0);
+            }
         }
-
-        // Add promotion of type "Discount"
+        
+        /// <summary>
+        /// Add promotion of type "Discount"
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddDiscountfromportal()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Discount);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event
+                , Participationselection.Brands, Promotions.Discount, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
         }
         
-        // Add promotion of type "Sale"
+        /// <summary>
+        /// Add promotion of type "Sale"
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddSaleFromportal()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Sale);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event
+                , Participationselection.Brands, Promotions.Sale, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
         }
-
-        // Add promotion of type "PartSale"
+        
+        /// <summary>
+        /// Add promotion of type "PartSale"
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddPartSaleFromportal()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.PartSale);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event
+                , Participationselection.Brands, Promotions.PartSale,DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
 
         }
-
-       // Add promotion of type "Offer" Approve from CRM
+       
+        /// <summary>
+        /// Add promotion of type "Offer" Approve from CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddOfferfromportal_RetailerApproveFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Offer);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Offer, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
-        // Add promotion of type "Offer" Sendback from CRM
+        /// <summary>
+        /// Add promotion of type "Offer" Sendback from CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddOfferfromportal_RetailerSendbackFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Offer);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Offer, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
-        // Add promotion of type "Offer" Cancel from CRM
+        /// <summary>
+        /// Add promotion of type "Offer" Cancel from CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddOfferfromportal_RetailerCancelFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Offer);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Offer, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
-        
-        //Add promotion of type "Kiosk" Approve from CRM
+        /// <summary>
+        ///Add promotion of type "Kiosk" Approve from CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddKioskfromportal_RetailerApproveFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Kiosk);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Kiosk, DateTime.Now.AddDays(5), DateTime.Now.AddDays(9));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
-        //Add promotion of type "Kiosk" Sendback from CRM
+        /// <summary>
+        ///Add promotion of type "Kiosk" Sendback from CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddKioskfromportal_RetailerSendbackFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Kiosk);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Kiosk, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
-        //Add promotion of type "Kiosk" Cancel from CRM
+        /// <summary>
+        ///Add promotion of type "Kiosk" Cancel from CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddKioskfromportal_RetailerCancelFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Kiosk);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Kiosk, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
-
-        //Add promotion of type "Raffle" Approve From CRM
+        /// <summary>
+        ///Add promotion of type "Raffle" Approve From CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddRafflefromportal_RetailerApproveFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Raffle);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Raffle, DateTime.Now.AddDays(5), DateTime.Now.AddDays(8));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
-        //Add promotion of type "Raffle" Sendback From CRM
+        
+        /// <summary>
+        ///Add promotion of type "Raffle" Sendback From CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddRafflefromportal_RetailerSendbackFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Raffle);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Raffle, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
-        //Add promotion of type "Raffle" Cancel From CRM
+        
+        /// <summary>
+        ///Add promotion of type "Raffle" Cancel From CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddRafflefromportal_RetailerCancelFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Raffle);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Raffle, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
-
-        //Add promotion of type "Scratch and win" Approve From CRM
+        /// <summary>
+        ///Add promotion of type "Scratch and win" Approve From CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddScratchandwinfromportal_RetailerApproveFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Scratchandwin);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
-
-        //Add promotion of type "Scratch and win" Sendback From CRM
+       
+        /// <summary>
+        ///Add promotion of type "Scratch and win" Sendback From CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddScratchandwinfromportal_RetailerSendbackFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Scratchandwin);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
-
-        //Add promotion of type "Scratch and win" Cancel From CRM
+        /// <summary>
+        ///Add promotion of type "Scratch and win" Cancel From CRM
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddScratchandwinfromportal_RetailerCancelFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Scratchandwin);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
-        //Add promotion of type "Scratch and win" with Sponsor company
+        /// <summary>
+        ///Add promotion of type "Scratch and win" with Sponsor company
+        /// <summary>
         [TestMethod]
         public void TC_FestivlRequest_AddScratchandwinfromportal_SponsorComapny_RetailerApproveFromCRM()
         {
-            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent, Participationselection.Brands, Promotions.Scratchandwin);
+            string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
+                Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);

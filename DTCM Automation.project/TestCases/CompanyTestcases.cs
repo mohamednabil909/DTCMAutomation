@@ -29,7 +29,7 @@ namespace DTCM_Automation.project.TestCases
         /// </summary>
         PortalFormsClass portalForms = new PortalFormsClass();
         CRMSteps CRMSteps = new CRMSteps();
-        IWebDriver Driver;
+        
 
         CommonFunctions.CommonFunctions CommonFunctions = new CommonFunctions.CommonFunctions();
         string Guid, RequestId,RequestbrandID;
@@ -71,7 +71,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi,true,true, true, RequestId, Decisions.Approve);
             }
         }
-        
+
+        /// <summary>
+        /// Create poi companyfrom portal then take decision Sendback from CRM
+        /// </summary>
         [TestMethod]
         public void TC_CreatePOICompany_POISendbackFromCRM()
         {
@@ -87,6 +90,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Sendback);
             }
         }
+
+        /// <summary>
+        /// Create poi companyfrom portal then take decision Cancel from CRM
+        /// </summary>
         [TestMethod]
         public void TC_CreatePOICompany_POICancelFromCRM()
         {
@@ -102,8 +109,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Cancel);
             }
         }
-        
-        //Create NONDED company from portal then take decision approve from CRM
+
+        /// <summary>
+        /// Create NONDED companyfrom portal then take decision approve from CRM
+        /// </summary>
         [TestMethod]
         public void TC_CreateNONDEDCompany_StackHolderApproveFromCRM()
         {
@@ -118,6 +127,10 @@ namespace DTCM_Automation.project.TestCases
             }
 
         }
+        
+        /// <summary>
+        /// Create NONDED companyfrom portal then take decision Sendback from CRM
+        /// </summary>
         [TestMethod]
         public void TC_CreateNONDEDCompany_StackHolderSendbackFromCRM()
         {
@@ -132,6 +145,10 @@ namespace DTCM_Automation.project.TestCases
             }
 
         }
+        
+        /// <summary>
+        /// Create NONDED companyfrom portal then take decision Cancel from CRM
+        /// </summary>
         [TestMethod]
         public void TC_CreateNONDEDCompany_StackHolderCancelFromCRM()
         {
@@ -146,8 +163,10 @@ namespace DTCM_Automation.project.TestCases
             }
 
         }
-        
-        //Create Branch from Portal Mall
+
+        /// <summary>
+         ///Create Branch from Portal Mall
+        /// </summary>
         [TestMethod]
         public void TC_CreateBranchfromportal_Mall()
         {
@@ -155,13 +174,19 @@ namespace DTCM_Automation.project.TestCases
             portalForms.Fillbranchform_Mall();
         }
 
-        //Create Branch from Portal Standalone
+        /// <summary>
+        ///Create Branch from Portal StandAlone
+        /// </summary>
         [TestMethod]
         public void TC_CreateBranchfromportal_Standalone()
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
             portalForms.Fillbranchform_Standalone();
         }
+        
+        /// <summary>
+        /// Create GOCRequest portal then take decision Approve from CRM
+        /// </summary>
         [TestMethod]
         public void TC_AddGOCCompany_AddCompanyChild_AssoicateCompanyytoGOCParent_StackHolderApproveFromCRM()
         {
@@ -182,6 +207,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true, true, true, RequestId, Decisions.Approve);
             }
         }
+        
+        /// <summary>
+        /// Create GOCRequest portal then take decision Sendback from CRM
+        /// </summary>
         [TestMethod]
         public void TC_AddGOCCompany_AddCompanyChild_AssoicateCompanyytoGOCParent_StackHolderSendbackFromCRM()
         {
@@ -199,6 +228,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Stackholder, true, true, true, RequestId, Decisions.Sendback);
             }
         }
+        
+        /// <summary>
+        /// Create GOCRequest portal then take decision Cancel from CRM
+        /// </summary>
         [TestMethod]
         public void TC_AddGOCCompany_AddCompanyChild_AssoicateCompanyytoGOCParent_StackHolderCancelFromCRM()
         {
@@ -223,20 +256,19 @@ namespace DTCM_Automation.project.TestCases
         [TestMethod]
         public void TC_AddBrand_ChangeBrandCategory_RetailerApproveFromCRM()
         {
-
             portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
             var brandName= portalForms.FillBrandForm("Test Brand English", "Food & Beverage","");
-            //  portalForms.Portal_LoginAndNavigateTo(ServiceName.RequestChangeBrandCategory);
-            Driver.Navigate().GoToUrl("http://ld-iis-dtcm.cloudapp.net/en/RequestChangeBrandCategory");
+            portalForms.GoToUrl("http://ld-iis-dtcm.cloudapp.net/en/RequestChangeBrandCategory");
             RequestId = portalForms.ChangeBrandRequest(brandName);
-
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
             }
         }
 
-
+        /// <summary>
+        /// Create ChangebrandCategory Request from portal then take decision Sendback from CRM
+        /// </summary>
         [TestMethod]
         public void TC_AddBrand_ChangeBrandCategory_RetailerSendbackFromCRM()
         {
@@ -253,6 +285,9 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
+        /// <summary>
+        /// Create ChangebrandCategory Request from portal then take decision Cancel from CRM
+        /// </summary>
         [TestMethod]
         public void TC_AddBrand_ChangeBrandCategory_RetailerCancelFromCRM()
         {
@@ -269,7 +304,6 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
-
         /// <summary>
         /// TODO create guid on the top of the tc and use it
         /// add steps to create company of type(cluste)
@@ -278,6 +312,7 @@ namespace DTCM_Automation.project.TestCases
         /// use the exact user not admin
         /// change test case name to be moredetailed withsteps
         /// </summary>
+
         [TestMethod]
         public void TC_ChangeCluster_RetailerApproveFromCRM()
         {
@@ -291,6 +326,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Approve);
             }
         }
+
+        /// <summary>
+        /// Create ChangeCluster Request from portal then take decision Sendback from CRM
+        /// </summary>
         [TestMethod]
         public void TC_ChangeCluster_RetailerSendbackFromCRM()
         {
@@ -303,6 +342,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Retailer, true, true, true, RequestId, Decisions.Sendback);
             }
         }
+
+        /// <summary>
+        /// Create ChangeCluster Request from portal then take decision Cancel from CRM
+        /// </summary>
         [TestMethod]
         public void TC_ChangeCluster_ReatilerCancelFromCRM()
         {
@@ -316,7 +359,9 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
-
+        /// <summary>
+        /// Create POICompany Request from portal then take decision Approve from CRM
+        /// </summary>
         [TestMethod]
         public void TC_ChangePOIType_POIApproveFromCRM()
         {
@@ -330,6 +375,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Approve);
             }
         }
+        
+        /// <summary>
+        /// Create POICompany Request from portal then take decision Sendback from CRM
+        /// <summary>
         [TestMethod]
         public void TC_ChangePOIType_POISendbackFromCRM()
         {
@@ -343,7 +392,10 @@ namespace DTCM_Automation.project.TestCases
                 CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Poi, true, true, true, RequestId, Decisions.Sendback);
             }
         }
-
+        
+        /// <summary>
+        /// Create POICompany Request from portal then take decision Cancel from CRM
+        /// <summary>
         [TestMethod]
         public void TC_ChangePOIType_POICancelFromCRM()
         {
@@ -358,7 +410,9 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
-
+        /// <summary>
+        /// Create DEDCompany Request from portal then take decision Approve from CRM
+        /// <summary>
         [TestMethod]
         public void TC_CreateCompanyDED_StackHolderApproveFromCRM()
         {
@@ -374,7 +428,9 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
-
+        /// <summary>
+        /// Create DEDCompany Request from portal then take decision Sendback from CRM
+        /// <summary>
         [TestMethod]
         public void TC_CreateCompanyDED_StackHolderSendbackFromCRM()
         {
@@ -390,6 +446,9 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
+        /// <summary>
+        /// Create DEDCompany Request from portal then take decision Cancel from CRM
+        /// <summary>
         [TestMethod]
         public void TC_CreateCompanyDED_StackHolderCancelFromCRM()
         {

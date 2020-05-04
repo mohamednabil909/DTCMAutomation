@@ -58,7 +58,7 @@ namespace DTCM_Automation.project.Portal
         [TestMethod]
         public void TC_SingleBrandCompany_CreateCalendarRequest_RetailerApproveFromCRM()
         {
-            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Brands,Properties.Settings.Default.singlebrand1_2value.ToDouble());
+            string requestid = SubmitRetailCalendarRequest(Properties.Settings.Default.singlebrand1_2, Properties.Settings.Default.Calendar, Participationselection.Branchs,Properties.Settings.Default.singlebrand1_2value.ToDouble());
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
@@ -67,8 +67,9 @@ namespace DTCM_Automation.project.Portal
             }
         }
 
-
-        //Approve Retail Calendar request with Stratigic Company
+        /// <summary>
+        ///Approve Retail Calendar request with Stratigic Company
+        /// <summary>
         [TestMethod]
         public void TC_CreateCalendarRequest_StratigicCompany_RetailerApproveFromCRM()
         {
@@ -81,8 +82,9 @@ namespace DTCM_Automation.project.Portal
             }
         }
 
-
-        //Sendback Retail Calendar request
+        /// <summary>
+        ///Sendback Retail Calendar request
+        /// <summary>
         [TestMethod]
         public void TC_CreateCalendarRequest_RetailerSendbackFromCRM()
         {
@@ -93,8 +95,9 @@ namespace DTCM_Automation.project.Portal
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
-
-        //Cancel Retail Calendar request
+        /// <summary>
+        ///Cancel Retail Calendar request
+        /// <summary>
         [TestMethod]
         public void TC_CreateCalendarRequest_RetailerCancelFromCRM()
         {
