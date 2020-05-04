@@ -234,10 +234,11 @@ namespace DTCM_Automation.project.TestCases
         public void TC_FestivlRequest_AddScratchandwinfromportal_RetailerApproveFromCRM()
         {
             string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event,
-                Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
+                Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(5), DateTime.Now.AddDays(9));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+                CRMSteps.Waveinvoice(xrmBrowser);
             }
         }
        

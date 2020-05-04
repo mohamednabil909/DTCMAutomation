@@ -147,6 +147,15 @@ namespace DTCM_Automation.project.Steps
             return checkStageIsCorrect;
         }
 
+        
+        //open invoice and wave invoice
+
+       internal void Waveinvoice(Browser xrmBrowser)
+
+        {
+            CRMFormsClass.WaveIvoicefromCRM(xrmBrowser);
+        }
+        
         //Create contact
         internal void CreatContact(Browser xrmBrowser)
         {

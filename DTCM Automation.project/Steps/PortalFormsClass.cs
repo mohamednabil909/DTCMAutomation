@@ -505,7 +505,7 @@ namespace DTCM_Automation.project.Steps
                     SendKeys(By.Id("GiftName"), "Prize1");
                     SendKeys(By.Id("NoOfGifts"), "42");
                     SendKeys(By.Id("PricePerEachGift"), "24");
-                    ClickOn(By.Id("save"), false);
+                    ClickOn(By.Id("savegift"), false);
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);

@@ -190,6 +190,9 @@ namespace DTCM_Automation.project.CommonFunctions
                 xrmBrowser.CommandBar.ClickCommand("PICK");
                 xrmBrowser.Dialogs.PickDialog();
                 //Openrequest
+                NavigateTo(xrmBrowser, "Profile Management", "Queue Items", "All Items");
+                xrmBrowser.Driver.WaitForPageToLoad();
+                Thread.Sleep(5000);
                 xrmBrowser.Grid.OpenRecord(0, "title");
             }
             else

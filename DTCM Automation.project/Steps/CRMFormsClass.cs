@@ -101,6 +101,12 @@ namespace DTCM_Automation.project.Steps
             return firstname + lastname;
         }
 
+        //Open invoice and waveit
+
+        public void WaveIvoicefromCRM(Browser xrmBrowser)
+        {
+            //xrmBrowser.Lookup.
+        }
 
         //Create Stratigic from CRM
 
