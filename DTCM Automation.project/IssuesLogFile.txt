@@ -1,0 +1,4 @@
+Date and Time: 05/05/2020 04:17:04
+Exception occurred in function "GetTextOf". Please check attached screenshot: No File Created
+
+

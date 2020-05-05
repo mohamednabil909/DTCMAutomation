@@ -495,7 +495,7 @@ namespace DTCM_Automation.project.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("420")]
         public double POAddedValues {
             get {
                 return ((double)(this["POAddedValues"]));
