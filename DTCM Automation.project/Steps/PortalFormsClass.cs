@@ -352,9 +352,17 @@ namespace DTCM_Automation.project.Steps
         {
             // add validationstep
             // TODO Add id of total price
-            string Actual_price = GetTextOf(By.XPath("/html/body/app-root/div/app-calendar-particicpation-request/div/div/div/form/div[2]/div/div[2]/div/h2/span"));
-            double Expected_value = productPrice + Properties.Settings.Default.POAddedValues;
-            if (Convert.ToDouble(Actual_price) != Expected_value)
+            if (productPrice != 0)
+            {
+                string Actual_price = GetTextOf(By.Id("totalamount")).Split(' ')[0].Remove(',');
+                double Expected_value = productPrice + Properties.Settings.Default.POAddedValues;
+                if (Convert.ToDouble(Actual_price) != Expected_value)
+                {
+                    // Log exception po not calculated correctly 
+                    // take screenshot
+                }
+            }
+            else if(!IsTextVisible("No Payment Required"))
             {
                 // Log exception po not calculated correctly 
                 // take screenshot
@@ -413,7 +421,7 @@ namespace DTCM_Automation.project.Steps
                     SetDate(StartDate, By.Id("startdatebtn"), By.Id("startdate"), null, null);
                     SetDate(EndDate, By.Id("enddatebtn"), By.Id("enddate"), null, null);
                     SendKeys(By.Id("DiscountPercentage"), "50");
-                    SelectByText(By.Id("discounttype"), "On All Items".ToLower());
+                    SelectByText(By.Id("discounttype"), "On All Items");
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);

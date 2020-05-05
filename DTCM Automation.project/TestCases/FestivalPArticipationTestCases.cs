@@ -58,16 +58,12 @@ namespace DTCM_Automation.project.TestCases
             if (SelectedPromotion == Promotions.Discount || SelectedPromotion == Promotions.Sale || SelectedPromotion == Promotions.PartSale)
             {
                 portalForms.SelectBrandsAndBranchesStep(participationselection);
+               
+            }
                 portalForms.FestivalParticipationAddPromotion(SelectedPromotion, StartDate, EndDate);
                 portalForms.AddAttachmentsStep();
                 return portalForms.PaymentDetailsStep(0);
-            }
-            else
-            {
-                portalForms.FestivalParticipationAddPromotion(SelectedPromotion, StartDate, EndDate);
-                portalForms.AddAttachmentsStep();
-                return portalForms.PaymentDetailsStep(0);
-            }
+            
         }
         
         /// <summary>
@@ -77,7 +73,11 @@ namespace DTCM_Automation.project.TestCases
         public void TC_FestivlRequest_AddDiscountfromportal()
         {
             string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event
-                , Participationselection.Brands, Promotions.Discount, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
+                , Participationselection.Brands, Promotions.Discount, DateTime.Now.AddDays(-4), DateTime.Now.AddDays(1));
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+            }
         }
         
         /// <summary>
@@ -88,6 +88,11 @@ namespace DTCM_Automation.project.TestCases
         {
             string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event
                 , Participationselection.Brands, Promotions.Sale, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+            }
         }
         
         /// <summary>

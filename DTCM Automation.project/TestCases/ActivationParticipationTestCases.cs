@@ -57,21 +57,15 @@ namespace DTCM_Automation.project.TestCases
             if (SelectedPromotion == Promotions.Discount || SelectedPromotion == Promotions.Sale || SelectedPromotion == Promotions.PartSale)
             {
                 portalForms.SelectBrandsAndBranchesStep(participationselection);
+                
+            }
+
                 portalForms.ActivationParticipationAddPromotion(SelectedPromotion, StartDate, EndDate);
 
                 portalForms.AddAttachmentsStep();
 
                 return portalForms.PaymentDetailsStep(0);
-            }
-
-            else
-            {
-                portalForms.ActivationParticipationAddPromotion(SelectedPromotion, StartDate, EndDate);
-
-                portalForms.AddAttachmentsStep();
-
-                return portalForms.PaymentDetailsStep(0);
-            }
+            
             
         }
         /// <summary>
@@ -111,7 +105,7 @@ namespace DTCM_Automation.project.TestCases
         public void TC_PortalAddActivationRequest_AddOfferPromotion_ApproveFromCRMRetailer_ApproveFromCRMManager()
         {
             string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent,
-                Participationselection.Brands, Promotions.Offer, DateTime.Now.AddDays(40), DateTime.Now.AddDays(10));
+                Participationselection.Brands, Promotions.Offer, DateTime.Now.AddDays(-2), DateTime.Now.AddDays(10));
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {

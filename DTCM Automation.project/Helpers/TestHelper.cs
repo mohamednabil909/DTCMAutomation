@@ -2068,17 +2068,17 @@ namespace DTCM_Automation.project
 
             try
             {
-                var pdfAttachmentPath = SetDir("pdf.pdf");
-                var imageAttachmentPath = SetDir("jpg.jpg");
-                var documentAttachmentPath = SetDir("docx.docx");
-                var textAttachmentPath = SetDir("txt.txt");
+                var pdfAttachmentPath = SetDir("Attachments\\pdf.pdf");
+                var imageAttachmentPath = SetDir("Attachments\\jpg.jpg");
+                var documentAttachmentPath = SetDir("Attachments\\docx.docx");
+                var textAttachmentPath = SetDir("Attachments\\txt.txt");
 
                 string documentPath;
 
                 switch (fileType)
                 {
                     case FileType.Pdf:
-                        documentPath = pdfAttachmentPath;
+                        documentPath = pdfAttachmentPath.Replace("\\","/");
                         break;
                     case FileType.Docx:
                         documentPath = documentAttachmentPath;
@@ -2098,9 +2098,12 @@ namespace DTCM_Automation.project
                 foreach (var fileUpload in fileUploadersList)
                 {
                     fileUpload.Click();
+                    Thread.Sleep(10000);
                     AutoItX3 AutoItX = new AutoItX3();
                     AutoItX.Send(documentPath + "{Enter}");
                     WaitForPageReadyState();
+                    Thread.Sleep(10000);
+                    //SendKeys(fileUpload, documentPath);
                 }
             }
             catch (Exception e)
@@ -3331,7 +3334,9 @@ namespace DTCM_Automation.project
         {
             lock (_syncLock)
             {
-                return TestContext.CurrentContext.TestDirectory + (string.IsNullOrEmpty(folderName) ? "" : "\\" + folderName);
+                //D:\atomation\DTCMAutomationSolution\DTCM Automation.project\Attachments
+                return Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\"+folderName;
+                //return Path.Combine( TestContext.CurrentContext.TestDirectory ,  "../" + folderName);
             }
         }
 
