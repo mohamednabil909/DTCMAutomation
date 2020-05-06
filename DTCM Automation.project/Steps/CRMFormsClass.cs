@@ -42,12 +42,13 @@ namespace DTCM_Automation.project.Steps
 
         internal void CalendarCreationDecision(Browser xrmBrowser, CommonFunctions.CommonFunctions.Decisions decision)
         {
-            xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_employeedecisioncode", Value = decision.ToString() });
+            xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_employeedecisioncode", Value = decision.ToString()});
           if (decision == CommonFunctions.CommonFunctions.Decisions.Cancel)
             {
                 xrmBrowser.Entity.SetValue("header_process_ldv_cancelreason", "Test automation Cancel reason");
                 
             }
+            
             else if (decision == CommonFunctions.CommonFunctions.Decisions.Sendback)
             {
                 xrmBrowser.Entity.SetValue("header_process_ldv_sendbackreason", "Test automation sendback reason");

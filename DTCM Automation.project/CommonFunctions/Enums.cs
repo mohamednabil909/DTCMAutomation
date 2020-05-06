@@ -55,6 +55,11 @@ namespace DTCM_Automation.project.CommonFunctions
 
         };
 
+        public enum BranchType
+        {
+            Mall,
+            Standalone
+        }
 
 
         public enum Cluster

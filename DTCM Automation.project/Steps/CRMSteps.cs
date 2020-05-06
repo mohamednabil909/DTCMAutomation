@@ -81,9 +81,9 @@ namespace DTCM_Automation.project.Steps
                     commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
                 // Done
                 checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
-
+               
                 // Done
-                CRMFormsClass.CalendarCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+                CRMFormsClass.CalendarCreationDecision(xrmBrowser, decision);
             }
             else
             {
@@ -102,7 +102,7 @@ namespace DTCM_Automation.project.Steps
                     checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, CommonFunctions.CommonFunctions.Stages.Employeedecision);
 
                     // Done
-                    CRMFormsClass.CalendarCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+                    CRMFormsClass.CalendarCreationDecision(xrmBrowser, decision);
                 }
             }
 
@@ -121,7 +121,7 @@ namespace DTCM_Automation.project.Steps
                 checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Managerdecision);
 
                 // Done
-                CRMFormsClass.ActivatioinCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+                CRMFormsClass.ActivatioinCreationDecision(xrmBrowser,decision);
             }
             else
             {
@@ -140,7 +140,7 @@ namespace DTCM_Automation.project.Steps
                     checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, CommonFunctions.CommonFunctions.Stages.Managerdecision);
 
                     // Done
-                    CRMFormsClass.ActivatioinCreationDecision(xrmBrowser, CommonFunctions.CommonFunctions.Decisions.Approve);
+                    CRMFormsClass.ActivatioinCreationDecision(xrmBrowser, decision);
                 }
             }
 

@@ -78,7 +78,7 @@
       <Value Profile="(Default)">Retail Calendar 2020</Value>
     </Setting>
     <Setting Name="Event" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Event Auto</Value>
+      <Value Profile="(Default)">Dubai Shopping Festival (DSF)</Value>
     </Setting>
     <Setting Name="ActivationEvent" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Activation auto</Value>

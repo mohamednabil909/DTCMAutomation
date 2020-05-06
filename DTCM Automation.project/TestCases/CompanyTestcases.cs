@@ -37,7 +37,7 @@ namespace DTCM_Automation.project.TestCases
         /* Initialize Runs at the Start of Run/Debug of Each Test Method
      * Opens New Driver and Initializes its Wait
      */
-        //[TestInitialize]
+        [TestInitialize]
         public void Portal_Initialize()
         {
             portalForms.Intialize();
@@ -51,6 +51,60 @@ namespace DTCM_Automation.project.TestCases
         public void Portal_CleanUp()
         {
             portalForms.CloseDriver();
+        }
+        
+        /// <summary>
+        /// Create DEDCompany Request from portal then take decision Approve from CRM
+        /// <summary>
+        [TestMethod]
+        public void TC_CreateCompanyDED_StackHolderApproveFromCRM()
+        {
+            Guid = CommonFunctions.RandomNumber();
+
+            
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
+            RequestId = portalForms.RegisterCompanyDED(Lisencetype.DED, Properties.Settings.Default.lisenceNumber);
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Approve);
+            }
+        }
+
+        /// <summary>
+        /// Create DEDCompany Request from portal then take decision Sendback from CRM
+        /// <summary>
+        [TestMethod]
+        public void TC_CreateCompanyDED_StackHolderSendbackFromCRM()
+        {
+            Guid = CommonFunctions.RandomNumber();
+
+
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
+            RequestId = portalForms.RegisterCompanyDED(Lisencetype.DED, Properties.Settings.Default.lisenceNumber);
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Sendback);
+            }
+        }
+
+        /// <summary>
+        /// Create DEDCompany Request from portal then take decision Cancel from CRM
+        /// <summary>
+        [TestMethod]
+        public void TC_CreateCompanyDED_StackHolderCancelFromCRM()
+        {
+            Guid = CommonFunctions.RandomNumber();
+
+
+            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
+            RequestId = portalForms.RegisterCompanyDED(Lisencetype.DED, Properties.Settings.Default.lisenceNumber);
+
+            using (var xrmBrowser = new Browser(TestSettings.Options))
+            {
+                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Cancel);
+            }
         }
 
         /// <summary>
@@ -168,21 +222,21 @@ namespace DTCM_Automation.project.TestCases
          ///Create Branch from Portal Mall
         /// </summary>
         [TestMethod]
-        public void TC_CreateBranchfromportal_Mall()
+        public void TC_CreateBranchfromportal()
         {
             portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
-            portalForms.Fillbranchform_Mall();
+            portalForms.Fillbranchform(BranchType.Mall);
         }
 
         /// <summary>
         ///Create Branch from Portal StandAlone
         /// </summary>
-        [TestMethod]
-        public void TC_CreateBranchfromportal_Standalone()
-        {
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
-            portalForms.Fillbranchform_Standalone();
-        }
+        //[TestMethod]
+        //public void TC_CreateBranchfromportal_Standalone()
+        //{
+        //    portalForms.Portal_LoginAndNavigateTo(ServiceName.CompanyManagement3);
+        //    portalForms.Fillbranchform_Standalone();
+        //}
         
         /// <summary>
         /// Create GOCRequest portal then take decision Approve from CRM
@@ -412,60 +466,7 @@ namespace DTCM_Automation.project.TestCases
             }
         }
 
-        /// <summary>
-        /// Create DEDCompany Request from portal then take decision Approve from CRM
-        /// <summary>
-        [TestMethod]
-        public void TC_CreateCompanyDED_StackHolderApproveFromCRM()
-        {
-            Guid = CommonFunctions.RandomNumber();
-
-
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
-            RequestId= portalForms.RegisterCompanyDED(Lisencetype.DED, Properties.Settings.Default.lisenceNumber);
-
-            using (var xrmBrowser = new Browser(TestSettings.Options))
-            {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Approve);
-            }
-        }
-
-        /// <summary>
-        /// Create DEDCompany Request from portal then take decision Sendback from CRM
-        /// <summary>
-        [TestMethod]
-        public void TC_CreateCompanyDED_StackHolderSendbackFromCRM()
-        {
-            Guid = CommonFunctions.RandomNumber();
-
-
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
-            RequestId = portalForms.RegisterCompanyDED(Lisencetype.DED, Properties.Settings.Default.lisenceNumber);
-
-            using (var xrmBrowser = new Browser(TestSettings.Options))
-            {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Sendback);
-            }
-        }
-
-        /// <summary>
-        /// Create DEDCompany Request from portal then take decision Cancel from CRM
-        /// <summary>
-        [TestMethod]
-        public void TC_CreateCompanyDED_StackHolderCancelFromCRM()
-        {
-            Guid = CommonFunctions.RandomNumber();
-
-
-            portalForms.Portal_LoginAndNavigateTo(ServiceName.accountregistration);
-            RequestId = portalForms.RegisterCompanyDED(Lisencetype.DED, Properties.Settings.Default.lisenceNumber);
-
-            using (var xrmBrowser = new Browser(TestSettings.Options))
-            {
-                CRMSteps.CompanyCreationDecisionStep(xrmBrowser, Users.Admin, true, true, true, RequestId, Decisions.Cancel);
-            }
-        }
-
+        
 
     }
 }
