@@ -68,6 +68,16 @@ namespace DTCM_Automation.project.CommonFunctions
             Activation,
             Offseasonperiod
         }
+
+        public Dictionary<Decisions, string> decisions = new Dictionary<Decisions, string>()
+        {
+            // Done
+
+            { Decisions.Approve,"Approve" },
+            { Decisions.Sendback,"Send back".ToString()},
+            { Decisions.Cancel,"Cancel" }
+        };
+
         public Dictionary<Stages, string> StagesValues = new Dictionary<Stages, string>()
         {
             // Done
@@ -317,14 +327,6 @@ public void OpenRequest(Browser xrmBrowser, string RequestNumber, string area, s
             //xrmBrowser.Lookup.SelectItem(0)
            return xrmBrowser.Lookup.Add();
         }
-
-
-
-
-       
-
-       
-
-
+        
     }
 }

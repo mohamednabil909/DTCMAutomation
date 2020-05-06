@@ -126,6 +126,7 @@ namespace DTCM_Automation.project.Steps
         /// <returns></returns>
         public bool RegisterationForm(string firstname, string lastname, string Email, String pass)
         {
+            WaitForPageToLoad();
             SelectByIndex(By.Id("title"), 1);
 
             SendKeys(By.Id("firstname"), firstname);
@@ -150,18 +151,14 @@ namespace DTCM_Automation.project.Steps
         #region Company, Brand, Branch Forms
         public string RegisterCompanyDED(Lisencetype lisencetype, string LisenceNumber)
         {
-
-            ClickOn(By.Id("ServicesDropdown"), false);
-            ClickOn(By.Id("retailservices"), false);
-            ClickOn(By.Id("RegisterNewCompany"), false);
+            
+            //ClickOn(By.Id("ServicesDropdown"), false);
+            //ClickOn(By.Id("retailservices"), false);
+            //ClickOn(By.Id("RegisterNewCompany"), false);
             WaitForPageToLoad();
             SelectByText(By.XPath("//*[@id=\"licensetype\"]"), lisencetype.ToString());
             SendKeys(By.Id("licenseno"), LisenceNumber);
-            //SetDate(new DateTime(2006, 11, 16),By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/div/button"),
-            //    By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker"),
-            //    By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker/div[1]/ngb-datepicker-navigation/div[1]/button"),
-            //    By.XPath("//*[@id=\"licenseissuancedate\"]/div/div/ngb-datepicker/div[1]/ngb-datepicker-navigation/div[2]/button"));
-
+            SetDate(DateTime.Now.AddDays(-150), By.Id("licenseissuancedatebtn"), By.Id("licenseissuancedate"), null, null);
             ClickOn(By.Id("gettid"), false);
             WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
@@ -207,8 +204,11 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("addnewbrand"), false);
             SendKeys(By.Id("brandnameen"), brandNameEnglish);
             SendKeys(By.Id("brandnamear"), brandNameArabic);
-            SelectByText(By.Id("category"), categoryName);
+            //SelectByText(By.XPath("category"), categoryName);
+            SelectByValue(By.XPath("category"), "2a82dccc - 1d35 - e911 - 80d8 - 000d3a2fe545");
             ClickOn(By.Id("submit"), false);
+            WaitForPageToLoad();
+            ClickOn(By.Id("closebtn"),false);
             //click on close
             //string url = GetUrl();
             //url = url.Split('/')[5].ToString();
@@ -227,34 +227,44 @@ namespace DTCM_Automation.project.Steps
         }
 
 
+
         // TODO remove this and send branch type to one function"FillBrandForm"
         //Fill Branch Form (Standalone)
-        public void Fillbranchform_Standalone()
-        {
+        //public void Fillbranchform_Standalone()
+        //{
 
-            SendKeys(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[1]/div/div/input"), "cinnabon".ToLower());
-            ClickOn(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[2]/div/div/a/div"), false);
-            ClickOn(By.XPath("/html/body/app-root/div/app-company/div/div/div/div[3]/div[1]/div"), false);
-            ClickOn(By.Id("addnewbranch"), false);
-            ClickOn(By.Id("typestandalone"), false);
-            SelectByText(By.Id("area"), "Bur Dubai");
-            SendKeys(By.Id("licenseno"), Properties.Settings.Default.lisenceNumber);
-            SendKeys(By.Id("Street1"), "Street11212");
-            ClickOn(By.Id("submit"), false);
-        }
+        //    SendKeys(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[1]/div/div/input"), "cinnabon".ToLower());
+        //    ClickOn(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[2]/div/div/a/div"), false);
+        //    ClickOn(By.XPath("/html/body/app-root/div/app-company/div/div/div/div[3]/div[1]/div"), false);
+        //    ClickOn(By.Id("addnewbranch"), false);
+        //                ClickOn(By.Id("submit"), false);
+        //}
 
 
         // TODO remove this and send branch type to one function"FillBrandForm"
         //Fill Branch Form (Mall)
-        public void Fillbranchform_Mall()
+        public void Fillbranchform(BranchType branchtype)
         {
+            WaitForPageToLoad();
             SendKeys(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[1]/div/div/input"), "cinnabon".ToLower());
             ClickOn(By.XPath("/html/body/app-root/div/app-companymanagement/div/div/div[2]/div/div/a/div"), false);
+            WaitForPageToLoad();
             ClickOn(By.XPath("/html/body/app-root/div/app-company/div/div/div/div[3]/div[1]/div"), false);
+            WaitForPageToLoad();
             ClickOn(By.Id("addnewbranch"), false);
-            ClickOn(By.Id("typemall"), false);
+            WaitForPageToLoad();
+            if (branchtype == BranchType.Mall)
+            {
+                ClickOn(By.Id("typemall"), false);
+                SelectByText(By.Id("mall"), "Dubai Mall");
+            }
+            else
+            {
+                ClickOn(By.Id("typestandalone"), false);
+                SelectByText(By.Id("area"), "Deira");
+                SendKeys(By.Id("Street1"), "Street11212");
+            }
             SendKeys(By.Id("licenseno"), Properties.Settings.Default.lisenceNumber);
-            SelectByText(By.Id("mall"), "Dubai Mall");
             ClickOn(By.Id("submit"), false);
         }
 
@@ -368,6 +378,7 @@ namespace DTCM_Automation.project.Steps
                 // take screenshot
             }
             ClickOn(By.Id("checkedcontrol"), true);
+            WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
             WaitForPageToLoad();
             return GetRquestId();
@@ -393,12 +404,15 @@ namespace DTCM_Automation.project.Steps
             SelectByText(By.Id("event"), EventName);
             WaitForPageToLoad();
             SelectByText(By.Id("participationtype"), "Promotions");
+
             WaitForPageToLoad();
 
 
             if (selectedPromotion == Promotions.Discount || selectedPromotion == Promotions.Sale || selectedPromotion == Promotions.PartSale)
                 ClickOn(By.Id("Discount, Sale, Part sale"), false);
 
+            else if (selectedPromotion == Promotions.Offer)
+                ClickOn(By.Id("Offer"), false);
             else if (selectedPromotion == Promotions.Kiosk)
                 ClickOn(By.Id("Kiosk"), false);
             else if (selectedPromotion == Promotions.Raffle)
@@ -543,6 +557,8 @@ namespace DTCM_Automation.project.Steps
             if (selectedPromotion == Promotions.Discount || selectedPromotion == Promotions.Sale || selectedPromotion == Promotions.PartSale)
                 ClickOn(By.Id("Discount, Sale, Part sale"), false);
 
+            else if (selectedPromotion == Promotions.Offer)
+                ClickOn(By.Id("Offer"), false);
             else if (selectedPromotion == Promotions.Kiosk)
                 ClickOn(By.Id("Kiosk"), false);
             else if (selectedPromotion == Promotions.Raffle)
