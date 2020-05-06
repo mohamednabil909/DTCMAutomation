@@ -7,6 +7,7 @@ using Microsoft.Dynamics365.UIAutomation.Api;
 using Microsoft.Dynamics365.UIAutomation.Browser;
 using System.Security;
 using System.Threading;
+using static DTCM_Automation.project.CommonFunctions.Enums;
 
 namespace DTCM_Automation.project
 {
@@ -14,7 +15,7 @@ namespace DTCM_Automation.project
     {
         string Companyname;
 
-        public string Addnewcompany(Browser xrmBrowser, CommonFunctions.CommonFunctions.AccountType accountType, CommonFunctions.CommonFunctions.LisenceNumber lisenceNumber)
+        public string Addnewcompany(Browser xrmBrowser, AccountType accountType,  LisenceNumber lisenceNumber)
         {
 
             xrmBrowser.Navigation.OpenSubArea("Profile Management", "Accounts");

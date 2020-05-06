@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using static DTCM_Automation.project.CommonFunctions.Enums;
 
 namespace DTCM_Automation.project.DataModels
 {
@@ -19,7 +20,7 @@ namespace DTCM_Automation.project.DataModels
         }
 
         string calendarname;
-        public string FilCalendarform(Browser xrmbrowser,CommonFunctions.CommonFunctions.CalendarType calendarType)
+        public string FilCalendarform(Browser xrmbrowser,CalendarType calendarType)
         {
             xrmbrowser.Entity.SetValue("ldv_name_en", "New Calenddar Automation");
             xrmbrowser.Entity.SetValue("ldv_name_ar", "تست كاليندر");

@@ -63,6 +63,7 @@ namespace DTCM_Automation.project.TestCases
                 portalForms.FestivalParticipationAddPromotion(SelectedPromotion, StartDate, EndDate);
                 portalForms.AddAttachmentsStep();
                 return portalForms.PaymentDetailsStep(0);
+            
         }
         
         /// <summary>

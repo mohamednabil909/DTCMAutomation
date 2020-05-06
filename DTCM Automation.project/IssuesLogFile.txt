@@ -186,3 +186,19 @@ Date and Time: 05/06/2020 18:32:29
 Exception occurred in function "SetDate". Please check attached screenshot: No File Created
 
 
+Date and Time: 05/06/2020 20:28:38
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 22:06:54
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 22:08:06
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 22:13:12
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+

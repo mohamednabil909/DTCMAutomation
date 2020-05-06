@@ -8,7 +8,102 @@ namespace DTCM_Automation.project.CommonFunctions
 {
    public class Enums
     {
-        
+        public enum Users
+        {
+            // Done
+            Admin,
+            Stackholder,
+            Retailer,
+            Poi,
+            Configuration,
+
+        }
+        public enum Decisions
+        {
+            // Done
+            Approve,
+            Sendback,
+            Cancel
+        }
+        public enum Stages
+        {
+            // Done
+            Submission,
+            Reviewdecision,
+            Employeedecision,
+            Managerdecision
+
+        }
+
+        public enum AccountType
+        {
+            Retailer,
+            POI,
+            RetailerandPOI
+        }
+
+        public enum LisenceNumber
+        {
+            DED,
+            NonDED
+        }
+
+        public enum CalendarType
+        {
+            RetailCalendar,
+            OffSeasonCalendar
+        }
+
+        public enum EventType
+        {
+            Festival,
+            Activation,
+            Offseasonperiod
+        }
+
+        public static Dictionary<Decisions, string> decisionsValues = new Dictionary<Decisions, string>()
+        {
+            // Done
+
+            { Decisions.Approve,"Approve" },
+            { Decisions.Sendback,"Send Back"},
+            { Decisions.Cancel,"Cancel" }
+        };
+
+        public static Dictionary<Stages, string> StagesValues = new Dictionary<Stages, string>()
+        {
+            // Done
+            { Stages.Submission,"Submission" },
+            { Stages.Reviewdecision,"Review Decision"},
+            { Stages.Employeedecision,"Employee Decision" },
+            { Stages.Managerdecision,"Manager Decision" }
+        };
+
+        public static Dictionary<AccountType, string> Accounttype = new Dictionary<AccountType, string>()
+        {
+            // Done
+
+            { AccountType.Retailer,"Retailer" },
+            { AccountType.POI,"POI"},
+            { AccountType.RetailerandPOI,"Retailer and POI" }
+        };
+
+        public static Dictionary<LisenceNumber, string> lisenceNumber = new Dictionary<LisenceNumber, string>()
+        {
+            // Done
+
+            { LisenceNumber.DED,"DED" },
+            { LisenceNumber.NonDED,"Non DED"},
+        };
+
+        public static Dictionary<CalendarType, string> calendarType = new Dictionary<CalendarType, string>()
+        {
+            // Done
+
+            { CalendarType.RetailCalendar,"Retail Calendar" },
+            { CalendarType.OffSeasonCalendar,"Off Season Calendar"},
+        };
+
         public enum ServiceName 
         {// Done
             Login,

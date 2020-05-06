@@ -46,6 +46,45 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
             });
         }
 
+
+
+        public BrowserCommandResult<bool> ClickElement(string field)
+        {
+            //return this.Execute($"Set Value: {field}", SetValue, field, value);
+            var returnval = this.Execute(GetOptions($"Set Value: {field}"), driver =>
+            {
+                if (driver.HasElement(By.Id(field)))
+                {
+                    driver.WaitUntilVisible(By.Id(field));
+
+                    var fieldElement = driver.FindElement(By.Id(field));
+                    if (fieldElement.IsVisible(By.TagName("a")))
+                    {
+                        IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+                        var element = fieldElement.FindElement(By.TagName("a"));
+                        js.ExecuteScript("arguments[0].setAttribute('style', 'pointer-events: none; cursor: default')", element);
+                    }
+                    fieldElement.Click();
+
+                    //try
+                    //{
+                    //    //Check to see if focus is on field already
+                    //    if (fieldElement.FindElement(By.ClassName(Elements.CssClass[Reference.SetValue.EditClass])) != null)
+                    //        fieldElement.FindElement(By.ClassName(Elements.CssClass[Reference.SetValue.EditClass])).Click();
+                    //    else
+                    //        fieldElement.FindElement(By.ClassName(Elements.CssClass[Reference.SetValue.ValueClass])).Click();
+                    //}
+                    //catch (NoSuchElementException) { }
+
+                }
+                else
+                    throw new InvalidOperationException($"Field: {field} Does not exist");
+
+                return true;
+            });
+            return returnval;
+        }
+
         /// <summary>
         /// Clicks the  Command Button on the menu
         /// </summary>

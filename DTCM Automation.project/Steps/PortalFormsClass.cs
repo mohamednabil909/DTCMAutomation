@@ -364,7 +364,9 @@ namespace DTCM_Automation.project.Steps
             // TODO Add id of total price
             if (productPrice != 0)
             {
-                string Actual_price = GetTextOf(By.Id("totalamount")).Split(' ')[0].Remove(',');
+                string Actual_price = GetTextOf(By.Id("totalamount")).Split(' ')[0];
+
+                //string Actual_price = PriceText.Remove(',');
                 double Expected_value = productPrice + Properties.Settings.Default.POAddedValues;
                 if (Convert.ToDouble(Actual_price) != Expected_value)
                 {
@@ -382,7 +384,7 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
             WaitForPageToLoad();
-            //return GetRquestId();
+            return GetRquestId();
         }
         #endregion
 

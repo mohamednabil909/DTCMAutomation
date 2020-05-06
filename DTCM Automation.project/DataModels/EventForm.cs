@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using DTCM_Automation.project.DataModels;
+using static DTCM_Automation.project.CommonFunctions.Enums;
 
 namespace DTCM_Automation.project.DataModels
 {
@@ -20,9 +21,9 @@ namespace DTCM_Automation.project.DataModels
         }
 
         
-        public void FillCalendarform(Browser xrmbrowser, CommonFunctions.CommonFunctions.EventType eventType, string CalendarName, string EventName)
+        public void FillCalendarform(Browser xrmbrowser, EventType eventType, string CalendarName, string EventName)
         {
-            if (eventType == CommonFunctions.CommonFunctions.EventType.Festival)
+            if (eventType == EventType.Festival)
             {
                 xrmbrowser.Entity.SetValue("ldv_name_en", "New Festival Automation");
                 xrmbrowser.Entity.SetValue("ldv_name_ar", "تست فيستيفال");
@@ -47,7 +48,7 @@ namespace DTCM_Automation.project.DataModels
 
             }
 
-            else if (eventType == CommonFunctions.CommonFunctions.EventType.Activation)
+            else if (eventType == EventType.Activation)
             {
                 xrmbrowser.Entity.SetValue("ldv_name_en", "New Activation Automation");
                 xrmbrowser.Entity.SetValue("ldv_name_ar", "تست اكتيفيشن");

@@ -8,48 +8,45 @@ using Microsoft.Dynamics365.UIAutomation.Browser;
 using System.Security;
 using System.Threading;
 using DTCM_Automation.project.Steps;
+using static DTCM_Automation.project.CommonFunctions.Enums;
+
 namespace DTCM_Automation.project.Steps
 {
     public class CRMFormsClass
     {
-        internal void CompanyCreationDecision(Browser xrmBrowser, CommonFunctions.CommonFunctions.Decisions decision,CommonFunctions.CommonFunctions.AccountType accountType)
+        internal void CompanyCreationDecision(Browser xrmBrowser, Decisions decision,AccountType accountType)
         {
-            if (decision == CommonFunctions.CommonFunctions.Decisions.Approve)
+                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_employeedecisioncode", Value =decisionsValues[ decision] });
+            if (decision == Decisions.Approve)
             {
-                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "ldv_employeedecisioncode", Value = decision.ToString() });
-                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "ldv_accounttypecode", Value = accountType.ToString() });
-                xrmBrowser.Entity.SelectLookup("ldv_clusterid");
+                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_accounttypecode", Value = accountType.ToString() });
+                xrmBrowser.Entity.SelectLookup("header_process_ldv_clusterid");
                 xrmBrowser.Lookup.SelectItem(2);
                 xrmBrowser.Lookup.Add();
-                Thread.Sleep(5000);
-                xrmBrowser.CommandBar.ClickCommand("Save");
             }
-            else if (decision == CommonFunctions.CommonFunctions.Decisions.Cancel)
+            else if (decision == Decisions.Cancel)
             {
-                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "ldv_employeedecisioncode", Value = decision.ToString() });
-                xrmBrowser.Entity.SetValue("ldv_cancelreason", "Cancelled");
-                xrmBrowser.CommandBar.ClickCommand("Save");
+                xrmBrowser.Entity.SetValue("header_process_ldv_cancelreason", "Test Automation Cancel Reason");
             }
             else
             {
-                xrmBrowser.Entity.SetValue("ldv_sendbackreason", "Send back test1234");
-                xrmBrowser.CommandBar.ClickCommand("Save");
+                xrmBrowser.Entity.SetValue("header_process_ldv_sendbackreason", "Test Automation SendBack reason");
             }
-            
-            //throw new NotImplementedException();
+
+            xrmBrowser.Entity.Save();
         }
 
 
-        internal void CalendarCreationDecision(Browser xrmBrowser, CommonFunctions.CommonFunctions.Decisions decision)
+        internal void CalendarCreationDecision(Browser xrmBrowser, Decisions decision)
         {
-            xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_employeedecisioncode", Value = decision.ToString()});
-          if (decision == CommonFunctions.CommonFunctions.Decisions.Cancel)
+            xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_employeedecisioncode", Value = decisionsValues[decision]});
+          if (decision == Decisions.Cancel)
             {
                 xrmBrowser.Entity.SetValue("header_process_ldv_cancelreason", "Test automation Cancel reason");
                 
             }
             
-            else if (decision == CommonFunctions.CommonFunctions.Decisions.Sendback)
+            else if (decision == Decisions.Sendback)
             {
                 xrmBrowser.Entity.SetValue("header_process_ldv_sendbackreason", "Test automation sendback reason");
                
@@ -58,26 +55,31 @@ namespace DTCM_Automation.project.Steps
         }
 
 
-        internal void ActivatioinCreationDecision(Browser xrmBrowser, CommonFunctions.CommonFunctions.Decisions decision)
+        internal void MarkWaived(Browser xrmBrowser)
         {
-            if (decision == CommonFunctions.CommonFunctions.Decisions.Approve)
+            xrmBrowser.Entity.ClickElement("ldv_invoiceid");
+            xrmBrowser.Driver.WaitForPageToLoad();
+
+        }
+
+        internal void ActivatioinCreationDecision(Browser xrmBrowser, Decisions decision)
+        {
+            xrmBrowser.Entity.SetValue(new OptionSet() { Name = "header_process_ldv_managerdecision", Value = decisionsValues[decision] });
+            if (decision == Decisions.Cancel)
             {
-                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "ldv_managerdecision", Value = decision.ToString() });
-                xrmBrowser.CommandBar.ClickCommand("Save");
-            }
-            else if (decision == CommonFunctions.CommonFunctions.Decisions.Cancel)
-            {
-                xrmBrowser.Entity.SetValue(new OptionSet() { Name = "ldv_managerdecision", Value = decision.ToString() });
-                xrmBrowser.Entity.SetValue("ldv_managercancelreason", "Cancelled");
-                xrmBrowser.CommandBar.ClickCommand("Save");
-            }
-            else
-            {
-                xrmBrowser.Entity.SetValue("ldv_managersendbackreason_1s", "Send back test1234");
-                xrmBrowser.CommandBar.ClickCommand("Save");
+                xrmBrowser.Entity.SetValue("header_process_ldv_managercancelreason", "Test automation Cancel reason");
+
             }
 
-            //throw new NotImplementedException();
+            else if (decision == Decisions.Sendback)
+            {
+                xrmBrowser.Entity.SetValue("header_process_ldv_managersendbackreason_1s", "Test automation sendback reason");
+
+            }
+
+            xrmBrowser.Entity.Save();
+
+            
         }
 
         //Create Contact from CRM

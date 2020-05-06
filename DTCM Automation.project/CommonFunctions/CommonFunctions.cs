@@ -10,108 +10,13 @@ using System.Security;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using static DTCM_Automation.project.CommonFunctions.Enums;
 using ExpectedConditions = SeleniumExtras.WaitHelpers.ExpectedConditions;
 
 namespace DTCM_Automation.project.CommonFunctions
 {
     public class CommonFunctions 
     {
-        public enum Users
-        {
-            // Done
-            Admin,
-            Stackholder,
-            Retailer,
-            Poi,
-            Configuration,
-
-        }
-        public enum Decisions
-        {
-            // Done
-            Approve,
-            Sendback,
-            Cancel
-        }
-        public enum Stages
-        {
-            // Done
-            Submission,
-            Reviewdecision,
-            Employeedecision,
-            Managerdecision
-
-        }
-
-        public enum AccountType
-        { 
-            Retailer,
-            POI,
-            RetailerandPOI
-        }
-
-        public enum LisenceNumber
-        {
-            DED,
-            NonDED
-        }
-
-        public enum CalendarType
-        {
-            RetailCalendar,
-            OffSeasonCalendar
-        }
-
-        public enum EventType
-        {
-            Festival,
-            Activation,
-            Offseasonperiod
-        }
-
-        public Dictionary<Decisions, string> decisions = new Dictionary<Decisions, string>()
-        {
-            // Done
-
-            { Decisions.Approve,"Approve" },
-            { Decisions.Sendback,"Send Back"},
-            { Decisions.Cancel,"Cancel" }
-        };
-
-        public Dictionary<Stages, string> StagesValues = new Dictionary<Stages, string>()
-        {
-            // Done
-            { Stages.Submission,"Submission" },
-            { Stages.Reviewdecision,"Review Decision"},
-            { Stages.Employeedecision,"Employee Decision" },
-            { Stages.Managerdecision,"Manager Decision" }
-        };
-
-        public Dictionary<AccountType, string> Accounttype = new Dictionary<AccountType, string>()
-        {
-            // Done
-
-            { AccountType.Retailer,"Retailer" },
-            { AccountType.POI,"POI"},
-            { AccountType.RetailerandPOI,"Retailer and POI" }
-        };
-
-        public Dictionary<LisenceNumber, string> lisenceNumber = new Dictionary<LisenceNumber, string>()
-        {
-            // Done
-
-            { LisenceNumber.DED,"DED" },
-            { LisenceNumber.NonDED,"Non DED"},
-        };
-
-        public Dictionary<CalendarType, string> calendarType = new Dictionary<CalendarType, string>()
-        {
-            // Done
-
-            { CalendarType.RetailCalendar,"Retail Calendar" },
-            { CalendarType.OffSeasonCalendar,"Off Season Calendar"},
-        };
-
         private  SecureString _username = Properties.Settings.Default.OnlineUsername.ToSecureString(); 
         private  SecureString _password = Properties.Settings.Default.OnlinePassword.ToSecureString(); 
         private  Uri _xrmUri = new Uri(Properties.Settings.Default.OnlineCrmUrl.ToString());
