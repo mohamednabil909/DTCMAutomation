@@ -74,7 +74,7 @@ namespace DTCM_Automation.project.CommonFunctions
             // Done
 
             { Decisions.Approve,"Approve" },
-            { Decisions.Sendback,"Send back".ToString()},
+            { Decisions.Sendback,"Send Back"},
             { Decisions.Cancel,"Cancel" }
         };
 
