@@ -377,11 +377,12 @@ namespace DTCM_Automation.project.Steps
                 // Log exception po not calculated correctly 
                 // take screenshot
             }
+            WaitForPageToLoad();
             ClickOn(By.Id("checkedcontrol"), true);
             WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
             WaitForPageToLoad();
-            return GetRquestId();
+            //return GetRquestId();
         }
         #endregion
 
@@ -547,6 +548,7 @@ namespace DTCM_Automation.project.Steps
         {
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
+            WaitForPageToLoad();
             WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();

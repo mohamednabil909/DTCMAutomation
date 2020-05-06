@@ -7442,3 +7442,1955 @@ Date and Time: 05/06/2020 02:54:38
 WaitFor Loader with Condition Invisible
 
 
+Date and Time: 05/06/2020 17:49:51
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 17:49:59
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:01
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:03
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 17:50:04
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 17:50:05
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 17:50:08
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:10
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:12
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:15
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:17
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:19
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:22
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:24
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:26
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 17:50:26
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:50:28
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:52:46
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 17:52:50
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:52:52
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:52:56
+SelectByText "Dubai Shopping Festival (DSF)" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 17:52:57
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:52:59
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:53:02
+SelectByText "Promotions" from Element with Locator: By.Id: participationtype
+
+
+Date and Time: 05/06/2020 17:53:04
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:53:06
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:53:14
+ClickOn Element with Locator: By.Id: Raffle
+
+
+Date and Time: 05/06/2020 17:53:15
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 17:53:21
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:53:23
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:53:25
+ClickOn Element with Locator: By.Id: Raffle
+
+
+Date and Time: 05/06/2020 17:53:26
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:53:27
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:53:28
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:53:29
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:53:30
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:53:30
+SetDate of Element with Locator: By.Id: startdatebtn to 11/05/2020
+
+
+Date and Time: 05/06/2020 17:53:31
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:53:32
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:53:32
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:53:33
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:53:34
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:53:35
+SetDate of Element with Locator: By.Id: enddatebtn to 14/05/2020
+
+
+Date and Time: 05/06/2020 17:53:35
+SelectByText "Online" from Element with Locator: By.Id: raffletype
+
+
+Date and Time: 05/06/2020 17:53:36
+SendKeys "Raffle Details" to Element with Locator: By.Id: raffledetails
+
+
+Date and Time: 05/06/2020 17:53:37
+SendKeys "7" to Element with Locator: By.Id: TotalNoOfWinners
+
+
+Date and Time: 05/06/2020 17:53:37
+SendKeys "Test Raffle" to Element with Locator: By.Id: ContactPersonName
+
+
+Date and Time: 05/06/2020 17:53:38
+SendKeys "Test@Raffle.com" to Element with Locator: By.Id: ContactPersonEmail
+
+
+Date and Time: 05/06/2020 17:53:39
+SendKeys "1234567890" to Element with Locator: By.Id: ContactPersonMobile
+
+
+Date and Time: 05/06/2020 17:53:40
+ClickOn Element with Locator: By.Id: addrafflelocation
+
+
+Date and Time: 05/06/2020 17:53:41
+SendKeys "Location" to Element with Locator: By.Id: rafflelocation
+
+
+Date and Time: 05/06/2020 17:53:42
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:53:43
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:53:43
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:53:44
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:53:46
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:53:47
+SetDate of Element with Locator: By.Id: drawdatebtn to 16/05/2020
+
+
+Date and Time: 05/06/2020 17:53:47
+ClickOn Element with Locator: By.Id: save
+
+
+Date and Time: 05/06/2020 17:53:47
+ClickOn Element with Locator: By.Id: addgift
+
+
+Date and Time: 05/06/2020 17:53:48
+SendKeys "Prize" to Element with Locator: By.Id: GiftName
+
+
+Date and Time: 05/06/2020 17:53:48
+SendKeys "4" to Element with Locator: By.Id: NoOfGifts
+
+
+Date and Time: 05/06/2020 17:53:49
+SendKeys "4" to Element with Locator: By.Id: PricePerEachGift
+
+
+Date and Time: 05/06/2020 17:53:49
+ClickOn Element with Locator: By.Id: savegift
+
+
+Date and Time: 05/06/2020 17:53:50
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 17:53:50
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:53:52
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:53:54
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 17:53:59
+UploadAttachments
+
+
+Date and Time: 05/06/2020 17:54:57
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:54:59
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:55:02
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 17:55:07
+Check if IsTextVisible where text is: No Payment Required
+
+
+Date and Time: 05/06/2020 17:55:07
+ClickOn Element with Locator: By.Id: checkedcontrol using Javascript
+
+
+Date and Time: 05/06/2020 17:55:08
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:55:10
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:55:12
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 17:55:12
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:55:14
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:57:44
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 17:57:52
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:57:54
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:57:56
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 17:57:57
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 17:57:58
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 17:58:00
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:03
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:05
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:07
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:09
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:11
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:14
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:16
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:18
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 17:58:18
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:20
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:23
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 17:58:23
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:25
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:27
+SelectByText "Dubai Shopping Festival (DSF)" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 17:58:28
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:30
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:32
+SelectByText "Promotions" from Element with Locator: By.Id: participationtype
+
+
+Date and Time: 05/06/2020 17:58:32
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:34
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:37
+ClickOn Element with Locator: By.Id: Raffle
+
+
+Date and Time: 05/06/2020 17:58:37
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 17:58:37
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:40
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:58:42
+ClickOn Element with Locator: By.Id: Raffle
+
+
+Date and Time: 05/06/2020 17:58:43
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:58:44
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:58:44
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:58:46
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:58:47
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 17:58:47
+SetDate of Element with Locator: By.Id: startdatebtn to 11/05/2020
+
+
+Date and Time: 05/06/2020 17:58:48
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:58:49
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:58:49
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:58:50
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:58:51
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 17:58:52
+SetDate of Element with Locator: By.Id: enddatebtn to 14/05/2020
+
+
+Date and Time: 05/06/2020 17:58:52
+SelectByText "Online" from Element with Locator: By.Id: raffletype
+
+
+Date and Time: 05/06/2020 17:58:53
+SendKeys "Raffle Details" to Element with Locator: By.Id: raffledetails
+
+
+Date and Time: 05/06/2020 17:58:54
+SendKeys "7" to Element with Locator: By.Id: TotalNoOfWinners
+
+
+Date and Time: 05/06/2020 17:58:54
+SendKeys "Test Raffle" to Element with Locator: By.Id: ContactPersonName
+
+
+Date and Time: 05/06/2020 17:58:55
+SendKeys "Test@Raffle.com" to Element with Locator: By.Id: ContactPersonEmail
+
+
+Date and Time: 05/06/2020 17:58:56
+SendKeys "1234567890" to Element with Locator: By.Id: ContactPersonMobile
+
+
+Date and Time: 05/06/2020 17:58:57
+ClickOn Element with Locator: By.Id: addrafflelocation
+
+
+Date and Time: 05/06/2020 17:58:58
+SendKeys "Location" to Element with Locator: By.Id: rafflelocation
+
+
+Date and Time: 05/06/2020 17:58:59
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:59:00
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:59:00
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:59:01
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:59:02
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 17:59:04
+SetDate of Element with Locator: By.Id: drawdatebtn to 16/05/2020
+
+
+Date and Time: 05/06/2020 17:59:04
+ClickOn Element with Locator: By.Id: save
+
+
+Date and Time: 05/06/2020 17:59:04
+ClickOn Element with Locator: By.Id: addgift
+
+
+Date and Time: 05/06/2020 17:59:05
+SendKeys "Prize" to Element with Locator: By.Id: GiftName
+
+
+Date and Time: 05/06/2020 17:59:05
+SendKeys "4" to Element with Locator: By.Id: NoOfGifts
+
+
+Date and Time: 05/06/2020 17:59:06
+SendKeys "4" to Element with Locator: By.Id: PricePerEachGift
+
+
+Date and Time: 05/06/2020 17:59:06
+ClickOn Element with Locator: By.Id: savegift
+
+
+Date and Time: 05/06/2020 17:59:07
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 17:59:07
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:59:09
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:59:11
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 17:59:12
+UploadAttachments
+
+
+Date and Time: 05/06/2020 17:59:56
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 17:59:58
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:00:00
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:00:00
+Check if IsTextVisible where text is: No Payment Required
+
+
+Date and Time: 05/06/2020 18:00:01
+ClickOn Element with Locator: By.Id: checkedcontrol using Javascript
+
+
+Date and Time: 05/06/2020 18:00:01
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:00:03
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:00:05
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:00:05
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:00:08
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:07
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 18:06:12
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:15
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:17
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 18:06:18
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 18:06:19
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 18:06:21
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:24
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:26
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:28
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:30
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:32
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:35
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:37
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:39
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:06:40
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:42
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:44
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 18:06:44
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:46
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:48
+SelectByText "Dubai Shopping Festival (DSF)" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 18:06:49
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:51
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:53
+SelectByText "Promotions" from Element with Locator: By.Id: participationtype
+
+
+Date and Time: 05/06/2020 18:06:54
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:56
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:06:58
+ClickOn Element with Locator: By.Id: Raffle
+
+
+Date and Time: 05/06/2020 18:06:58
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:06:59
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:07:01
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:07:03
+ClickOn Element with Locator: By.Id: Raffle
+
+
+Date and Time: 05/06/2020 18:07:04
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:07:05
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:07:06
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:07:07
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:07:08
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:07:08
+SetDate of Element with Locator: By.Id: startdatebtn to 11/05/2020
+
+
+Date and Time: 05/06/2020 18:07:09
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:07:10
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:07:10
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:07:11
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:07:13
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:07:14
+SetDate of Element with Locator: By.Id: enddatebtn to 14/05/2020
+
+
+Date and Time: 05/06/2020 18:07:14
+SelectByText "Online" from Element with Locator: By.Id: raffletype
+
+
+Date and Time: 05/06/2020 18:07:14
+SendKeys "Raffle Details" to Element with Locator: By.Id: raffledetails
+
+
+Date and Time: 05/06/2020 18:07:15
+SendKeys "7" to Element with Locator: By.Id: TotalNoOfWinners
+
+
+Date and Time: 05/06/2020 18:07:16
+SendKeys "Test Raffle" to Element with Locator: By.Id: ContactPersonName
+
+
+Date and Time: 05/06/2020 18:07:16
+SendKeys "Test@Raffle.com" to Element with Locator: By.Id: ContactPersonEmail
+
+
+Date and Time: 05/06/2020 18:07:18
+SendKeys "1234567890" to Element with Locator: By.Id: ContactPersonMobile
+
+
+Date and Time: 05/06/2020 18:07:18
+ClickOn Element with Locator: By.Id: addrafflelocation
+
+
+Date and Time: 05/06/2020 18:07:19
+SendKeys "Location" to Element with Locator: By.Id: rafflelocation
+
+
+Date and Time: 05/06/2020 18:07:20
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 18:07:21
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 18:07:22
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 18:07:23
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 18:07:24
+GetParentElement of Element with Locator: By.Id: drawdate
+
+
+Date and Time: 05/06/2020 18:07:25
+SetDate of Element with Locator: By.Id: drawdatebtn to 16/05/2020
+
+
+Date and Time: 05/06/2020 18:07:25
+ClickOn Element with Locator: By.Id: save
+
+
+Date and Time: 05/06/2020 18:07:26
+ClickOn Element with Locator: By.Id: addgift
+
+
+Date and Time: 05/06/2020 18:07:26
+SendKeys "Prize" to Element with Locator: By.Id: GiftName
+
+
+Date and Time: 05/06/2020 18:07:27
+SendKeys "4" to Element with Locator: By.Id: NoOfGifts
+
+
+Date and Time: 05/06/2020 18:07:27
+SendKeys "4" to Element with Locator: By.Id: PricePerEachGift
+
+
+Date and Time: 05/06/2020 18:07:28
+ClickOn Element with Locator: By.Id: savegift
+
+
+Date and Time: 05/06/2020 18:07:28
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:07:29
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:07:31
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:07:33
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:07:33
+UploadAttachments
+
+
+Date and Time: 05/06/2020 18:08:17
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:08:19
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:08:22
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:08:22
+Check if IsTextVisible where text is: No Payment Required
+
+
+Date and Time: 05/06/2020 18:08:22
+ClickOn Element with Locator: By.Id: checkedcontrol using Javascript
+
+
+Date and Time: 05/06/2020 18:08:22
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:08:24
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:08:27
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:08:27
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:08:29
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:14:50
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 18:14:56
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:14:58
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:00
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 18:15:01
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 18:15:02
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 18:15:05
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:07
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:09
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:11
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:13
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:15
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:18
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:20
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:22
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:15:23
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:25
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:27
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 18:15:27
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:30
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:32
+SelectByText "Dubai Shopping Festival (DSF)" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 18:15:32
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:34
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:36
+SelectByText "Promotions" from Element with Locator: By.Id: participationtype
+
+
+Date and Time: 05/06/2020 18:15:37
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:39
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:41
+ClickOn Element with Locator: By.Id: Scratch and win
+
+
+Date and Time: 05/06/2020 18:15:42
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:15:42
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:44
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:15:46
+ClickOn Element with Locator: By.Id: Scratch & Win
+
+
+Date and Time: 05/06/2020 18:15:47
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:15:48
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:15:49
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:15:50
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:15:51
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:15:52
+SetDate of Element with Locator: By.Id: startdatebtn to 11/05/2020
+
+
+Date and Time: 05/06/2020 18:15:52
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:15:53
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:15:54
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:15:55
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:15:56
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:15:57
+SetDate of Element with Locator: By.Id: enddatebtn to 15/05/2020
+
+
+Date and Time: 05/06/2020 18:15:57
+SendKeys "Details" to Element with Locator: By.Id: details
+
+
+Date and Time: 05/06/2020 18:15:58
+SendKeys "4" to Element with Locator: By.Id: numberofwinners
+
+
+Date and Time: 05/06/2020 18:15:58
+SendKeys "Test Scratch" to Element with Locator: By.Id: contactpersonname
+
+
+Date and Time: 05/06/2020 18:15:59
+SendKeys "Test@Scratch.com" to Element with Locator: By.Id: contactpersonemail
+
+
+Date and Time: 05/06/2020 18:16:00
+SendKeys "1234567800" to Element with Locator: By.Id: contactpersonmobile
+
+
+Date and Time: 05/06/2020 18:16:01
+ClickOn Element with Locator: By.Id: addgift
+
+
+Date and Time: 05/06/2020 18:16:01
+SendKeys "Prize1" to Element with Locator: By.Id: GiftName
+
+
+Date and Time: 05/06/2020 18:16:02
+SendKeys "42" to Element with Locator: By.Id: NoOfGifts
+
+
+Date and Time: 05/06/2020 18:16:03
+SendKeys "24" to Element with Locator: By.Id: PricePerEachGift
+
+
+Date and Time: 05/06/2020 18:16:03
+ClickOn Element with Locator: By.Id: savegift
+
+
+Date and Time: 05/06/2020 18:16:04
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:16:04
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:16:06
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:16:08
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:16:09
+UploadAttachments
+
+
+Date and Time: 05/06/2020 18:16:53
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:16:55
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:16:57
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:16:57
+Check if IsTextVisible where text is: No Payment Required
+
+
+Date and Time: 05/06/2020 18:16:57
+ClickOn Element with Locator: By.Id: checkedcontrol using Javascript
+
+
+Date and Time: 05/06/2020 18:16:58
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:17:00
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:17:02
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:17:02
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:17:04
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:24:41
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 18:24:47
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:24:49
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:24:52
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 18:24:53
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 18:24:54
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 18:24:56
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:24:59
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:01
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:03
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:05
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:07
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:10
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:12
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:14
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:25:14
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:16
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:18
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 18:25:19
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:21
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:23
+SelectByText "Activation auto" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 18:25:24
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:26
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:28
+ClickOn Element with Locator: By.Id: Discount, Sale, Part sale
+
+
+Date and Time: 05/06/2020 18:25:28
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:25:29
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:31
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:33
+ClickOn Element with Locator: By.Id: selectallbrands using Javascript
+
+
+Date and Time: 05/06/2020 18:25:33
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:25:35
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:26:37
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 18:26:44
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:26:46
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:26:49
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 18:26:50
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 18:26:51
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 18:26:53
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:26:55
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:26:57
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:26:59
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:02
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:04
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:06
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:08
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:10
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:27:11
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:13
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:17
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 18:27:28
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:31
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:34
+SelectByText "Activation auto" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 18:27:39
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:41
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:27:47
+ClickOn Element with Locator: By.Id: Discount, Sale, Part sale
+
+
+Date and Time: 05/06/2020 18:27:57
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:28:15
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:28:17
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:28:19
+ClickOn Element with Locator: By.Id: selectallbrands using Javascript
+
+
+Date and Time: 05/06/2020 18:28:19
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:28:22
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:28:24
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:28:41
+ClickOn Element with Locator: By.Id: Discount
+
+
+Date and Time: 05/06/2020 18:29:01
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:29:03
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:29:03
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:29:04
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:29:10
+SetDate of Element with Locator: By.Id: startdatebtn to 08/05/2020
+
+
+Date and Time: 05/06/2020 18:29:18
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:29:20
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:29:20
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:29:21
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:29:22
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:29:28
+SetDate of Element with Locator: By.Id: enddatebtn to 11/05/2020
+
+
+Date and Time: 05/06/2020 18:29:29
+SendKeys "50" to Element with Locator: By.Id: DiscountPercentage
+
+
+Date and Time: 05/06/2020 18:29:31
+SelectByText "On All Items" from Element with Locator: By.Id: discounttype
+
+
+Date and Time: 05/06/2020 18:29:44
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:29:49
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:29:52
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:29:54
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:29:55
+UploadAttachments
+
+
+Date and Time: 05/06/2020 18:29:56
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:29:58
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:30:00
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:30:00
+Check if IsTextVisible where text is: No Payment Required
+
+
+Date and Time: 05/06/2020 18:30:00
+ClickOn Element with Locator: By.Id: checkedcontrol using Javascript
+
+
+Date and Time: 05/06/2020 18:30:01
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:30:03
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:30:05
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:30:05
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:30:07
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:31:35
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 18:31:41
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:31:44
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:31:46
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 18:31:47
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 18:31:48
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 18:31:50
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:31:53
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:31:55
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:31:57
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:31:59
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:01
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:04
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:32:04
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:06
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:08
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 18:32:09
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:11
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:13
+SelectByText "Activation auto" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 18:32:14
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:16
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:18
+ClickOn Element with Locator: By.Id: Discount, Sale, Part sale
+
+
+Date and Time: 05/06/2020 18:32:18
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:32:18
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:21
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:23
+ClickOn Element with Locator: By.Id: selectallbrands using Javascript
+
+
+Date and Time: 05/06/2020 18:32:23
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:25
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:32:27
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:32:27
+ClickOn Element with Locator: By.Id: Discount
+
+
+Date and Time: 05/06/2020 18:32:28
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:32:28
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:32:29
+SendKeys "50" to Element with Locator: By.Id: DiscountPercentage
+
+
+Date and Time: 05/06/2020 18:33:36
+Initialize New Driver and Wait
+
+
+Date and Time: 05/06/2020 18:33:46
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:33:49
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:33:51
+Frontend Login with username "amir@dtcm.com" and password "P@ssw0rd"
+
+
+Date and Time: 05/06/2020 18:33:52
+SendKeys "amir@dtcm.com" to Username Field
+
+
+Date and Time: 05/06/2020 18:33:53
+SendKeys "P@ssw0rd" to Password Field
+
+
+Date and Time: 05/06/2020 18:33:55
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:33:58
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:00
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:02
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:04
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:06
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:09
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:11
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:13
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:34:14
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:16
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:18
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:20
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:22
+SelectByText "Katry Company distributor" from Element with Locator: By.Id: company
+
+
+Date and Time: 05/06/2020 18:34:23
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:25
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:27
+SelectByText "Activation auto" from Element with Locator: By.Id: event
+
+
+Date and Time: 05/06/2020 18:34:27
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:29
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:31
+ClickOn Element with Locator: By.Id: Discount, Sale, Part sale
+
+
+Date and Time: 05/06/2020 18:34:32
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:34:32
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:35
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:37
+ClickOn Element with Locator: By.Id: selectallbrands using Javascript
+
+
+Date and Time: 05/06/2020 18:34:37
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:39
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:41
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:34:41
+ClickOn Element with Locator: By.Id: Discount
+
+
+Date and Time: 05/06/2020 18:34:43
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:34:44
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:34:44
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:34:45
+GetParentElement of Element with Locator: By.Id: startdate
+
+
+Date and Time: 05/06/2020 18:34:46
+SetDate of Element with Locator: By.Id: startdatebtn to 08/05/2020
+
+
+Date and Time: 05/06/2020 18:34:47
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:34:48
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:34:48
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:34:49
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:34:50
+GetParentElement of Element with Locator: By.Id: enddate
+
+
+Date and Time: 05/06/2020 18:34:51
+SetDate of Element with Locator: By.Id: enddatebtn to 11/05/2020
+
+
+Date and Time: 05/06/2020 18:34:51
+SendKeys "50" to Element with Locator: By.Id: DiscountPercentage
+
+
+Date and Time: 05/06/2020 18:34:52
+SelectByText "On All Items" from Element with Locator: By.Id: discounttype
+
+
+Date and Time: 05/06/2020 18:34:52
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:34:52
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:55
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:34:57
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:34:57
+UploadAttachments
+
+
+Date and Time: 05/06/2020 18:35:41
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:35:43
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:35:45
+ClickOn Element with Locator: By.Id: next
+
+
+Date and Time: 05/06/2020 18:35:46
+Check if IsTextVisible where text is: No Payment Required
+
+
+Date and Time: 05/06/2020 18:35:46
+ClickOn Element with Locator: By.Id: checkedcontrol using Javascript
+
+
+Date and Time: 05/06/2020 18:35:46
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:35:48
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:35:50
+ClickOn Element with Locator: By.Id: submit
+
+
+Date and Time: 05/06/2020 18:35:51
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:35:53
+WaitFor Loader with Condition Invisible
+
+
+Date and Time: 05/06/2020 18:35:55
+CloseDriver
+
+

@@ -81,7 +81,7 @@ namespace DTCM_Automation.project.Steps
                     commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
                 // Done
                 checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, CommonFunctions.CommonFunctions.Stages.Reviewdecision);
-
+               
                 // Done
                 CRMFormsClass.CalendarCreationDecision(xrmBrowser, decision);
             }

@@ -158,3 +158,31 @@ Date and Time: 05/06/2020 00:39:16
 Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
 
 
+Date and Time: 05/06/2020 18:25:19
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 18:25:33
+Exception occurred in function "WaitFor". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 18:29:56
+Exception occurred in function "UploadAttachments". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 18:32:09
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 18:32:14
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 18:32:28
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/06/2020 18:32:29
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
