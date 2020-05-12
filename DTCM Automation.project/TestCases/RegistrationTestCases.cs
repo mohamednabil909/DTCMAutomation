@@ -49,9 +49,7 @@ namespace DTCM_Automation.project.TestCases
             portalForms.Portal_NavigateToRegister();
             //Registeration
             portalForms.RegisterationForm("FirstName", Guid, "Test" + Guid + "Atomation@test.com", "P@ssw0rd1");
-
-
-
+            
             // portalSteps.RegiterNewUser( guid);
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {

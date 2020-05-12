@@ -202,3 +202,115 @@ Date and Time: 05/06/2020 22:13:12
 Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
 
 
+Date and Time: 05/11/2020 02:12:02
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/11/2020 02:17:43
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/11/2020 02:21:40
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 00:53:22
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 00:57:28
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 01:17:32
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 01:27:46
+Exception occurred in function "GetTextOf". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 02:02:02
+Exception occurred in function "UploadAttachments". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 02:34:42
+Exception occurred in function "GetParentElement". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 02:34:43
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 02:34:43
+Exception occurred in function "GetParentElement". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 02:34:44
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 02:34:44
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 16:27:49
+Exception occurred in function "GetRequestId". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 17:38:37
+Exception occurred in function "UploadAttachments". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 17:44:13
+Exception occurred in function "UploadAttachments". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 17:44:32
+Exception occurred in function "GetRequestId". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 20:08:30
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 20:08:35
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 20:08:58
+Exception occurred in function "GetParentElement". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 20:08:58
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 20:08:59
+Exception occurred in function "GetParentElement". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 20:08:59
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/12/2020 22:54:45
+Exception occurred in function "UploadAttachments". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 01:01:11
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 01:01:26
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 01:01:26
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 01:01:27
+Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
+
+

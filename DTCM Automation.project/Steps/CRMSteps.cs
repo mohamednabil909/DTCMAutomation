@@ -82,9 +82,12 @@ namespace DTCM_Automation.project.Steps
                     commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
                 // Done
                 checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser,  Stages.Reviewdecision);
-               
+
                 // Done
+                Thread.Sleep(2000);
                 CRMFormsClass.CalendarCreationDecision(xrmBrowser, decision);
+
+                //CRMFormsClass.MarkWaived(xrmBrowser);
             }
             else
             {
@@ -100,10 +103,12 @@ namespace DTCM_Automation.project.Steps
                     }
 
                     // Done
-                    checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1,  Stages.Employeedecision);
+                    checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1,  Stages.Reviewdecision);
 
                     // Done
                     CRMFormsClass.CalendarCreationDecision(xrmBrowser, decision);
+
+                  //  CRMFormsClass.MarkWaived(xrmBrowser);
                 }
             }
 
@@ -133,8 +138,51 @@ namespace DTCM_Automation.project.Steps
                     // Done
                     checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, Stages.Reviewdecision);
 
-                    
                     CRMFormsClass.MarkWaived(xrmBrowser1);
+                }
+            }
+
+            return checkStageIsCorrect;
+        }
+
+
+        public bool ActivatonFirstDecisionStep(Browser xrmBrowser, Users User, bool SameUser, bool PickRequest, bool loginFirst, string RequestNumber, Decisions decision)
+        {
+            bool checkStageIsCorrect = true;
+
+            if (SameUser)
+            {
+                if (PickRequest)
+                    commonFunctions.PickOpenRequest(xrmBrowser, User, loginFirst, RequestNumber);
+                // Done
+                checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser, Stages.Employeedecision);
+
+                // Done
+                Thread.Sleep(2000);
+                CRMFormsClass.CalendarCreationDecision(xrmBrowser, decision);
+
+                //CRMFormsClass.MarkWaived(xrmBrowser);
+            }
+            else
+            {
+                using (var xrmBrowser1 = new Browser(TestSettings.Options))
+                {
+                    if (PickRequest)
+                        commonFunctions.PickOpenRequest(xrmBrowser1, User, loginFirst, RequestNumber);
+                    else
+                    {
+                        // TODO open existing request 
+                        commonFunctions.CRMLoginAs(xrmBrowser1, User);
+                        commonFunctions.OpenRequest(xrmBrowser1, RequestNumber, "Profile Management", "Queue Items", "Items available to work on");
+                    }
+
+                    // Done
+                    checkStageIsCorrect = commonFunctions.CheckStage(xrmBrowser1, Stages.Employeedecision);
+
+                    // Done
+                    CRMFormsClass.CalendarCreationDecision(xrmBrowser, decision);
+
+                    //CRMFormsClass.MarkWaived(xrmBrowser);
                 }
             }
 

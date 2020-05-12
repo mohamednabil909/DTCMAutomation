@@ -64,8 +64,7 @@ namespace DTCM_Automation.project.Portal
             {
                 //requestid = "REQ-005141";
                 CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
-                CRMSteps.MarkWaivedStep(xrmBrowser, Users.Admin, false
-                    , requestid);
+               // CRMSteps.MarkWaivedStep(xrmBrowser, Users.Admin, false, requestid);
             }
         }
 

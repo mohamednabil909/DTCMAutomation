@@ -127,10 +127,9 @@ namespace DTCM_Automation.project.Steps
         public bool RegisterationForm(string firstname, string lastname, string Email, String pass)
         {
             WaitForPageToLoad();
+            WaitForPageToLoad();
             SelectByIndex(By.Id("title"), 1);
-
             SendKeys(By.Id("firstname"), firstname);
-
             SendKeys(By.Id("lastname"), lastname);
             SelectByIndex(By.Id("department"), 1);
             SelectByIndex(By.Id("positionlevel"), 1);
@@ -317,6 +316,7 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             ClickOn(By.Id("next"), false);
             WaitForPageToLoad();
+            WaitForPageToLoad();
             SelectByText(By.Id("company"), CompanyName);
             WaitForPageToLoad();
             SelectByText(By.Id("calendar"), CalendarName);
@@ -329,11 +329,13 @@ namespace DTCM_Automation.project.Steps
             WaitForPageToLoad();
             if (participationselection == Participationselection.Branchs)
             {
+                WaitForPageToLoad();
                 ClickOn(By.Id("selectallbranches"), true);
             }
 
             else if (participationselection == Participationselection.Brands)
             {
+                WaitForPageToLoad();
                 ClickOn(By.Id("selectallbrands"), true);
             }
 
@@ -364,6 +366,7 @@ namespace DTCM_Automation.project.Steps
             // TODO Add id of total price
             if (productPrice != 0)
             {
+                WaitForPageToLoad();
                 string Actual_price = GetTextOf(By.Id("totalamount")).Split(' ')[0];
 
                 //string Actual_price = PriceText.Remove(',');
@@ -383,6 +386,7 @@ namespace DTCM_Automation.project.Steps
             ClickOn(By.Id("checkedcontrol"), true);
             WaitForPageToLoad();
             ClickOn(By.Id("submit"), false);
+            WaitForPageToLoad();
             WaitForPageToLoad();
             return GetRquestId();
         }
@@ -576,6 +580,7 @@ namespace DTCM_Automation.project.Steps
         
         public void ActivationParticipationAddPromotion(Promotions selectedPromotion,DateTime StartDate ,DateTime EndDate)
         {
+            WaitForPageToLoad();
             try
             {
                 if (selectedPromotion == Promotions.Discount)
@@ -652,13 +657,13 @@ namespace DTCM_Automation.project.Steps
                     SendKeys(By.Id("rafflelocation"), "Location");
                     SetDate(DateTime.Now.AddDays(10), By.Id("drawdatebtn"), By.Id("drawdate"), null, null);
                     
-                    //Calendar
+                    
                     ClickOn(By.Id("save"), false);
                     ClickOn(By.Id("addgift"), false);
                     SendKeys(By.Id("GiftName"), "Prize");
                     SendKeys(By.Id("NoOfGifts"), "4");
                     SendKeys(By.Id("PricePerEachGift"), "4");
-                    ClickOn(By.Id("save"), false);
+                    ClickOn(By.Id("savegift"), false);
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);
@@ -679,7 +684,7 @@ namespace DTCM_Automation.project.Steps
                     SendKeys(By.Id("GiftName"), "Prize1");
                     SendKeys(By.Id("NoOfGifts"), "42");
                     SendKeys(By.Id("PricePerEachGift"), "24");
-                    ClickOn(By.Id("save"), false);
+                    ClickOn(By.Id("savegift"), false);
                     ClickOn(By.Id("submit"), false);
                     WaitForPageToLoad();
                     ClickOn(By.Id("next"), false);

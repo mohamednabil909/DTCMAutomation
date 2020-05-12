@@ -65,8 +65,6 @@ namespace DTCM_Automation.project.TestCases
                 portalForms.AddAttachmentsStep();
 
                 return portalForms.PaymentDetailsStep(0);
-            
-            
         }
         /// <summary>
         /// Add promotion of type "Discount"
@@ -76,6 +74,11 @@ namespace DTCM_Automation.project.TestCases
         {
             string requestid = AddActivationRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.ActivationEvent
                 , Participationselection.Brands, Promotions.Discount, DateTime.Now.AddDays(2), DateTime.Now.AddDays(5));
+            //using (var xrmBrowser = new Browser(TestSettings.Options))
+            //{
+            //    CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+            //}
+
         }
 
         /// <summary>
@@ -109,7 +112,7 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
        
@@ -123,7 +126,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Offer, DateTime.Now.AddDays(5), DateTime.Now.AddDays(6));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
@@ -137,7 +140,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Offer, DateTime.Now.AddDays(7), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
@@ -151,7 +154,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Kiosk, DateTime.Now.AddDays(5), DateTime.Now.AddDays(8));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
@@ -166,7 +169,7 @@ namespace DTCM_Automation.project.TestCases
 
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
@@ -180,7 +183,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Kiosk, DateTime.Now.AddDays(9), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
@@ -194,7 +197,8 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Raffle, DateTime.Now.AddDays(6), DateTime.Now.AddDays(8));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+                
             }
         }
 
@@ -208,7 +212,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Raffle, DateTime.Now.AddDays(8), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
 
@@ -222,7 +226,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Raffle, DateTime.Now.AddDays(6), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 
@@ -236,7 +240,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(5), DateTime.Now.AddDays(7));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Approve);
             }
         }
 
@@ -250,7 +254,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(7), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Sendback);
             }
         }
         /// <summary>
@@ -263,7 +267,7 @@ namespace DTCM_Automation.project.TestCases
                 Participationselection.Brands, Promotions.Scratchandwin, DateTime.Now.AddDays(6), DateTime.Now.AddDays(10));
             using (var xrmBrowser = new Browser(TestSettings.Options))
             {
-                CRMSteps.EventFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
+                CRMSteps.ActivatonFirstDecisionStep(xrmBrowser, Users.Retailer, true, true, true, requestid, Decisions.Cancel);
             }
         }
 

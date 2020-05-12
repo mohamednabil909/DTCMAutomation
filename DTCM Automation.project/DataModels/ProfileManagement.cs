@@ -27,7 +27,7 @@ namespace DTCM_Automation.project.DataModels
         public string GetActivationLink(Browser xrmBrowser, string email)
         {
             NavigatetoContacts(xrmBrowser);
-
+            Thread.Sleep(2000);
             xrmBrowser.Grid.Search(email);
             xrmBrowser.Grid.OpenRecord(0);
             string emailText = xrmBrowser.ActivityFeed.getEmailText();

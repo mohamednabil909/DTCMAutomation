@@ -59,7 +59,7 @@ namespace DTCM_Automation.project.Steps
         {
             xrmBrowser.Entity.ClickElement("ldv_invoiceid");
             xrmBrowser.Driver.WaitForPageToLoad();
-
+            xrmBrowser.CommandBar.ClickCommand("Waive Invoice");
         }
 
         internal void ActivatioinCreationDecision(Browser xrmBrowser, Decisions decision)

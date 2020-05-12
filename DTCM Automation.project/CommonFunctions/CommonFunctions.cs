@@ -102,6 +102,7 @@ namespace DTCM_Automation.project.CommonFunctions
             if (GridItems != null && GridItems.Count > 0)
             {
                 xrmBrowser.Grid.SelectRecord(0);
+                Thread.Sleep(1000);
                 xrmBrowser.CommandBar.ClickCommand("PICK");
                 xrmBrowser.Dialogs.PickDialog();
                 //Openrequest
