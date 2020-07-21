@@ -314,3 +314,47 @@ Date and Time: 05/13/2020 01:01:27
 Exception occurred in function "SelectByText". Please check attached screenshot: No File Created
 
 
+Date and Time: 05/13/2020 15:05:30
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:10:55
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:16:04
+Exception occurred in function "SelectByIndex". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:20:16
+Exception occurred in function "GetTextOf". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:22:16
+Exception occurred in function "GetTextOf". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:39:48
+Exception occurred in function "GetParentElement". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:39:48
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:39:49
+Exception occurred in function "GetParentElement". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:39:49
+Exception occurred in function "SetDate". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:43:35
+Exception occurred in function "UploadAttachments". Please check attached screenshot: No File Created
+
+
+Date and Time: 05/13/2020 15:57:49
+Exception occurred in function "UploadAttachments". Please check attached screenshot: No File Created
+
+

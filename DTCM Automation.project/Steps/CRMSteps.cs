@@ -29,6 +29,7 @@ namespace DTCM_Automation.project.Steps
             ProfileManagement Profile = new ProfileManagement();
 
             commonFunctions.CRMLoginAs(xrmBrowser, User);
+            Thread.Sleep(500);
             return Profile.GetActivationLink(xrmBrowser, RequestNumber);
             
         }

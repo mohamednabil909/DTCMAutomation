@@ -128,7 +128,7 @@ namespace DTCM_Automation.project.Steps
         {
             WaitForPageToLoad();
             WaitForPageToLoad();
-            SelectByIndex(By.Id("title"), 1);
+            //SelectByIndex(By.Id("title"), 1);
             SendKeys(By.Id("firstname"), firstname);
             SendKeys(By.Id("lastname"), lastname);
             SelectByIndex(By.Id("department"), 1);
@@ -326,6 +326,7 @@ namespace DTCM_Automation.project.Steps
         }
         public void SelectBrandsAndBranchesStep(Participationselection participationselection)
         {
+            WaitForPageToLoad();
             WaitForPageToLoad();
             if (participationselection == Participationselection.Branchs)
             {

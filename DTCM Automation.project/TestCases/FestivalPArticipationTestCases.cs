@@ -73,7 +73,7 @@ namespace DTCM_Automation.project.TestCases
         public void TC_FestivlRequest_AddDiscountfromportal()
         {
             string requestid = AddFestivalRequestFromPortal(Properties.Settings.Default.CompanyName, Properties.Settings.Default.Event
-                , Participationselection.Brands, Promotions.Discount, DateTime.Now.AddDays(-4), DateTime.Now.AddDays(1));
+                , Participationselection.Brands, Promotions.Discount, DateTime.Now.AddDays(5), DateTime.Now.AddDays(9));
             
         }
         

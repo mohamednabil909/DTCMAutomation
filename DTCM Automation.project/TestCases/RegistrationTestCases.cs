@@ -56,7 +56,7 @@ namespace DTCM_Automation.project.TestCases
 
 
                 string actvatinLink = CRMSteps.OpenActivationEmail(xrmBrowser, Users.Admin, "Test" + Guid + "Atomation@test.com");
-
+                
                 confirmed= portalForms.NavigateToActivationLink(actvatinLink);
             }
 
